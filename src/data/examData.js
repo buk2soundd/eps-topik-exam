@@ -1393,6 +1393,29 @@ function seededShuffle(arr, seed) {
 }
 
 /**
+ * Shuffle the answer options of a question and return a new question object
+ * with updated correctIndex. Uses a per-question seed so it's deterministic.
+ */
+function shuffleOptions(q, seed) {
+  const indices = [0, 1, 2, 3];
+  // seeded shuffle of indices
+  let s = seed;
+  for (let i = indices.length - 1; i > 0; i--) {
+    s = (s * 1664525 + 1013904223) & 0xffffffff;
+    const j = Math.abs(s) % (i + 1);
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+  const SYMS = ['①', '②', '③', '④'];
+  // Strip leading symbol from option text (if any) then re-label
+  const strip = (opt) => opt.replace(/^[①②③④]\s*/, '').trim();
+  const newOptions = indices.map((origIdx, newPos) =>
+    `${SYMS[newPos]} ${strip(q.options[origIdx])}`
+  );
+  const newCorrectIndex = indices.indexOf(q.correctIndex);
+  return { ...q, options: newOptions, correctIndex: newCorrectIndex };
+}
+
+/**
  * Generate one exam set (setNumber: 1-5, category: 'ALL'|'AGRICULTURE'|'INDUSTRY').
  * For topic categories, all matching questions appear first; remaining slots
  * are filled from the general pool (no cross-topic contamination).
@@ -1425,17 +1448,15 @@ export function generateExamSet(setNumber, category = EXAM_CATEGORIES.ALL) {
     ].slice(0, 20);
   }
 
-  const readingQuestions = pickedR.map((q, i) => ({
-    ...q,
-    id: i + 1,
-    section: EXAM_SECTIONS.READING,
-  }));
+  const readingQuestions = pickedR.map((q, i) => {
+    const qSeed = (seed + i * 7919) & 0xffffffff;
+    return { ...shuffleOptions(q, qSeed), id: i + 1, section: EXAM_SECTIONS.READING };
+  });
 
-  const listeningQuestions = pickedL.map((q, i) => ({
-    ...q,
-    id: i + 21,
-    section: EXAM_SECTIONS.LISTENING,
-  }));
+  const listeningQuestions = pickedL.map((q, i) => {
+    const qSeed = (seed + 99991 + i * 7919) & 0xffffffff;
+    return { ...shuffleOptions(q, qSeed), id: i + 21, section: EXAM_SECTIONS.LISTENING };
+  });
 
   return [...readingQuestions, ...listeningQuestions];
 }

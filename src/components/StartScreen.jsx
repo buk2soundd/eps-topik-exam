@@ -1,18 +1,14 @@
 import React from 'react';
-import { ClipboardList, Clock, BookOpen, Headphones, ChevronRight, Tractor, Factory, LayoutGrid, User } from 'lucide-react';
-import { TOTAL_EXAM_SETS, EXAM_CATEGORIES } from '../data/examData';
+import { ClipboardList, Clock, BookOpen, Headphones, ChevronRight, Tractor, Factory, LayoutGrid, User, Shuffle } from 'lucide-react';
+import { EXAM_CATEGORIES } from '../data/examData';
 
 const SET_COLORS = [
-  '', // index 0 unused
   '#1a3a6b', '#065f46', '#7c2d12', '#581c87', '#9f1239',
   '#0369a1', '#166534', '#92400e', '#4c1d95', '#881337',
-  '#0c4a6e', '#14532d', '#78350f', '#3b0764', '#4d7c0f',
 ];
 const SET_BG = [
-  '',
   '#dbeafe', '#d1fae5', '#ffedd5', '#ede9fe', '#ffe4e6',
   '#e0f2fe', '#dcfce7', '#fef3c7', '#f3e8ff', '#fff1f2',
-  '#bae6fd', '#bbf7d0', '#fde68a', '#e9d5ff', '#d9f99d',
 ];
 
 const CATEGORY_OPTIONS = [
@@ -48,12 +44,18 @@ const CATEGORY_OPTIONS = [
   },
 ];
 
-const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examinerName, onNameChange, onStart }) => {
+const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examinerName, onNameChange, onStart, onReshuffle }) => {
   const cat = CATEGORY_OPTIONS.find((c) => c.key === selectedCategory) || CATEGORY_OPTIONS[0];
   const canStart = examinerName.trim().length >= 2;
+  // pick color from seed: colorIdx 0-9 based on last digit of seed
+  const colorIdx = assignedSet % 10;
+  const setColor = SET_COLORS[colorIdx];
+  const setBg    = SET_BG[colorIdx];
+  // Display as 6-digit code
+  const setCode = String(assignedSet).padStart(6, '0');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-blue-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-slate-100 to-blue-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden">
 
         {/* Header */}
@@ -99,25 +101,33 @@ const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examiner
         </div>
 
         {/* Set Badge */}
-        <div className="flex justify-center mt-4 mb-2">
+        <div className="flex flex-col items-center mt-4 mb-1 gap-2">
           <div
             className="flex flex-col items-center justify-center rounded-2xl px-10 py-4 shadow-md border-2"
-            style={{ background: SET_BG[assignedSet], borderColor: SET_COLORS[assignedSet] }}
+            style={{ background: setBg, borderColor: setColor }}
           >
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: SET_COLORS[assignedSet] }}>
-              ສຸ່ມອັດຕະໂນມັດ
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: setColor }}>
+              ລະຫັດຊຸດຂໍ້ສອບ (ສຸ່ມ)
             </span>
-            <span className="text-4xl font-black mt-1" style={{ color: SET_COLORS[assignedSet] }}>
-              ຊຸດທີ {assignedSet}
+            <span className="text-3xl font-black mt-1 font-mono tracking-widest" style={{ color: setColor }}>
+              #{setCode}
             </span>
-            <span className="text-sm font-bold tracking-widest mt-1" style={{ color: SET_COLORS[assignedSet] }}>
-              SET {String(assignedSet).padStart(2, '0')} / {TOTAL_EXAM_SETS}
+            <span className="text-xs font-medium mt-1 opacity-70" style={{ color: setColor }}>
+              ແຕ່ລະລະຫັດ = ຊຸດຂໍ້ສອບທີ່ແຕກຕ່າງກັນ
             </span>
           </div>
+          <button
+            onClick={onReshuffle}
+            className="flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-full border-2 transition-all hover:opacity-80 active:scale-95"
+            style={{ borderColor: setColor, color: setColor, background: setBg }}
+          >
+            <Shuffle size={13} />
+            ສຸ່ມລະຫັດໃໝ່
+          </button>
         </div>
 
         <p className="text-center text-xs text-gray-400 mb-3">
-          ລະບົບສຸ່ມຊຸດຂໍ້ສອບໃຫ້ອັດຕະໂນມັດ — ແຕ່ລະຄົນໄດ້ຮັບຊຸດຂໍ້ສອບທີ່ແຕກຕ່າງກັນ
+          ລະຫັດ 1–999,999 ທຳໃຫ້ແຕ່ລະຄົນໄດ້ຂໍ້ສອບ ແລະ ລຳດັບຕົວເລືອກທີ່ຕ່າງກັນ
         </p>
 
         {/* Exam Info */}

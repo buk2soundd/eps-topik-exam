@@ -735,21 +735,341 @@ export const ImageHardHatSign = () => (
   </svg>
 );
 
+// ─────────────────────────────────────────────────────────────────────────────
+// ── 2026 FORMAT QUESTION IMAGES ───────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── Keyword Badge — for 단어와 관계있는 것 고르기 ─────────────────────────────
+const KeywordBadge = ({ text, scale = 1 }) => {
+  const bw = Math.round(380 * scale);
+  const vw = bw + 80;
+  const fs = text.length <= 2 ? 64 : text.length <= 3 ? 52 : 42;
+  return (
+    <svg viewBox={`0 0 ${vw} 162`} xmlns="http://www.w3.org/2000/svg"
+      className="w-full max-w-sm mx-auto my-1">
+      <rect width={vw} height="162" fill="#fdf7f5" rx="10"/>
+      <rect x="22" y="22" width={bw + 36} height="118" rx="55" fill="#c01040"/>
+      <text x={vw / 2} y="101" textAnchor="middle" fontSize={fs}
+        fontFamily="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif"
+        fill="white" fontWeight="bold">{text}</text>
+    </svg>
+  );
+};
+export const KeywordChuksa   = () => <KeywordBadge text="축사" />;
+export const KeywordBiryo    = () => <KeywordBadge text="비료" />;
+export const KeywordYongjeop = () => <KeywordBadge text="용접" />;
+export const KeywordJigecha  = () => <KeywordBadge text="지게차" scale={1.25} />;
+
+// ── Fill-in-Blank Badge — for 빈칸에 들어갈 알맞은 것 고르기 ──────────────────
+const BlankBadge = ({ label }) => (
+  <svg viewBox="0 0 580 162" xmlns="http://www.w3.org/2000/svg"
+    className="w-full max-w-xl mx-auto my-1">
+    <rect width="580" height="162" fill="#fdf7f5" rx="10"/>
+    <rect x="18" y="22" width="544" height="118" rx="55" fill="#c01040"/>
+    <text x="290" y="100" textAnchor="middle" fontSize="30"
+      fontFamily="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif"
+      fill="white" fontWeight="bold">{label}:  ___________</text>
+  </svg>
+);
+export const BlankChurgunJangso = () => <BlankBadge label="출근 장소" />;
+export const BlankSafetyGear    = () => <BlankBadge label="안전 장비" />;
+export const BlankBohoJangbi    = () => <BlankBadge label="보호 장비" />;
+
+// ── 저울 (Dial Scale) ──────────────────────────────────────────────────────────
+export const ImageScaleJoul = () => {
+  const needleA = (-225 + (3 / 10) * 270) * Math.PI / 180;
+  const nx = +(140 + 38 * Math.cos(needleA)).toFixed(1);
+  const ny = +(188 + 38 * Math.sin(needleA)).toFixed(1);
+  return (
+    <svg viewBox="0 0 280 300" xmlns="http://www.w3.org/2000/svg"
+      className="w-full max-w-xs mx-auto rounded-lg border border-gray-200 shadow-sm bg-white">
+      <rect width="280" height="300" fill="white"/>
+      {/* Base */}
+      <ellipse cx="140" cy="270" rx="72" ry="14" fill="#9a5510"/>
+      <rect x="68" y="254" width="144" height="22" fill="#c07020"/>
+      {/* Body cylinder */}
+      <rect x="76" y="118" width="128" height="144" rx="14" fill="#e09030"/>
+      <path d="M76,118 L76,262 Q76,270 90,270 L76,262 Z" fill="#c07020" opacity="0.45"/>
+      <path d="M204,118 L204,262 Q204,270 190,270 L204,262 Z" fill="#c07020" opacity="0.45"/>
+      {/* Dial face */}
+      <circle cx="140" cy="188" r="56" fill="#fffce8" stroke="#c07020" strokeWidth="4"/>
+      <circle cx="140" cy="188" r="50" fill="white"/>
+      {/* Tick marks – 25 positions, 270° arc */}
+      {Array.from({length: 25}, (_, i) => {
+        const a = (-225 + i * (270 / 24)) * Math.PI / 180;
+        const major = i % 4 === 0;
+        return (
+          <line key={i}
+            x1={+(140 + (major ? 34 : 40) * Math.cos(a)).toFixed(1)}
+            y1={+(188 + (major ? 34 : 40) * Math.sin(a)).toFixed(1)}
+            x2={+(140 + 46 * Math.cos(a)).toFixed(1)}
+            y2={+(188 + 46 * Math.sin(a)).toFixed(1)}
+            stroke="#555" strokeWidth={major ? 2 : 0.8}/>
+        );
+      })}
+      {/* Labels 0 2 4 6 8 10 */}
+      {[0,2,4,6,8,10].map((n, i) => {
+        const a = (-225 + i * (270 / 5)) * Math.PI / 180;
+        return (
+          <text key={n}
+            x={+(140 + 27 * Math.cos(a)).toFixed(1)}
+            y={+(192 + 27 * Math.sin(a)).toFixed(1)}
+            textAnchor="middle" fontSize="9" fill="#333" fontWeight="bold">{n}</text>
+        );
+      })}
+      <text x="140" y="178" textAnchor="middle" fontSize="9" fill="#c01040" fontWeight="bold">kg</text>
+      {/* Needle */}
+      <line x1="140" y1="188" x2={nx} y2={ny} stroke="#cc0000" strokeWidth="2.5" strokeLinecap="round"/>
+      <circle cx="140" cy="188" r="4.5" fill="#444"/>
+      {/* Platform post */}
+      <rect x="134" y="65" width="12" height="57" fill="#c07020"/>
+      <ellipse cx="140" cy="66" rx="56" ry="10" fill="#e0e0e0" stroke="#bbb" strokeWidth="1.5"/>
+      <ellipse cx="140" cy="62" rx="56" ry="10" fill="#ebebeb" stroke="#ccc" strokeWidth="1.5"/>
+      {/* Caption */}
+      <text x="140" y="292" textAnchor="middle" fontSize="14"
+        fontFamily="'Malgun Gothic','Arial',sans-serif" fill="#555" fontWeight="bold">저울</text>
+    </svg>
+  );
+};
+
+// ── 버니어 캘리퍼스 (Vernier Caliper) ─────────────────────────────────────────
+export const ImageVernierCaliper = () => (
+  <svg viewBox="0 0 500 210" xmlns="http://www.w3.org/2000/svg"
+    className="w-full max-w-xl mx-auto rounded-lg border border-gray-200 shadow-sm bg-white">
+    <rect width="500" height="210" fill="white"/>
+    {/* Main beam */}
+    <rect x="28" y="94" width="414" height="22" rx="4" fill="#c8c8c8" stroke="#999" strokeWidth="1.5"/>
+    {/* Scale ticks & numbers */}
+    {Array.from({length: 21}, (_, i) => (
+      <g key={i}>
+        <line x1={38 + i * 18} y1="94" x2={38 + i * 18} y2={i % 5 === 0 ? 82 : 88}
+          stroke="#444" strokeWidth={i % 5 === 0 ? 1.5 : 0.8}/>
+        {i % 5 === 0 && (
+          <text x={38 + i * 18} y="78" textAnchor="middle" fontSize="9" fill="#333">{i * 5}</text>
+        )}
+      </g>
+    ))}
+    <text x="414" y="80" fontSize="8" fill="#666">mm</text>
+    {/* Fixed jaw */}
+    <rect x="28" y="60" width="50" height="56" rx="3" fill="#d4d4d4" stroke="#aaa" strokeWidth="1.5"/>
+    <rect x="28" y="114" width="50" height="48" rx="3" fill="#d4d4d4" stroke="#aaa" strokeWidth="1.5"/>
+    {/* Sliding jaw */}
+    <rect x="158" y="84" width="55" height="130" rx="3" fill="#b8b8b8" stroke="#888" strokeWidth="1.5"/>
+    <rect x="160" y="60" width="50" height="36" rx="3" fill="#b4b4b4" stroke="#888" strokeWidth="1.5"/>
+    <rect x="160" y="114" width="50" height="48" rx="3" fill="#b4b4b4" stroke="#888" strokeWidth="1.5"/>
+    {/* Vernier scale on slider */}
+    {Array.from({length: 11}, (_, i) => (
+      <line key={i} x1={167 + i * 10} y1="84" x2={167 + i * 10} y2={i % 5 === 0 ? 76 : 80}
+        stroke="#444" strokeWidth="0.8"/>
+    ))}
+    {/* Depth gauge rod */}
+    <rect x="198" y="97" width="232" height="10" rx="3" fill="#aaa" stroke="#888" strokeWidth="1.2"/>
+    {/* Lock screw */}
+    <ellipse cx="206" cy="102" rx="8" ry="6" fill="#666"/>
+    <line x1="206" y1="96" x2="206" y2="108" stroke="#aaa" strokeWidth="1.5"/>
+    {/* Gap guide lines */}
+    <line x1="78" y1="60"  x2="160" y2="60"  stroke="#aaa" strokeWidth="0.8" strokeDasharray="3,2"/>
+    <line x1="78" y1="162" x2="160" y2="162" stroke="#aaa" strokeWidth="0.8" strokeDasharray="3,2"/>
+    {/* Caption */}
+    <text x="250" y="190" textAnchor="middle" fontSize="13"
+      fontFamily="'Malgun Gothic','Arial',sans-serif" fill="#333" fontWeight="bold">버니어 캘리퍼스</text>
+  </svg>
+);
+
+// ── 스패너 (Open-End Wrench) ───────────────────────────────────────────────────
+export const ImageSpanner = () => (
+  <svg viewBox="0 0 440 160" xmlns="http://www.w3.org/2000/svg"
+    className="w-full max-w-lg mx-auto rounded-lg border border-gray-200 shadow-sm bg-white">
+    <rect width="440" height="160" fill="white"/>
+    {/* Handle */}
+    <rect x="105" y="62" width="268" height="34" rx="17" fill="#c0c0c0" stroke="#999" strokeWidth="1.5"/>
+    <rect x="105" y="62" width="268" height="12" rx="6" fill="white" opacity="0.28"/>
+    {/* Knurling grip marks */}
+    {Array.from({length: 9}, (_, i) => (
+      <rect key={i} x={160 + i * 22} y="64" width="8" height="30" rx="3"
+        fill="#aaa" opacity="0.25"/>
+    ))}
+    {/* Open-end head — upper jaw */}
+    <path d="M105,62 L50,58 L42,46 L32,50 L32,64 L105,68 Z"
+      fill="#b8b8b8" stroke="#999" strokeWidth="1.5"/>
+    {/* Open-end head — lower jaw */}
+    <path d="M105,96 L50,100 L42,112 L32,108 L32,94 L105,90 Z"
+      fill="#b8b8b8" stroke="#999" strokeWidth="1.5"/>
+    {/* Back plate */}
+    <path d="M32,50 L18,56 L18,102 L32,108 L32,64 Z"
+      fill="#a8a8a8" stroke="#888" strokeWidth="1.5"/>
+    {/* Box end — right */}
+    <circle cx="383" cy="79" r="34" fill="none" stroke="#c0c0c0" strokeWidth="20"/>
+    <circle cx="383" cy="79" r="16" fill="white" stroke="#ccc" strokeWidth="1"/>
+    <polygon points="383,65 394,72 394,86 383,93 372,86 372,72"
+      fill="none" stroke="#999" strokeWidth="2"/>
+    {/* Caption */}
+    <text x="220" y="146" textAnchor="middle" fontSize="14"
+      fontFamily="'Malgun Gothic','Arial',sans-serif" fill="#444" fontWeight="bold">스패너</text>
+  </svg>
+);
+
+// ── 작업 순서 — 농업 (A: 장갑착용 · B: 손씻기 · C: 작업시작) → 정답 B–A–C ────
+export const ImageWorkSeqAgri = () => (
+  <svg viewBox="0 0 510 244" xmlns="http://www.w3.org/2000/svg"
+    className="w-full max-w-xl mx-auto rounded-lg border border-gray-200 shadow bg-gray-50">
+    <rect width="510" height="244" fill="#f8f8f6"/>
+    {/* Header bar */}
+    <rect x="0" y="0" width="510" height="36" rx="8" fill="#1a3a6b"/>
+    <rect x="0" y="28" width="510" height="8" fill="#1a3a6b"/>
+    <text x="255" y="24" textAnchor="middle" fontSize="15" fill="white" fontWeight="bold"
+      fontFamily="'Malgun Gothic','Arial',sans-serif">작업 순서</text>
+    {/* Three panels */}
+    <rect x="8"   y="44" width="152" height="156" rx="10" fill="white" stroke="#dde" strokeWidth="1.5"/>
+    <rect x="179" y="44" width="152" height="156" rx="10" fill="white" stroke="#dde" strokeWidth="1.5"/>
+    <rect x="350" y="44" width="152" height="156" rx="10" fill="white" stroke="#dde" strokeWidth="1.5"/>
+    {/* Arrows */}
+    <polygon points="164,118 175,111 175,125" fill="#cc3300"/>
+    <polygon points="335,118 346,111 346,125" fill="#cc3300"/>
+
+    {/* ── Panel A: 장갑을 착용하기 (Green work glove) ─── */}
+    <rect x="38"  y="112" width="72" height="54" rx="8" fill="#39a048"/>
+    <rect x="28"  y="130" width="16" height="30" rx="8" fill="#39a048"/>
+    <rect x="40"  y="84"  width="14" height="36" rx="7" fill="#39a048"/>
+    <rect x="56"  y="78"  width="14" height="38" rx="7" fill="#39a048"/>
+    <rect x="72"  y="80"  width="14" height="36" rx="7" fill="#39a048"/>
+    <rect x="88"  y="88"  width="12" height="28" rx="6" fill="#39a048"/>
+    <rect x="38"  y="160" width="72" height="10" rx="4" fill="#2a7a36"/>
+    <text x="84"  y="210" textAnchor="middle" fontSize="23" fill="#1a3a6b" fontWeight="bold" fontFamily="Arial">A</text>
+    <text x="84"  y="225" textAnchor="middle" fontSize="9"  fill="#555"
+      fontFamily="'Malgun Gothic','Arial',sans-serif">장갑 착용</text>
+
+    {/* ── Panel B: 손을 씻기 (Faucet + hands) ─── */}
+    <rect x="246" y="62" width="12" height="32" rx="4" fill="#888"/>
+    <path d="M252,90 Q285,90 285,108" fill="none" stroke="#888" strokeWidth="10" strokeLinecap="round"/>
+    <rect x="236" y="60" width="32" height="8" rx="4" fill="#aaa"/>
+    <ellipse cx="285" cy="120" rx="4" ry="9" fill="#5bc0eb" opacity="0.82"/>
+    <ellipse cx="278" cy="126" rx="3" ry="7" fill="#5bc0eb" opacity="0.6"/>
+    <ellipse cx="292" cy="125" rx="3" ry="6" fill="#5bc0eb" opacity="0.6"/>
+    {/* Left hand */}
+    <path d="M238,144 Q230,136 234,127 L255,127 L255,152 L238,152 Z" fill="#f5c9a0"/>
+    <rect x="234" y="114" width="9" height="17" rx="4.5" fill="#f5c9a0"/>
+    <rect x="245" y="110" width="9" height="19" rx="4.5" fill="#f5c9a0"/>
+    {/* Right hand */}
+    <path d="M268,144 Q276,136 272,127 L255,127 L255,152 L268,152 Z" fill="#f0be96"/>
+    <rect x="268" y="114" width="9" height="17" rx="4.5" fill="#f0be96"/>
+    <rect x="279" y="110" width="9" height="19" rx="4.5" fill="#f0be96"/>
+    <text x="255" y="210" textAnchor="middle" fontSize="23" fill="#1a3a6b" fontWeight="bold" fontFamily="Arial">B</text>
+    <text x="255" y="225" textAnchor="middle" fontSize="9"  fill="#555"
+      fontFamily="'Malgun Gothic','Arial',sans-serif">손 씻기</text>
+
+    {/* ── Panel C: 작업을 시작하기 (Worker in field) ─── */}
+    <circle cx="426" cy="82" r="18" fill="#f5c9a0"/>
+    <path d="M409,82 Q409,60 426,57 Q443,60 443,82Z" fill="#ff9800"/>
+    <rect x="406" y="78" width="40" height="8" rx="4" fill="#e08000"/>
+    <rect x="412" y="100" width="28" height="46" rx="6" fill="#2a7a38"/>
+    <path d="M412,103 L386,116 L386,122 L406,112 L412,112 Z" fill="#2a7a38"/>
+    <rect x="440" y="100" width="22" height="9" rx="4" fill="#2a7a38"/>
+    <line x1="386" y1="118" x2="374" y2="172" stroke="#7a5030" strokeWidth="4" strokeLinecap="round"/>
+    <rect x="364" y="170" width="22" height="6" rx="3" fill="#5a3018"/>
+    <ellipse cx="400" cy="176" rx="36" ry="6" fill="#b8903a" opacity="0.45"/>
+    <line x1="408" y1="176" x2="408" y2="155" stroke="#2a8a20" strokeWidth="2"/>
+    <ellipse cx="403" cy="153" rx="7" ry="4" fill="#3aaa28" transform="rotate(-20,403,153)"/>
+    <ellipse cx="413" cy="150" rx="7" ry="4" fill="#3aaa28" transform="rotate(25,413,150)"/>
+    <rect x="413" y="144" width="9" height="26" rx="4" fill="#1a5a28"/>
+    <rect x="428" y="144" width="9" height="26" rx="4" fill="#1a5a28"/>
+    <line x1="350" y1="173" x2="502" y2="173" stroke="#b8903a" strokeWidth="2"/>
+    <text x="426" y="210" textAnchor="middle" fontSize="23" fill="#1a3a6b" fontWeight="bold" fontFamily="Arial">C</text>
+    <text x="426" y="225" textAnchor="middle" fontSize="9"  fill="#555"
+      fontFamily="'Malgun Gothic','Arial',sans-serif">작업 시작</text>
+  </svg>
+);
+
+// ── 작업 순서 — 산업 (A: 기계점검 · B: 전원켜기 · C: 작업시작) → 정답 A–B–C ──
+export const ImageWorkSeqInd = () => (
+  <svg viewBox="0 0 510 244" xmlns="http://www.w3.org/2000/svg"
+    className="w-full max-w-xl mx-auto rounded-lg border border-gray-200 shadow bg-gray-50">
+    <rect width="510" height="244" fill="#f8f8f6"/>
+    {/* Header bar */}
+    <rect x="0" y="0" width="510" height="36" rx="8" fill="#1a3a6b"/>
+    <rect x="0" y="28" width="510" height="8" fill="#1a3a6b"/>
+    <text x="255" y="24" textAnchor="middle" fontSize="15" fill="white" fontWeight="bold"
+      fontFamily="'Malgun Gothic','Arial',sans-serif">작업 순서</text>
+    {/* Three panels */}
+    <rect x="8"   y="44" width="152" height="156" rx="10" fill="white" stroke="#dde" strokeWidth="1.5"/>
+    <rect x="179" y="44" width="152" height="156" rx="10" fill="white" stroke="#dde" strokeWidth="1.5"/>
+    <rect x="350" y="44" width="152" height="156" rx="10" fill="white" stroke="#dde" strokeWidth="1.5"/>
+    <polygon points="164,118 175,111 175,125" fill="#cc3300"/>
+    <polygon points="335,118 346,111 346,125" fill="#cc3300"/>
+
+    {/* ── Panel A: 기계를 점검하기 (Machine + green checkmark) ─── */}
+    <rect x="26"  y="66" width="94" height="86" rx="8" fill="#dce8f4" stroke="#8aacc8" strokeWidth="2"/>
+    <rect x="33"  y="73" width="36" height="22" rx="4" fill="#c0d4e8" stroke="#8aacc8" strokeWidth="1"/>
+    <rect x="76"  y="73" width="36" height="22" rx="4" fill="#c0d4e8" stroke="#8aacc8" strokeWidth="1"/>
+    <circle cx="52"  cy="118" r="13" fill="#b8b8b8" stroke="#999" strokeWidth="1.5"/>
+    <circle cx="52"  cy="118" r="6"  fill="#888"/>
+    <rect x="70"  y="110" width="42" height="8" rx="3" fill="#9ab870"/>
+    <rect x="70"  y="122" width="42" height="8" rx="3" fill="#dab840"/>
+    <circle cx="116" cy="72" r="20" fill="#22c55e"/>
+    <path d="M105,72 L113,80 L127,62" stroke="white" strokeWidth="4"
+      fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+    <text x="84"  y="210" textAnchor="middle" fontSize="23" fill="#1a3a6b" fontWeight="bold" fontFamily="Arial">A</text>
+    <text x="84"  y="225" textAnchor="middle" fontSize="9"  fill="#555"
+      fontFamily="'Malgun Gothic','Arial',sans-serif">기계 점검</text>
+
+    {/* ── Panel B: 전원을 켜기 (Glowing power button) ─── */}
+    <rect x="203" y="62" width="104" height="118" rx="12" fill="#222"/>
+    <rect x="210" y="69" width="90" height="105" rx="10" fill="#1a1a1a"/>
+    <circle cx="255" cy="132" r="32" fill="#2c2c2c"/>
+    <circle cx="255" cy="132" r="27" fill="#333" stroke="#22ff44" strokeWidth="2.5"/>
+    <path d="M255,112 L255,126" stroke="#22ff44" strokeWidth="5" strokeLinecap="round"/>
+    <path d="M243,116 Q234,126 234,138 Q234,158 255,158 Q276,158 276,138 Q276,126 267,116"
+      fill="none" stroke="#22ff44" strokeWidth="4" strokeLinecap="round"/>
+    <circle cx="255" cy="132" r="34" fill="none" stroke="#22ff44" strokeWidth="1.2" opacity="0.35"/>
+    <circle cx="255" cy="132" r="40" fill="none" stroke="#22ff44" strokeWidth="0.6" opacity="0.18"/>
+    {/* Finger */}
+    <circle cx="255" cy="84" r="15" fill="#f5c9a0"/>
+    <rect x="251" y="60" width="8" height="28" rx="4" fill="#f5c9a0"/>
+    <text x="255" y="210" textAnchor="middle" fontSize="23" fill="#1a3a6b" fontWeight="bold" fontFamily="Arial">B</text>
+    <text x="255" y="225" textAnchor="middle" fontSize="9"  fill="#555"
+      fontFamily="'Malgun Gothic','Arial',sans-serif">전원 켜기</text>
+
+    {/* ── Panel C: 작업을 시작하기 (Worker at machine) ─── */}
+    <rect x="388" y="96" width="102" height="74" rx="6" fill="#d4e4f4" stroke="#6a9cc4" strokeWidth="1.5"/>
+    <rect x="394" y="102" width="90" height="56" rx="4" fill="#3a7ab0"/>
+    <polyline points="400,148 412,138 424,142 438,128 452,134 466,120 480,124"
+      stroke="#88ff88" strokeWidth="2.5" fill="none"/>
+    <rect x="388" y="166" width="102" height="6" rx="2" fill="#8aaccc"/>
+    {/* Worker figure */}
+    <circle cx="376" cy="84" r="16" fill="#f5c9a0"/>
+    <path d="M361,84 Q361,63 376,60 Q391,63 391,84Z" fill="#2060c0"/>
+    <rect x="359" y="78" width="34" height="9" rx="4" fill="#1a50aa"/>
+    <rect x="362" y="100" width="28" height="42" rx="6" fill="#2060c0"/>
+    <path d="M390,104 L440,104 L440,113 L390,113 Z" fill="#2060c0"/>
+    <rect x="363" y="140" width="9" height="22" rx="4" fill="#1a50aa"/>
+    <rect x="379" y="140" width="9" height="22" rx="4" fill="#1a50aa"/>
+    <line x1="350" y1="164" x2="502" y2="164" stroke="#aaa" strokeWidth="1.5"/>
+    <text x="426" y="210" textAnchor="middle" fontSize="23" fill="#1a3a6b" fontWeight="bold" fontFamily="Arial">C</text>
+    <text x="426" y="225" textAnchor="middle" fontSize="9"  fill="#555"
+      fontFamily="'Malgun Gothic','Arial',sans-serif">작업 시작</text>
+  </svg>
+);
+
 // ── Map: bankId → image component ─────────────────────────────────────────
 export const QUESTION_IMAGE_COMPONENTS = {
+  // General
   R01: ImageQ1,
   R02: ImageQ2,
   R07: ImageFireSign,
   R08: ImageFireSign,
   R15: ImageLiftingPosture,
-  // Agriculture
-  R26: ImageTractor,
-  R27: ImagePesticideSign,
-  R29: ImageGreenhouse,
-  // Industry
-  R31: ImageExitSign,
-  R32: ImageNoSmoking,
-  R33: ImageForkliftSign,
-  R34: ImageWeldingSign,
-  R36: ImageHardHatSign,
+  // Agriculture — 2026 format
+  R26: KeywordChuksa,        // 축사  단어와 관계있는 것
+  R27: KeywordBiryo,         // 비료  단어와 관계있는 것
+  R28: BlankChurgunJangso,   // 출근 장소: ___
+  R29: ImageScaleJoul,       // 저울  그림과 관계있는 내용
+  R30: ImageWorkSeqAgri,     // 작업 순서 A-B-C
+  R30b: BlankSafetyGear,     // 안전 장비: ___
+  // Industry — 2026 format
+  R31: ImageVernierCaliper,  // 버니어 캘리퍼스  그림과 관계있는 내용
+  R32: KeywordYongjeop,      // 용접  단어와 관계있는 것
+  R33: KeywordJigecha,       // 지게차  단어와 관계있는 것
+  R34: BlankBohoJangbi,      // 보호 장비: ___
+  R35: ImageWorkSeqInd,      // 작업 순서 A-B-C
+  R36: ImageSpanner,         // 스패너  그림과 관계있는 내용
 };

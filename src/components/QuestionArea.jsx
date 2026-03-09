@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Volume2, Clock } from 'lucide-react';
 import { EXAM_SECTIONS, LISTENING_PLAY_TIMES, LISTENING_ANSWER_TIME_SEC } from '../data/examData';
 import { QUESTION_IMAGE_COMPONENTS } from './ExamImages';
+
+// ── Real-photo with SVG fallback ───────────────────────────────────────────
+// Shows a real image from imageUrl; if it fails to load, falls back to SVG.
+const ImageWithFallback = ({ imageUrl, imageAlt, SvgImage }) => {
+  const [imgFailed, setImgFailed] = useState(false);
+
+  if (imageUrl && !imgFailed) {
+    return (
+      <div className="flex justify-center mb-6">
+        <img
+          src={imageUrl}
+          alt={imageAlt || '문제 그림'}
+          className="max-w-full rounded-lg border border-gray-300 shadow"
+          style={{ maxHeight: '280px', objectFit: 'contain', background: '#fff' }}
+          onError={() => setImgFailed(true)}
+        />
+      </div>
+    );
+  }
+  if (SvgImage) {
+    return (
+      <div className="flex justify-center mb-6 exam-image-wrap">
+        <SvgImage />
+      </div>
+    );
+  }
+  return null;
+};
 
 const OPTION_SYMBOLS = ['①', '②', '③', '④'];
 
@@ -187,29 +215,17 @@ const QuestionArea = ({
         {question.questionText}
       </p>
 
-      {/* Inline SVG image (Reading section) */}
+      {/* Image — prefer real photo (imageUrl) over SVG, with fallback */}
       {(() => {
         const SvgImage = QUESTION_IMAGE_COMPONENTS[question.bankId];
-        if (SvgImage) {
-          return (
-            <div className="flex justify-center mb-6 exam-image-wrap">
-              <SvgImage />
-            </div>
-          );
-        }
-        if (question.imageUrl) {
-          return (
-            <div className="flex justify-center mb-6">
-              <img
-                src={question.imageUrl}
-                alt={question.imageAlt || '문제 그림'}
-                className="max-w-full rounded border border-gray-300 shadow-sm"
-                style={{ maxHeight: '240px', objectFit: 'contain' }}
-              />
-            </div>
-          );
-        }
-        return null;
+        if (!question.imageUrl && !SvgImage) return null;
+        return (
+          <ImageWithFallback
+            imageUrl={question.imageUrl}
+            imageAlt={question.imageAlt}
+            SvgImage={SvgImage}
+          />
+        );
       })()}
 
       {/* Answer options */}

@@ -119,7 +119,7 @@ const ResultModal = ({ answers, examQuestions, setNumber, onClose, onRestart }) 
         {/* Modal Body */}
         <div className="flex flex-col md:flex-row overflow-hidden flex-1 min-h-0">
           {/* ── Left: Score Summary ── */}
-          <div className="md:w-56 flex-shrink-0 flex flex-col items-center justify-center gap-5 p-6 border-b md:border-b-0 md:border-r border-gray-200 bg-gray-50">
+          <div className="md:w-56 shrink-0 flex flex-col items-center justify-center gap-5 p-6 border-b md:border-b-0 md:border-r border-gray-200 bg-gray-50">
             <CircleChart score={totalScore} total={TOTAL_QUESTIONS} />
 
             {/* Badge pills */}

@@ -1,5 +1,5 @@
-// EPS-TOPIK Mock Exam — Question Bank
-// Reading bank: 56 questions  |  Listening bank: 40 questions
+// EPS-TOPIK Mock Exam — Question Bank (2026 Edition)
+// Reading bank: 88 questions  |  Listening bank: 64 questions
 // generateExamSet(setNumber) picks 20R + 20L based on set seed
 
 export const EXAM_SECTIONS = {
@@ -7,7 +7,7 @@ export const EXAM_SECTIONS = {
   LISTENING: 'LISTENING',
 };
 
-export const TOTAL_EXAM_SETS = 15;
+export const TOTAL_EXAM_SETS = 999;
 export const TOTAL_QUESTIONS = 40;
 export const READING_COUNT = 20;
 export const LISTENING_COUNT = 20;
@@ -21,17 +21,17 @@ export const EXAM_CATEGORIES = {
 };
 
 // BankIds belonging to each topic category
-const AGRI_R_IDS = new Set(['R26','R27','R28','R29','R30','R30b']);
-const AGRI_L_IDS = new Set(['L26','L27','L28','L29','L30','L31','L40']);
-const IND_R_IDS  = new Set(['R31','R32','R33','R34','R35','R36']);
-const IND_L_IDS  = new Set(['L32','L33','L34','L35','L36','L37','L38','L39']);
+const AGRI_R_IDS = new Set(['R26','R27','R28','R29','R30','R30b','R57','R58','R59','R60','R61','R62','R69','R70','R71','R72','R73','R74','R75','R76','R77','R78']);
+const AGRI_L_IDS = new Set(['L26','L27','L28','L29','L30','L31','L38','L40','L41','L42','L43','L44','L49','L50','L51','L52','L53','L54','L55','L56']);
+const IND_R_IDS  = new Set(['R31','R32','R33','R34','R35','R36','R63','R64','R65','R66','R67','R68','R79','R80','R81','R82','R83','R84','R85','R86','R87','R88']);
+const IND_L_IDS  = new Set(['L32','L33','L34','L35','L36','L37','L39','L45','L46','L47','L48','L57','L58','L59','L60','L61','L62','L63','L64']);
 
 // Listening auto-play config (simulated — replace with real audio durations)
 export const LISTENING_PLAY_TIMES = 2;          // plays per question
 export const LISTENING_PLAY_DURATION_SEC = 10;  // simulated length per play (sec)
 export const LISTENING_ANSWER_TIME_SEC = 8;      // answer window after final play
 
-// ─── READING QUESTION BANK (56 questions) ─────────────────────────────────
+// ─── READING QUESTION BANK (88 questions) ─────────────────────────────────
 const readingBank = [
   {
     bankId: 'R01',
@@ -39,8 +39,8 @@ const readingBank = [
     groupLabel: '[문제 유형: 그림 보고 단어/문장 고르기]',
     questionText: '다음 그림에 알맞은 것을 고르십시오.',
     imageKey: 'q1_towel',
-    options: ['① 65cm', '② 65kg', '③ 65개', '④ 65명'],
-    correctIndex: 0,
+    options: ['① 65kg', '② 65cm', '③ 65개', '④ 65명'],
+    correctIndex: 1,
     explanation: 'ภาพแสดงการวัดความยาวของผ้าขนหนู ยาว 65 เซนติเมตร → ①',
   },
   {
@@ -50,78 +50,88 @@ const readingBank = [
     questionText: '그림과 같이 할 때 알맞은 문장을 고르십시오.',
     imageKey: 'q2_uniform',
     options: [
-      '① 작업복을 입습니다.',
+      '① 작업복을 삽니다.',
       '② 작업복을 벗습니다.',
-      '③ 작업복을 삽니다.',
+      '③ 작업복을 입습니다.',
       '④ 작업복을 팝니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation: 'ภาพแสดงการสวมชุดทำงาน → ① 작업복을 입습니다.',
   },
   {
     bankId: 'R03',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[문제 유형: 빈칸 채우기]',
-    questionText: '작업장에서는 ( )을/를 착용해야 합니다.',
+    groupLabel: '[EPS 2026] [어휘] [개인보호장구]',
+    questionText: '용접 작업 시 강한 빛으로부터 눈과 얼굴을 보호하기 위해 착용해야 하는 것은 무엇입니까?',
     imageKey: null,
-    options: ['① 안전모', '② 슬리퍼', '③ 치마', '④ 모자'],
-    correctIndex: 0,
-    explanation: 'ในสถานที่ทำงานต้องสวมหมวกนิรภัย (안전모)',
+    options: ['① 방독 마스크', '② 방진 마스크', '③ 귀마개', '④ 차광 마스크'],
+    correctIndex: 3,
+    explanation: 'งานเชื่อมโลหะต้องสวม 차광 마스크 (หน้ากากกันแสง) ป้องกันตาและใบหน้าจากแสงเชื่อมจ้า → ①',
   },
   {
     bankId: 'R04',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[문제 유형: 빈칸 채우기]',
-    questionText: '이 기계는 ( )이/가 고장났습니다.',
+    groupLabel: '[EPS 2026] [어휘] [화학물질 관리]',
+    questionText: '화학물질의 성분, 위험성, 취급 방법, 응급처치 방법 등이 수록된 문서를 ( )(이)라고 합니다.',
     imageKey: null,
-    options: ['① 엔진', '② 신발', '③ 음식', '④ 가방'],
+    options: [
+      '① MSDS(물질안전보건자료)',
+      '② LOTO(잠금·표지 장치)',
+      '③ GAP(농식품 안전 인증)',
+      '④ PPE(개인보호장구)',
+    ],
     correctIndex: 0,
-    explanation: 'เครื่องจักรนี้เครื่องยนต์ (엔진) เสีย',
+    explanation: 'MSDS (Material Safety Data Sheet / 물질안전보건자료) คือเอกสารข้อมูลความปลอดภัยของสารเคมี → ①',
   },
   {
     bankId: 'R05',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[문제 유형: 유의어 찾기]',
-    questionText: '저는 공장에서 일합니다. ← 밑줄 친 부분과 의미가 같은 것을 고르십시오.',
+    groupLabel: '[EPS 2026] [유의어] [직장 안전 어휘]',
+    questionText: '밑줄 친 부분과 의미가 가장 비슷한 것을 고르십시오.\n\n"사고가 발생하면 즉시 관리자에게 알려야 합니다."',
     imageKey: null,
-    options: ['① 근무합니다', '② 공부합니다', '③ 먹습니다', '④ 쉽니다'],
-    correctIndex: 0,
-    explanation: '일하다 = 근무하다',
+    options: ['① 숨겨야', '② 보고해야', '③ 무시해야', '④ 기다려야'],
+    correctIndex: 1,
+    explanation: '알리다 (แจ้ง) ≈ 보고하다 (รายงาน) ในบริบทเกิดอุบัติเหตุ → ①',
   },
   {
     bankId: 'R06',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[문제 유형: 유의어 찾기]',
-    questionText: '내일은 쉬는 날입니다. ← 밑줄 친 부분과 의미가 같은 것을 고르십시오.',
+    groupLabel: '[EPS 2026] [유의어] [노동법 어휘]',
+    questionText: '밑줄 친 부분과 의미가 가장 비슷한 것을 고르십시오.\n\n"올해부터 최저임금이 인상되었습니다."',
     imageKey: null,
-    options: ['① 휴일', '② 근무일', '③ 평일', '④ 작업일'],
-    correctIndex: 0,
-    explanation: 'วันหยุดพัก (쉬는 날) = 휴일',
+    options: ['① 유지되었습니다', '② 낮아졌습니다', '③ 높아졌습니다', '④ 폐지되었습니다'],
+    correctIndex: 2,
+    explanation: '인상되다 (ปรับขึ้น) = 높아지다 (เพิ่มขึ้น) → ①',
   },
   {
     bankId: 'R07',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[문제 유형: 표지판 이해]',
-    questionText: '이 표지판이 의미하는 것은 무엇입니까?',
-    imageKey: 'fire_sign',
+    groupLabel: '[EPS 2026] [안전 표지판] [색상·형태별 의미]',
+    questionText: '안전 표지판의 색상과 종류의 연결이 맞는 것을 고르십시오.',
+    imageKey: null,
     options: [
-      '① 불을 피우면 안 됩니다.',
-      '② 물을 마시면 안 됩니다.',
-      '③ 음식을 먹으면 안 됩니다.',
-      '④ 담배를 피워도 됩니다.',
+      '① 초록 직사각형(안내 표지) — 금지를 나타냅니다.',
+      '② 파란 원형(지시 표지) — 위험을 경고합니다.',
+      '③ 노란 삼각형(경고 표지) — 반드시 해야 하는 것입니다.',
+      '④ 빨간 원형(금지 표지) — 특정 행동을 하면 안 됩니다.',
     ],
-    correctIndex: 0,
-    explanation: 'ป้าย 화기 엄금 = ห้ามติดไฟ',
+    correctIndex: 3,
+    explanation: 'ป้ายวงกลมแดง = ป้ายห้าม (금지), น้ำเงิน = ป้ายบังคับ (지시), เหลือง = ป้ายเตือน (경고), เขียว = ป้ายแนะนำ (안내) → ①',
   },
   {
     bankId: 'R08',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[문제 유형: 표지판 이해]',
-    questionText: '이 표지판이 붙어 있는 장소로 가장 알맞은 곳은?',
-    imageKey: 'fire_sign',
-    options: ['① 위험물 보관 장소', '② 식당', '③ 화장실', '④ 사무실'],
+    groupLabel: '[EPS 2026] [안전 표지판] [상황별 적용]',
+    questionText: '"이 구역에서는 반드시 안전모를 착용하십시오." — 이 내용을 전달하는 안전 표지판의 종류는?',
+    imageKey: null,
+    options: [
+      '① 파란 원형 지시 표지판',
+      '② 빨간 원형 금지 표지판',
+      '③ 노란 삼각형 경고 표지판',
+      '④ 초록 직사각형 안내 표지판',
+    ],
     correctIndex: 0,
-    explanation: 'ป้าย 화기 엄금 มักติดที่พื้นที่เก็บวัตถุอันตราย',
+    explanation: 'ป้ายบังคับให้ปฏิบัติ (เช่น ต้องสวมหมวก) ใช้ป้ายวงกลมสีน้ำเงิน (지시 표지) → ①',
   },
   {
     bankId: 'R09',
@@ -130,12 +140,12 @@ const readingBank = [
     questionText: '산업안전보건법에 대한 설명으로 맞는 것은?',
     imageKey: null,
     options: [
-      '① 근로자의 안전과 건강을 보호하는 법률입니다.',
-      '② 음식 위생에 관한 법률입니다.',
+      '① 음식 위생에 관한 법률입니다.',
+      '② 근로자의 안전과 건강을 보호하는 법률입니다.',
       '③ 교통 안전에 관한 법률입니다.',
       '④ 환경 보호에 관한 법률입니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     explanation: 'กฎหมายความปลอดภัยและอาชีวอนามัย คุ้มครองความปลอดภัยและสุขภาพของลูกจ้าง',
   },
   {
@@ -145,48 +155,58 @@ const readingBank = [
     questionText: '다음 중 업무상 재해가 아닌 것은?',
     imageKey: null,
     options: [
-      '① 퇴근 후 집에서 넘어진 경우',
+      '① 직장 내 폭력으로 다친 경우',
       '② 작업 중 기계에 손이 끼인 경우',
-      '③ 직장 내 폭력으로 다친 경우',
+      '③ 퇴근 후 집에서 넘어진 경우',
       '④ 출장 중 교통사고가 난 경우',
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation: 'อุบัติเหตุที่บ้านหลังเลิกงานไม่นับเป็น 업무상 재해',
   },
   {
     bankId: 'R11',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[문제 유형: 빈칸 채우기]',
-    questionText: '작업 전에 반드시 ( )을/를 확인해야 합니다.',
+    groupLabel: '[EPS 2026] [안전 절차] [화재 대피]',
+    questionText: '화재가 발생했을 때 건물에서 대피하는 방법으로 맞는 것을 고르십시오.',
     imageKey: null,
-    options: ['① 안전 장갑', '② 점심 메뉴', '③ 날씨 예보', '④ 주말 계획'],
-    correctIndex: 0,
-    explanation: 'ก่อนทำงานต้องตรวจสอบถุงมือนิรภัย (안전 장갑)',
+    options: [
+      '① 연기가 있어도 뛰어서 이동합니다.',
+      '② 엘리베이터로 신속히 내려갑니다.',
+      '③ 짐을 모두 챙긴 후 천천히 이동합니다.',
+      '④ 엘리베이터 대신 비상계단을 이용합니다.',
+    ],
+    correctIndex: 3,
+    explanation: 'เกิดไฟไหม้ต้องใช้บันไดหนีไฟ (비상계단) เท่านั้น ห้ามใช้ลิฟต์ (엘리베이터) → ①',
   },
   {
     bankId: 'R12',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[문제 유형: 빈칸 채우기]',
-    questionText: '위험한 물질을 다룰 때는 ( )을/를 착용해야 합니다.',
+    groupLabel: '[EPS 2026] [응급 처치] [화학물질 사고]',
+    questionText: '작업 중 화학 물질이 눈에 들어갔을 때 가장 먼저 해야 할 행동은?',
     imageKey: null,
-    options: ['① 보호복', '② 수영복', '③ 잠옷', '④ 한복'],
+    options: [
+      '① 흐르는 물로 즉시 15분 이상 씻습니다.',
+      '② 눈을 손으로 힘껏 비빕니다.',
+      '③ 수건으로 눈을 닦습니다.',
+      '④ 작업을 마친 후 병원에 갑니다.',
+    ],
     correctIndex: 0,
-    explanation: 'จัดการสารอันตรายต้องสวมชุดป้องกัน (보호복)',
+    explanation: 'สารเคมีเข้าตาต้องล้างด้วยน้ำไหลทันทีนาน ≥ 15 นาที อย่าขยี้ตาหรือรอ → ①',
   },
   {
     bankId: 'R13',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[문제 유형: 안전 실천]',
-    questionText: '산업재해를 예방하기 위한 방법으로 맞는 것은?',
+    groupLabel: '[EPS 2026] [안전 문화] [위험 보고 의무]',
+    questionText: '작업 중 위험 요인을 발견했을 때 올바른 행동으로 맞는 것을 고르십시오.',
     imageKey: null,
     options: [
-      '① 안전 교육을 받는다.',
-      '② 안전 장비를 착용하지 않는다.',
-      '③ 피곤해도 계속 일한다.',
-      '④ 문제가 생겨도 보고하지 않는다.',
+      '① 생산 목표 달성을 위해 그냥 작업을 계속합니다.',
+      '② 즉시 작업을 중단하고 안전관리자에게 보고합니다.',
+      '③ 사소한 위험은 보고하지 않아도 됩니다.',
+      '④ 경험이 많으면 위험해도 작업을 계속해도 됩니다.',
     ],
-    correctIndex: 0,
-    explanation: 'การรับการอบรมความปลอดภัย (안전 교육) ป้องกันอุบัติเหตุ',
+    correctIndex: 1,
+    explanation: 'วัฒนธรรมความปลอดภัย: พบอันตราย → หยุดงานทันที → แจ้งเจ้าหน้าที่ความปลอดภัย → ①',
   },
   {
     bankId: 'R14',
@@ -195,12 +215,12 @@ const readingBank = [
     questionText: '근로자가 위험한 상황을 발견했을 때 가장 먼저 해야 할 일은?',
     imageKey: null,
     options: [
-      '① 즉시 관리자에게 보고한다.',
+      '① 혼자 해결하려고 시도한다.',
       '② 못 본 척 지나친다.',
-      '③ 혼자 해결하려고 시도한다.',
+      '③ 즉시 관리자에게 보고한다.',
       '④ 작업을 계속 진행한다.',
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation: 'พบอันตรายต้องรายงานผู้จัดการทันที',
   },
   {
@@ -210,12 +230,12 @@ const readingBank = [
     questionText: '다음 중 올바른 리프팅 자세는?',
     imageKey: 'lifting',
     options: [
-      '① 무릎을 구부리고 허리를 세운다.',
+      '① 빠르게 들어올린다.',
       '② 허리만 구부려서 든다.',
       '③ 팔만 사용하여 든다.',
-      '④ 빠르게 들어올린다.',
+      '④ 무릎을 구부리고 허리를 세운다.',
     ],
-    correctIndex: 0,
+    correctIndex: 3,
     explanation: 'ท่ายกของที่ถูกต้อง: งอเข่า ตั้งหลังตรง',
   },
   {
@@ -240,12 +260,12 @@ const readingBank = [
     questionText: '다음 중 연장 근무 시 올바른 것은?',
     imageKey: null,
     options: [
-      '① 근로자 동의가 필요합니다.',
-      '② 회사 마음대로 할 수 있습니다.',
+      '① 회사 마음대로 할 수 있습니다.',
+      '② 근로자 동의가 필요합니다.',
       '③ 급여 추가 없이 할 수 있습니다.',
       '④ 한 달에 한 번만 가능합니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     explanation: 'ทำงานล่วงเวลาต้องได้รับความยินยอมจากลูกจ้าง',
   },
   {
@@ -255,12 +275,12 @@ const readingBank = [
     questionText: '주휴일에 대한 설명으로 맞는 것은?',
     imageKey: null,
     options: [
-      '① 1주일에 1일 이상 부여됩니다.',
+      '① 유급이 아닙니다.',
       '② 회사 사정에 따라 없을 수 있습니다.',
-      '③ 유급이 아닙니다.',
+      '③ 1주일에 1일 이상 부여됩니다.',
       '④ 근로자가 선택할 수 없습니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation: 'วันหยุดประจำสัปดาห์ 주휴일 ต้องให้อย่างน้อย 1 วัน/สัปดาห์',
   },
   {
@@ -270,12 +290,12 @@ const readingBank = [
     questionText: '산업재해보상보험에 대한 설명으로 맞는 것은?',
     imageKey: null,
     options: [
-      '① 사업주가 보험료를 전액 부담합니다.',
+      '① 외국인 근로자는 적용되지 않습니다.',
       '② 근로자가 보험료를 납부합니다.',
       '③ 부상 시 치료비만 보상됩니다.',
-      '④ 외국인 근로자는 적용되지 않습니다.',
+      '④ 사업주가 보험료를 전액 부담합니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 3,
     explanation: 'ประกันอุบัติเหตุจากการทำงาน → นายจ้างจ่ายเบี้ยประกันทั้งหมด',
   },
   {
@@ -300,12 +320,12 @@ const readingBank = [
     questionText: '다음 중 근로계약서를 쓰는 이유로 맞는 것은?',
     imageKey: null,
     options: [
-      '① 근로 조건을 명확히 하기 위해서',
-      '② 회사를 홍보하기 위해서',
+      '① 회사를 홍보하기 위해서',
+      '② 근로 조건을 명확히 하기 위해서',
       '③ 세금을 피하기 위해서',
       '④ 여행을 가기 위해서',
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     explanation: 'สัญญาจ้างงาน 근로계약서 เพื่อกำหนดเงื่อนไขการทำงานให้ชัดเจน',
   },
   {
@@ -314,8 +334,8 @@ const readingBank = [
     groupLabel: '[문제 유형: 빈칸 채우기]',
     questionText: '최저임금제도는 근로자에게 ( ) 이상의 임금을 보장합니다.',
     imageKey: null,
-    options: ['① 최저 임금', '② 최대 임금', '③ 평균 임금', '④ 기본 연봉'],
-    correctIndex: 0,
+    options: ['① 평균 임금', '② 최대 임금', '③ 최저 임금', '④ 기본 연봉'],
+    correctIndex: 2,
     explanation: 'ระบบค่าจ้างขั้นต่ำ (최저임금제도) รับประกันค่าจ้างขั้นต่ำ (최저 임금)',
   },
   {
@@ -325,12 +345,12 @@ const readingBank = [
     questionText: '기계 작동 중 정비는 언제 해야 합니까?',
     imageKey: null,
     options: [
-      '① 기계를 반드시 정지한 후에',
+      '① 작업 후 2시간이 지난 후',
       '② 기계가 작동 중에',
       '③ 빠른 작업을 위해 동시에',
-      '④ 작업 후 2시간이 지난 후',
+      '④ 기계를 반드시 정지한 후에',
     ],
-    correctIndex: 0,
+    correctIndex: 3,
     explanation: 'การซ่อมบำรุงเครื่องจักรต้องทำหลังจากหยุดเครื่องเท่านั้น',
   },
   {
@@ -350,12 +370,12 @@ const readingBank = [
     questionText: '다음 중 작업장 내 소음으로 인한 건강 피해를 예방하는 방법은?',
     imageKey: null,
     options: [
-      '① 귀마개나 귀덮개를 착용한다.',
-      '② 음악을 크게 틀어놓는다.',
+      '① 음악을 크게 틀어놓는다.',
+      '② 귀마개나 귀덮개를 착용한다.',
       '③ 빠르게 작업을 마친다.',
       '④ 소음이 나는 기계를 더 빠르게 운전한다.',
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     explanation: 'ป้องกันการสูญเสียการได้ยินจากเสียงดังด้วยการสวมที่อุดหู (귀마개)',
   },
 
@@ -363,164 +383,169 @@ const readingBank = [
   {
     bankId: 'R26',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[농업] [그림 보고 농기계 이름 고르기]',
-    questionText: '다음 그림에 있는 농기계의 이름은 무엇입니까?',
-    imageKey: 'tractor',
-    options: ['① 트랙터', '② 지게차', '③ 크레인', '④ 굴착기'],
-    correctIndex: 0,
-    explanation: 'ภาพแสดงรถแทรกเตอร์ (트랙터) ใช้ในงานเกษตร',
+    groupLabel: '[농업] [단어와 관계있는 것 고르기]',
+    questionText: '다음 단어와 관계있는 것은 무엇입니까?',
+    imageKey: null,
+    options: [
+      '① 잠을 자는 곳이에요.',
+      '② 물건을 파는 곳이에요.',
+      '③ 가축을 기르는 곳이에요.',
+      '④ 서류 작업을 하는 곳이에요.',
+    ],
+    correctIndex: 2,
+    explanation: '축사(畜舍)는 소·돼지·닭 등 가축을 기르는 건물입니다. → ③',
   },
   {
     bankId: 'R27',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[농업] [표지판 이해]',
-    questionText: '이 표지판이 의미하는 것은 무엇입니까?',
-    imageKey: 'pesticide_sign',
+    groupLabel: '[농업] [단어와 관계있는 것 고르기]',
+    questionText: '다음 단어와 관계있는 것은 무엇입니까?',
+    imageKey: null,
     options: [
-      '① 농약을 조심해야 합니다.',
-      '② 농약을 마셔도 됩니다.',
-      '③ 이 구역은 안전합니다.',
-      '④ 불을 피워도 됩니다.',
+      '① 불을 끄는 것이에요.',
+      '② 물건을 고치는 것이에요.',
+      '③ 옷을 세탁하는 것이에요.',
+      '④ 식물을 키울 때 쓰는 것이에요.',
     ],
-    correctIndex: 0,
-    explanation: 'ป้ายเตือนอันตรายจากสารเคมีกำจัดศัตรูพืช (농약 위험) → ①',
+    correctIndex: 3,
+    explanation: '비료(肥料)는 식물이 잘 자라도록 영양분을 주는 물질입니다. → ④',
   },
   {
     bankId: 'R28',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[농업] [빈칸 채우기]',
-    questionText: '농약을 사용할 때는 반드시 ( )을/를 착용해야 합니다.',
+    groupLabel: '[농업] [빈칸에 들어갈 알맞은 것 고르기]',
+    questionText: '빈칸에 들어갈 가장 알맞은 것을 고르십시오.\n\n"봄에 씨앗을 땅에 심는 것을 ( )(이)라고 합니다."',
     imageKey: null,
-    options: ['① 보호 장갑과 마스크', '② 수영복', '③ 잠옷', '④ 슬리퍼'],
+    options: ['① 파종', '② 수확', '③ 제초', '④ 퇴비'],
     correctIndex: 0,
-    explanation: 'การใช้สารเคมีกำจัดศัตรูพืชต้องสวมถุงมือป้องกันและหน้ากาก',
+    explanation: 'การหว่านเมล็ดพืชลงดินในฤดูใบไม้ผลิเรียกว่า 파종 (หว่านเมล็ด) → ①',
   },
   {
     bankId: 'R29',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[농업] [그림 보고 작업 내용 고르기]',
-    questionText: '그림에서 하고 있는 작업은 무엇입니까?',
-    imageKey: 'greenhouse',
-    options: ['① 비닐하우스에서 농사를 짓고 있습니다.', '② 공장에서 기계를 고치고 있습니다.', '③ 도로를 청소하고 있습니다.', '④ 건물을 짓고 있습니다.'],
-    correctIndex: 0,
-    explanation: 'ภาพแสดงการทำงานในโรงเรือนพลาสติก (비닐하우스)',
+    groupLabel: '[농업] [그림과 관계있는 내용 고르기]',
+    questionText: '다음 그림과 관계있는 내용은 무엇입니까?',
+    imageKey: null,
+    options: [
+      '① 저울 - 종이를 잘라요.',
+      '② 저울 - 무게를 재요.',
+      '③ 가위 - 종이를 잘라요.',
+      '④ 가위 - 무게를 재요.',
+    ],
+    correctIndex: 1,
+    explanation: '저울은 물체의 무게를 재는 도구입니다. → ②',
   },
   {
     bankId: 'R30',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[농업] [안전 지식]',
-    questionText: '농기계를 사용하기 전에 가장 먼저 해야 할 일은?',
+    groupLabel: '[농업] [작업 순서 나열하기]',
+    questionText: '농약 살포 작업의 올바른 순서를 고르십시오.\n\nA. 작업 후 손발 씻기  B. 보호복·마스크 착용  C. 농약 희석  D. 농약 살포',
     imageKey: null,
     options: [
-      '① 기계 상태와 연료를 점검한다.',
-      '② 음식을 먹으면서 준비한다.',
-      '③ 전화 통화를 하면서 시동을 건다.',
-      '④ 빠르게 작업을 시작한다.',
+      '① D – B – C – A',
+      '② C – B – D – A',
+      '③ B – C – D – A',
+      '④ A – B – C – D',
     ],
-    correctIndex: 0,
-    explanation: 'ก่อนใช้เครื่องจักรการเกษตรต้องตรวจสอบสภาพเครื่องและน้ำมันก่อน',
+    correctIndex: 2,
+    explanation: 'ลำดับพ่นสารกำจัดศัตรูพืช: สวมชุดป้องกัน (B) → ผสมสาร (C) → พ่น (D) → ล้างมือ (A) → ①',
   },
   {
     bankId: 'R30b',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[농업] [법률 이해]',
-    questionText: '외국인 농업 근로자가 사업장을 바꾸려면 어떻게 해야 합니까?',
+    groupLabel: '[농업] [빈칸에 들어갈 알맞은 것 고르기]',
+    questionText: '빈칸에 들어갈 가장 알맞은 것을 고르십시오.\n\n"농약 살포 시 눈을 보호하기 위해 반드시 ( )을/를 착용해야 합니다."',
     imageKey: null,
-    options: [
-      '① 고용노동부에 신고하고 허가를 받아야 합니다.',
-      '② 혼자 결정하고 바로 이동하면 됩니다.',
-      '③ 비자 없이 이동이 가능합니다.',
-      '④ 사업장 변경은 불가능합니다.',
-    ],
-    correctIndex: 0,
-    explanation: 'แรงงานต่างชาติที่ต้องการเปลี่ยนสถานที่ทำงานต้องแจ้งและรับอนุญาตจากกระทรวงแรงงาน',
+    options: ['① 안전모', '② 귀마개', '③ 보안경', '④ 안전화'],
+    correctIndex: 2,
+    explanation: 'ขณะพ่นยาฆ่าแมลงต้องสวมแว่นนิรภัย (보안경) เพื่อป้องกันดวงตา → ①',
   },
 
   // ─── INDUSTRY READING ──────────────────────────────────────────────────
   {
     bankId: 'R31',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[산업] [표지판 이해]',
-    questionText: '이 표지판이 의미하는 것은?',
-    imageKey: 'exit_sign',
+    groupLabel: '[산업] [그림과 관계있는 내용 고르기]',
+    questionText: '다음 그림과 관계있는 내용은 무엇입니까?',
+    imageKey: null,
     options: [
-      '① 비상구를 나타냅니다.',
-      '② 화장실 방향입니다.',
-      '③ 식당 입구입니다.',
-      '④ 창고 방향입니다.',
+      '① 버니어 캘리퍼스 - 무게를 재요.',
+      '② 스패너 - 나사를 조여요.',
+      '③ 스패너 - 길이를 재요.',
+      '④ 버니어 캘리퍼스 - 길이를 재요.',
     ],
-    correctIndex: 0,
-    explanation: 'ป้ายสีเขียวนี้คือป้ายทางออกฉุกเฉิน (비상구) → ①',
+    correctIndex: 3,
+    explanation: '버니어 캘리퍼스는 물체의 길이·두께를 정밀하게 재는 측정 도구입니다. → ②',
   },
   {
     bankId: 'R32',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[산업] [표지판 이해]',
-    questionText: '이 표지판이 있는 곳에서 해서는 안 되는 것은?',
-    imageKey: 'no_smoking',
+    groupLabel: '[산업] [단어와 관계있는 것 고르기]',
+    questionText: '다음 단어와 관계있는 것은 무엇입니까?',
+    imageKey: null,
     options: [
-      '① 담배를 피웁니다.',
-      '② 작업을 합니다.',
-      '③ 대화를 합니다.',
-      '④ 청소를 합니다.',
+      '① 금속을 이어 붙이는 것이에요.',
+      '② 채소를 기르는 것이에요.',
+      '③ 글씨를 쓰는 것이에요.',
+      '④ 음식을 만드는 것이에요.',
     ],
     correctIndex: 0,
-    explanation: 'ป้าย 금연 (ห้ามสูบบุหรี่) หมายความว่าห้ามสูบบุหรี่ → ①',
+    explanation: '용접(鎔接)은 높은 열로 금속끼리 이어 붙이는 산업 작업입니다. → ②',
   },
   {
     bankId: 'R33',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[산업] [표지판 이해]',
-    questionText: '이 표지판을 보았을 때 어떻게 해야 합니까?',
-    imageKey: 'forklift_sign',
+    groupLabel: '[산업] [단어와 관계있는 것 고르기]',
+    questionText: '다음 단어와 관계있는 것은 무엇입니까?',
+    imageKey: null,
     options: [
-      '① 지게차가 다니는 구역이므로 조심해야 합니다.',
-      '② 이 구역에서 쉬어도 됩니다.',
-      '③ 이 구역에서 음식을 먹어도 됩니다.',
-      '④ 이 구역은 어린이 놀이터입니다.',
+      '① 하늘을 나는 것이에요.',
+      '② 무거운 물건을 들어 옮기는 것이에요.',
+      '③ 농약을 뿌리는 것이에요.',
+      '④ 도로를 청소하는 것이에요.',
     ],
-    correctIndex: 0,
-    explanation: 'ป้าย 지게차 주의 คือบริเวณที่รถโฟล์คลิฟต์วิ่ง ต้องระวัง → ①',
+    correctIndex: 1,
+    explanation: '지게차는 공장·창고에서 무거운 화물을 들어 이동하는 산업 차량입니다. → ③',
   },
   {
     bankId: 'R34',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[산업] [용접 표지판 이해]',
-    questionText: '이 표지판이 있는 곳에서 용접 작업을 할 때 반드시 착용해야 할 것은?',
-    imageKey: 'welding_sign',
-    options: [
-      '① 차광 안경(보안경)',
-      '② 수영 고글',
-      '③ 선글라스',
-      '④ 안경 없이 해도 됩니다.',
-    ],
-    correctIndex: 0,
-    explanation: 'ในการเชื่อมโลหะต้องสวมแว่นตาป้องกันแสง (차광 안경) เสมอ → ①',
+    groupLabel: '[산업] [빈칸에 들어갈 알맞은 것 고르기]',
+    questionText: '빈칸에 들어갈 가장 알맞은 것을 고르십시오.',
+    imageKey: null,
+    options: ['① 슬리퍼', '② 운동화', '③ 안전화', '④ 샌들'],
+    correctIndex: 2,
+    explanation: '보호 장비(保護 裝備)에는 발을 보호하는 안전화(safety shoes)가 포함됩니다. → ①',
   },
   {
     bankId: 'R35',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[산업] [빈칸 채우기]',
-    questionText: '지게차 작업 시 ( )에 절대 서 있으면 안 됩니다.',
+    groupLabel: '[산업] [작업 순서 나열하기]',
+    questionText: '다음 작업 순서를 맞게 나열한 그림을 고르십시오.\n\n작업 순서: 기계를 점검하기 → 전원을 켜기 → 작업을 시작하기',
     imageKey: null,
-    options: ['① 작업 반경 내', '② 사무실 안', '③ 식당 안', '④ 주차장 내'],
-    correctIndex: 0,
-    explanation: 'ห้ามยืนอยู่ในรัศมีการทำงานของรถโฟล์คลิฟต์เด็ดขาด',
+    options: [
+      '① A – C – B',
+      '② B – A – C',
+      '③ C – B – A',
+      '④ A – B – C',
+    ],
+    correctIndex: 3,
+    explanation: '올바른 순서: A(기계 점검) → B(전원 켜기) → C(작업 시작) → ①',
   },
   {
     bankId: 'R36',
     section: EXAM_SECTIONS.READING,
-    groupLabel: '[산업] [안전모 착용 표지판]',
-    questionText: '이 표지판이 뜻하는 것은 무엇입니까?',
-    imageKey: 'hard_hat_sign',
+    groupLabel: '[산업] [그림과 관계있는 내용 고르기]',
+    questionText: '다음 그림과 관계있는 내용은 무엇입니까?',
+    imageKey: null,
     options: [
-      '① 이 구역에서는 안전모를 써야 합니다.',
-      '② 이 구역은 주차 금지입니다.',
-      '③ 이 구역은 출입 금지입니다.',
-      '④ 이 구역은 음식물 섭취 가능입니다.',
+      '① 스패너 - 나사를 조여요.',
+      '② 스패너 - 무게를 재요.',
+      '③ 드라이버 - 무게를 재요.',
+      '④ 드라이버 - 나사를 조여요.',
     ],
     correctIndex: 0,
-    explanation: 'ป้ายสีน้ำเงินนี้หมายความว่าต้องสวมหมวกนิรภัย (안전모 착용) → ①',
+    explanation: '스패너(렌치)는 볼트·너트를 조이거나 풀 때 사용하는 공구입니다. → ②',
   },
 
   // ─── NEW 2026-STYLE READING QUESTIONS (R37–R56) ────────────────────────
@@ -533,12 +558,12 @@ const readingBank = [
     questionText: '다음을 읽고 이 글의 내용과 맞는 것을 고르십시오.\n\n"오늘 오후 3시부터 공장 전기 점검이 있습니다. 이 시간 동안 2층 생산 라인은 가동을 중단합니다. 작업자는 1층 휴게실에서 대기해 주십시오."',
     imageKey: null,
     options: [
-      '① 2층 라인은 오후 3시부터 멈춥니다.',
-      '② 전기 점검은 오전에 있습니다.',
+      '① 전기 점검은 오전에 있습니다.',
+      '② 2층 라인은 오후 3시부터 멈춥니다.',
       '③ 작업자는 3층으로 이동해야 합니다.',
       '④ 생산 라인은 계속 가동됩니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     explanation: 'ช่วงตรวจสอบไฟฟ้าบ่าย 3 โมง สายการผลิตชั้น 2 หยุดทำงาน → ①',
   },
   {
@@ -548,12 +573,12 @@ const readingBank = [
     questionText: '다음 공고를 읽고 맞는 것을 고르십시오.\n\n"안전 교육 안내\n• 일시: 매주 월요일 오전 9시\n• 대상: 전 직원\n• 장소: 2층 회의실\n• 교육 불참 시 사전 신청 필요"',
     imageKey: null,
     options: [
-      '① 안전 교육은 매주 월요일에 있습니다.',
+      '① 교육 장소는 3층입니다.',
       '② 교육은 매일 진행됩니다.',
-      '③ 교육 장소는 3층입니다.',
+      '③ 안전 교육은 매주 월요일에 있습니다.',
       '④ 일부 직원만 참석합니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation: 'ประกาศอบรมความปลอดภัยทุกวันจันทร์เช้า 9 โมง → ①',
   },
   {
@@ -562,8 +587,8 @@ const readingBank = [
     groupLabel: '[2026 유형: 어휘 문맥 이해]',
     questionText: '다음 문장에서 ( )에 들어갈 알맞은 말을 고르십시오.\n\n"작업 중에는 개인 휴대폰 사용을 ( )합니다."',
     imageKey: null,
-    options: ['① 금지', '② 허가', '③ 장려', '④ 지원'],
-    correctIndex: 0,
+    options: ['① 지원', '② 허가', '③ 장려', '④ 금지'],
+    correctIndex: 3,
     explanation: 'ระหว่างทำงานห้ามใช้โทรศัพท์ส่วนตัว (금지 = ห้าม) → ①',
   },
   {
@@ -583,12 +608,12 @@ const readingBank = [
     questionText: '다음 내용과 맞는 것을 고르십시오.\n\n"산업안전보건법 제38조에 따라 사업주는 근로자에게 작업 전 안전 교육을 의무적으로 실시해야 합니다."',
     imageKey: null,
     options: [
-      '① 작업 전 안전 교육은 사업주의 의무입니다.',
-      '② 안전 교육은 선택 사항입니다.',
+      '① 안전 교육은 선택 사항입니다.',
+      '② 작업 전 안전 교육은 사업주의 의무입니다.',
       '③ 교육은 작업 후에 실시합니다.',
       '④ 교육은 1년에 한 번만 합니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     explanation: 'ตาม พ.ร.บ. ความปลอดภัยแรงงาน มาตรา 38 นายจ้างมีหน้าที่อบรมความปลอดภัยก่อนทำงาน → ①',
   },
   {
@@ -598,12 +623,12 @@ const readingBank = [
     questionText: '다음 공고문의 내용과 맞지 않는 것을 고르십시오.\n\n"[임금 명세서 교부 안내]\n• 회사는 매월 급여일에 임금 명세서를 제공해야 합니다.\n• 근로기준법 제48조에 따라 의무 사항입니다.\n• 전자 파일 또는 종이로 제공 가능합니다."',
     imageKey: null,
     options: [
-      '① 임금 명세서는 연 1회 제공합니다.',
+      '① 전자 파일로 제공할 수 있습니다.',
       '② 임금 명세서 제공은 법적 의무입니다.',
-      '③ 전자 파일로 제공할 수 있습니다.',
+      '③ 임금 명세서는 연 1회 제공합니다.',
       '④ 급여일에 제공합니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation: 'ประกาศระบุว่าแจกสลิปเงินเดือนทุกเดือน ไม่ใช่ปีละครั้ง → ① ผิด',
   },
   {
@@ -612,8 +637,8 @@ const readingBank = [
     groupLabel: '[2026 유형: 유의어]',
     questionText: '밑줄 친 단어와 의미가 가장 비슷한 것을 고르십시오.\n\n"이 기계는 매우 위험하므로 조작 시 주의해야 합니다."',
     imageKey: null,
-    options: ['① 취급', '② 방치', '③ 판매', '④ 구매'],
-    correctIndex: 0,
+    options: ['① 구매', '② 방치', '③ 판매', '④ 취급'],
+    correctIndex: 3,
     explanation: '조작하다 (ควบคุม/ใช้งาน) = 취급하다 → ①',
   },
   {
@@ -632,8 +657,8 @@ const readingBank = [
     groupLabel: '[2026 유형: 복잡한 빈칸 채우기]',
     questionText: '다음 문장의 ( )에 알맞은 것을 고르십시오.\n\n"외국인 근로자는 입국 후 ( ) 이내에 외국인 등록을 해야 합니다."',
     imageKey: null,
-    options: ['① 90일', '② 30일', '③ 6개월', '④ 1년'],
-    correctIndex: 0,
+    options: ['① 30일', '② 90일', '③ 6개월', '④ 1년'],
+    correctIndex: 1,
     explanation: 'แรงงานต่างชาติต้องขึ้นทะเบียนคนต่างด้าวภายใน 90 วันหลังเข้าประเทศ → ①',
   },
   {
@@ -643,12 +668,12 @@ const readingBank = [
     questionText: '다음을 읽고 내용과 맞는 것을 고르십시오.\n\n"근로자는 산업재해가 발생하면 즉시 작업을 중단하고 응급처치를 받은 후 사업주에게 보고해야 합니다. 사업주는 재해 발생 사실을 근로복지공단에 신고할 의무가 있습니다."',
     imageKey: null,
     options: [
-      '① 산업재해 발생 시 사업주는 근로복지공단에 신고해야 합니다.',
+      '① 근로자가 직접 근로복지공단에 신고합니다.',
       '② 재해가 발생해도 작업을 계속해야 합니다.',
-      '③ 근로자가 직접 근로복지공단에 신고합니다.',
+      '③ 산업재해 발생 시 사업주는 근로복지공단에 신고해야 합니다.',
       '④ 응급처치는 나중에 받아도 됩니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation: 'นายจ้างมีหน้าที่แจ้งอุบัติเหตุจากการทำงานต่อ 근로복지공단 → ①',
   },
   {
@@ -657,15 +682,15 @@ const readingBank = [
     groupLabel: '[2026 유형: 어휘 문맥 이해]',
     questionText: '문장에서 ( )에 공통으로 들어갈 알맞은 말을 고르십시오.\n\n"• 작업 시작 전 장비를 ( )한다.\n• 매월 기계 상태를 정기 ( )한다."',
     imageKey: null,
-    options: ['① 점검', '② 세탁', '③ 요리', '④ 휴식'],
-    correctIndex: 0,
+    options: ['① 휴식', '② 세탁', '③ 요리', '④ 점검'],
+    correctIndex: 3,
     explanation: '점검 (ตรวจสอบ) เหมาะกับทั้งสองประโยค → ①',
   },
   {
     bankId: 'R48',
     section: EXAM_SECTIONS.READING,
     groupLabel: '[2026 유형: 법률 이해]',
-    questionText: '다음 중 2025년 기준 한국의 최저임금에 대한 설명으로 맞는 것은?',
+    questionText: '다음 중 한국의 최저임금에 대한 설명으로 맞는 것은?',
     imageKey: null,
     options: [
       '① 최저임금은 모든 근로자에게 동일하게 적용됩니다.',
@@ -683,12 +708,12 @@ const readingBank = [
     questionText: '직장 내 괴롭힘(직장 내 폭력)을 당했을 때 올바른 대처 방법은?',
     imageKey: null,
     options: [
-      '① 고용노동부 또는 사내 고충처리부서에 신고합니다.',
-      '② 조용히 참고 말하지 않습니다.',
+      '① 조용히 참고 말하지 않습니다.',
+      '② 고용노동부 또는 사내 고충처리부서에 신고합니다.',
       '③ 바로 사직서를 제출합니다.',
       '④ 상대방에게 직접 폭력으로 대응합니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     explanation: 'ถูกคุกคามในที่ทำงาน → แจ้งกระทรวงแรงงาน หรือฝ่ายร้องทุกข์ภายในบริษัท → ①',
   },
   {
@@ -698,12 +723,12 @@ const readingBank = [
     questionText: '다음 공고문에 대한 내용으로 맞는 것을 고르십시오.\n\n"[휴가 신청 안내]\n연차 유급 휴가는 1년간 80% 이상 출근한 근로자에게 15일이 주어집니다. 휴가 사용은 최소 3일 전에 신청서를 제출해야 합니다."',
     imageKey: null,
     options: [
-      '① 연차는 출근율 80% 이상이면 15일 받습니다.',
+      '① 휴가는 당일 신청 가능합니다.',
       '② 연차는 모든 근로자에게 자동 지급됩니다.',
-      '③ 휴가는 당일 신청 가능합니다.',
+      '③ 연차는 출근율 80% 이상이면 15일 받습니다.',
       '④ 휴가는 2달 전에 신청해야 합니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation: 'วันลาพักร้อนประจำปี 15 วัน สำหรับผู้มาทำงาน ≥ 80% ต้องยื่นล่วงหน้า 3 วัน → ①',
   },
   {
@@ -713,12 +738,12 @@ const readingBank = [
     questionText: '밀폐 공간 작업에서 가장 먼저 해야 하는 것은?',
     imageKey: null,
     options: [
-      '① 산소 농도 및 유해 가스 농도를 측정한다.',
+      '① 단독으로 작업을 진행한다.',
       '② 빨리 들어가서 작업을 시작한다.',
       '③ 마스크를 쓰지 않고 내부로 들어간다.',
-      '④ 단독으로 작업을 진행한다.',
+      '④ 산소 농도 및 유해 가스 농도를 측정한다.',
     ],
-    correctIndex: 0,
+    correctIndex: 3,
     explanation: 'งานในที่อับอากาศต้องวัดปริมาณออกซิเจนและก๊าซพิษก่อนเข้าเสมอ → ①',
   },
   {
@@ -743,12 +768,12 @@ const readingBank = [
     questionText: '외국인 근로자의 사업장 변경 사유로 인정되는 것은?',
     imageKey: null,
     options: [
-      '① 사업장 휴업·폐업으로 계속 근무가 불가능한 경우',
-      '② 급여가 마음에 들지 않는 경우',
+      '① 급여가 마음에 들지 않는 경우',
+      '② 사업장 휴업·폐업으로 계속 근무가 불가능한 경우',
       '③ 다른 지역으로 이사를 가고 싶은 경우',
       '④ 더 편한 일을 하고 싶은 경우',
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     explanation: 'เหตุผลที่ยอมรับให้เปลี่ยนสถานที่ทำงาน: บริษัทปิดกิจการหรือหยุดกิจการ → ①',
   },
   {
@@ -757,8 +782,8 @@ const readingBank = [
     groupLabel: '[2026 유형: 어휘 문맥 이해]',
     questionText: '다음 ( )에 들어갈 알맞은 말을 고르십시오.\n\n"화재가 발생하면 엘리베이터를 사용하지 말고 ( )을/를 이용하여 대피해야 합니다."',
     imageKey: null,
-    options: ['① 비상계단', '② 에스컬레이터', '③ 화물 엘리베이터', '④ 옥상'],
-    correctIndex: 0,
+    options: ['① 화물 엘리베이터', '② 에스컬레이터', '③ 비상계단', '④ 옥상'],
+    correctIndex: 2,
     explanation: 'เกิดไฟไหม้ต้องใช้บันไดหนีไฟ (비상계단) ไม่ใช่ลิฟต์ → ①',
   },
   {
@@ -768,12 +793,12 @@ const readingBank = [
     questionText: '다음을 읽고 내용과 맞지 않는 것을 고르십시오.\n\n"건강보험은 외국인 근로자도 의무 가입 대상입니다. 보험료는 근로자와 사업주가 절반씩 부담합니다. 몸이 아프면 건강보험증이나 외국인 등록증으로 병원을 이용할 수 있습니다."',
     imageKey: null,
     options: [
-      '① 외국인 근로자는 건강보험 가입이 면제됩니다.',
+      '① 외국인도 건강보험 가입 의무가 있습니다.',
       '② 보험료는 근로자와 사업주가 나눠 냅니다.',
       '③ 병원에서 외국인 등록증을 사용할 수 있습니다.',
-      '④ 외국인도 건강보험 가입 의무가 있습니다.',
+      '④ 외국인 근로자는 건강보험 가입이 면제됩니다.',
     ],
-    correctIndex: 0,
+    correctIndex: 3,
     explanation: 'ข้อความระบุว่าแรงงานต่างชาติ "ต้อง" เข้าประกันสุขภาพ ไม่ใช่ยกเว้น → ① ผิด',
   },
   {
@@ -791,24 +816,502 @@ const readingBank = [
     correctIndex: 0,
     explanation: 'เมื่อลูกจ้างลาออก นายจ้างต้องจ่ายค่าชดเชยการลาออก (퇴직금) ตามระยะเวลาทำงาน → ①',
   },
+
+  // ─── [농업 2026] NEW AGRICULTURE READING (R57–R62) ──────────────────────
+  {
+    bankId: 'R57',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [스마트팜 이해]',
+    questionText: '다음을 읽고 내용과 맞는 것을 고르십시오.\n\n"스마트팜은 IoT 센서를 이용하여 온실의 온도·습도·이산화탄소 농도를 자동으로 조절합니다. 농부는 스마트폰으로 멀리서도 작물 상태를 확인하고 제어할 수 있습니다."',
+    imageKey: null,
+    options: [
+      '① 스마트팜은 온도만 제어합니다.',
+      '② 스마트팜에서는 스마트폰으로 원격 관리가 가능합니다.',
+      '③ 스마트팜은 수작업으로만 운영됩니다.',
+      '④ 스마트팜에서는 센서를 사용하지 않습니다.',
+    ],
+    correctIndex: 1,
+    explanation: 'สมาร์ทฟาร์มควบคุมอุณหภูมิ/ความชื้น/CO₂ อัตโนมัติ และจัดการจากระยะไกลผ่านสมาร์ทโฟน → ①',
+  },
+  {
+    bankId: 'R58',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [농약 GHS 안전표지 읽기]',
+    questionText: '농약 용기에 붙어 있는 해골 그림(☠) 표시의 의미는 무엇입니까?',
+    imageKey: null,
+    options: [
+      '① 아이들이 사용해도 됩니다.',
+      '② 친환경 제품입니다.',
+      '③ 고독성 물질로 매우 위험합니다.',
+      '④ 물에 희석하지 않아도 됩니다.',
+    ],
+    correctIndex: 2,
+    explanation: 'สัญลักษณ์กะโหลกข้ามกระดูก ☠ บนยาฆ่าแมลงหมายถึงสารพิษร้ายแรง อันตรายมาก → ①',
+  },
+  {
+    bankId: 'R59',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [GAP 인증 이해]',
+    questionText: '다음을 읽고 내용과 맞는 것을 고르십시오.\n\n"GAP(농식품안전관리인증기준)은 농산물의 생산에서 수확·포장·유통까지 안전을 관리하는 제도입니다. GAP 인증을 받은 농산물은 잔류 농약 검사 등 엄격한 기준을 통과한 것입니다."',
+    imageKey: null,
+    options: [
+      '① GAP 인증은 간단한 절차로 취득할 수 있습니다.',
+      '② GAP는 농약 사용을 권장하는 제도입니다.',
+      '③ GAP는 유통 단계만 관리합니다.',
+      '④ GAP 인증 농산물은 엄격한 안전 기준을 통과한 제품입니다.',
+    ],
+    correctIndex: 3,
+    explanation: 'ผลิตภัณฑ์เกษตรที่ได้รับการรับรอง GAP ผ่านมาตรฐานความปลอดภัยเข้มงวด ตั้งแต่การผลิตจนถึงจำหน่าย → ①',
+  },
+  {
+    bankId: 'R60',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [농기계 점검 항목 이해]',
+    questionText: '트랙터 작업 전 점검 항목 중 관계없는 것은?',
+    imageKey: null,
+    options: [
+      '① 냉장고 온도 확인',
+      '② 타이어 공기압 확인',
+      '③ 엔진 오일 확인',
+      '④ 안전 벨트 작동 확인',
+    ],
+    correctIndex: 0,
+    explanation: 'ก่อนใช้รถแทรกเตอร์ต้องตรวจสอบ: แรงดันยาง, น้ำมันเครื่อง, เข็มขัดนิรภัย — การตรวจตู้เย็นไม่เกี่ยวข้อง → ①',
+  },
+  {
+    bankId: 'R61',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [계절근로자 권리 이해]',
+    questionText: '농업 분야 계절근로자에 관한 설명으로 맞는 것은?',
+    imageKey: null,
+    options: [
+      '① 계절근로자는 산업재해보상보험 적용이 제외됩니다.',
+      '② 계절근로자도 최저임금이 적용됩니다.',
+      '③ 계절근로자는 근로계약서를 작성할 필요가 없습니다.',
+      '④ 계절근로자는 건강보험 가입이 면제됩니다.',
+    ],
+    correctIndex: 1,
+    explanation: 'แรงงานตามฤดูกาลในภาคเกษตรก็ได้รับการคุ้มครองค่าจ้างขั้นต่ำเท่าเทียมกับแรงงานอื่น → ①',
+  },
+  {
+    bankId: 'R62',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [폭염 작업 공고문 읽기]',
+    questionText: '다음 공고문의 내용과 맞는 것을 고르십시오.\n\n"[여름철 야외 농작업 주의 안내]\n• 오전 10시~오후 2시: 강한 햇볕으로 인해 야외 작업 자제\n• 1시간 작업 후 15분 이상 그늘에서 휴식\n• 물은 30분마다 1컵 이상 마실 것\n• 어지럼증·구역질 시 즉시 작업 중단 후 관리자에게 보고"',
+    imageKey: null,
+    options: [
+      '① 물은 하루에 한 번만 마시면 됩니다.',
+      '② 오전 10시 이전에는 야외 작업을 해서는 안 됩니다.',
+      '③ 어지러울 때는 즉시 작업을 멈추고 관리자에게 알려야 합니다.',
+      '④ 야외 작업은 오후 2시 이후에만 가능합니다.',
+    ],
+    correctIndex: 2,
+    explanation: 'เมื่อรู้สึกเวียนหัวหรือคลื่นไส้ต้องหยุดทำงานและแจ้งผู้จัดการทันที → ①',
+  },
+
+  // ─── [산업 2026] NEW INDUSTRY READING (R63–R68) ──────────────────────────
+  {
+    bankId: 'R63',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [중대재해처벌법 이해]',
+    questionText: '다음을 읽고 내용과 맞는 것을 고르십시오.\n\n"중대재해처벌법은 사망자 1명 이상 또는 6개월 이상 치료가 필요한 부상자가 2명 이상 발생한 중대산업재해를 예방하기 위한 법률입니다. 안전·보건 의무를 다하지 않은 사업주와 경영책임자는 형사 처벌을 받습니다."',
+    imageKey: null,
+    options: [
+      '① 이 법은 사업주의 복지만을 위한 것입니다.',
+      '② 사망 사고가 발생해도 사업주는 처벌받지 않습니다.',
+      '③ 중대재해처벌법은 외국인 근로자에게는 적용되지 않습니다.',
+      '④ 중대재해 발생 시 안전 의무를 다하지 않은 사업주는 형사 처벌을 받습니다.',
+    ],
+    correctIndex: 3,
+    explanation: 'พ.ร.บ. ลงโทษอุบัติเหตุร้ายแรง: หากนายจ้างไม่ปฏิบัติตามหน้าที่ด้านความปลอดภัย จะถูกดำเนินคดีอาญา → ①',
+  },
+  {
+    bankId: 'R64',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [GHS 화학물질 표지 읽기]',
+    questionText: '화학물질 용기에 다음 그림문자가 붙어 있을 때 의미로 맞는 것은?\n\n[불꽃 모양 그림문자 🔥]',
+    imageKey: null,
+    options: [
+      '① 이 물질은 인화성이 있어 불이 붙을 수 있습니다.',
+      '② 이 물질은 독성이 강합니다.',
+      '③ 이 물질은 환경에 해롭습니다.',
+      '④ 이 물질은 압축 가스입니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'สัญลักษณ์เปลวไฟ 🔥 ในระบบ GHS หมายความว่าสารนั้นเป็นวัตถุไวไฟ → ①',
+  },
+  {
+    bankId: 'R65',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [스마트팩토리 이해]',
+    questionText: '다음을 읽고 내용과 맞는 것을 고르십시오.\n\n"스마트팩토리는 제조 공정에 IoT·빅데이터·AI 등을 도입하여 생산을 자동화·최적화한 공장입니다. 실시간으로 불량을 감지하고 생산 데이터를 분석합니다."',
+    imageKey: null,
+    options: [
+      '① 스마트팩토리는 수작업 비중이 높습니다.',
+      '② 스마트팩토리는 AI와 IoT를 활용하여 생산을 자동화합니다.',
+      '③ 스마트팩토리에서는 불량 감지가 불가능합니다.',
+      '④ 스마트팩토리는 소규모 가내 공장에서만 사용됩니다.',
+    ],
+    correctIndex: 1,
+    explanation: 'สมาร์ทแฟกทอรี่ใช้ IoT/AI/빅데이터 เพื่อทำให้การผลิตเป็นอัตโนมัติและตรวจจับของเสียแบบเรียลไทม์ → ①',
+  },
+  {
+    bankId: 'R66',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [작업환경측정 결과 이해]',
+    questionText: '다음 작업환경 측정 결과 안내문의 내용과 맞지 않는 것을 고르십시오.\n\n"[작업환경 측정 결과]\n• 소음: 92 dB (기준치: 90 dB → 기준 초과)\n• 분진: 4.2 mg/m³ (기준치: 5 mg/m³ → 정상)\n• 측정 결과는 근로자에게 즉시 공개해야 함."',
+    imageKey: null,
+    options: [
+      '① 분진은 기준치 내에 있습니다.',
+      '② 소음이 기준치를 초과했습니다.',
+      '③ 소음은 기준치 이하로 정상입니다.',
+      '④ 측정 결과는 근로자에게 알려야 합니다.',
+    ],
+    correctIndex: 2,
+    explanation: 'ระดับเสียง 92 dB เกินมาตรฐาน 90 dB → ① ที่บอกว่าอยู่ในเกณฑ์ปกติ ผิด!',
+  },
+  {
+    bankId: 'R67',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [근로자 건강검진 주기]',
+    questionText: '빈칸에 들어갈 가장 알맞은 것을 고르십시오.\n\n"공장에서 일하는 비사무직 근로자는 ( )에 1회 이상 일반 건강검진을 받아야 합니다."',
+    imageKey: null,
+    options: ['① 10년', '② 3년', '③ 5년', '④ 1년'],
+    correctIndex: 3,
+    explanation: 'ลูกจ้างที่ทำงานในโรงงาน (ไม่ใช่งานออฟฟิศ) ต้องตรวจสุขภาพอย่างน้อยปีละ 1 ครั้ง → ①',
+  },
+  {
+    bankId: 'R68',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [소방 시설 점검 공고문 읽기]',
+    questionText: '다음 공고문의 내용과 맞는 것을 고르십시오.\n\n"[소방 시설 점검 안내]\n• 일시: 이번 주 목요일 오전 10시~12시\n• 점검 내용: 소화기, 비상구, 스프링클러 작동 점검\n• 점검 시간 동안 A동 1층 이동 통로를 임시 폐쇄합니다.\n• 비상 시 B동 비상계단을 이용하세요."',
+    imageKey: null,
+    options: [
+      '① 점검 중 A동 1층 통로가 임시 폐쇄됩니다.',
+      '② 점검은 오후에 진행됩니다.',
+      '③ 점검 시간은 3시간입니다.',
+      '④ 모든 비상구가 점검 중 사용 불가합니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ระหว่างตรวจสอบอุปกรณ์ดับเพลิง ทางเดินชั้น 1 ตึก A จะปิดชั่วคราว → ①',
+  },
+
+  // ─── [농업 2026] AGRICULTURE READING R69–R78 ──────────────────────────────
+  {
+    bankId: 'R69',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [수확 및 선별 작업]',
+    questionText: '다음을 읽고 내용과 맞는 것을 고르십시오.\n\n"사과 수확 후 크기·색깔·모양에 따라 1등급·2등급·등외로 선별합니다. 선별된 사과는 규격 박스에 담아 저온 저장고에 보관합니다."',
+    imageKey: null,
+    options: [
+      '① 사과는 모두 같은 박스에 섞어 담습니다.',
+      '② 사과는 수확 후 등급에 따라 선별됩니다.',
+      '③ 저온 저장고는 사용하지 않습니다.',
+      '④ 선별 작업은 수확 전에 합니다.',
+    ],
+    correctIndex: 1,
+    explanation: 'หลังเก็บเกี่ยวแอปเปิ้ลจะแบ่งเกรดตามขนาด/สี/รูปทรง แล้วเก็บในห้องเย็น → ①',
+  },
+  {
+    bankId: 'R70',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [물 관리·점적관개]',
+    questionText: '( )에 들어갈 알맞은 말을 고르십시오.\n\n"점적관개는 물을 작물 뿌리 근처에 조금씩 ( ) 방법으로, 물 낭비를 줄이고 병해를 예방하는 효과가 있습니다."',
+    imageKey: null,
+    options: ['① 가열하는', '② 제거하는', '③ 공급하는', '④ 측정하는'],
+    correctIndex: 2,
+    explanation: 'ระบบน้ำหยด (점적관개) คือการค่อยๆ จ่ายน้ำ (공급하는) บริเวณรากพืช → ①',
+  },
+  {
+    bankId: 'R71',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [서리 피해 예방]',
+    questionText: '봄철 늦서리로 인한 작물 피해를 예방하는 방법으로 맞는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 작물에 소금물을 뿌린다.',
+      '② 농약을 두 배로 살포한다.',
+      '③ 비닐하우스 환기구를 전부 개방한다.',
+      '④ 방상팬을 가동하거나 방상 커버를 씌운다.',
+    ],
+    correctIndex: 3,
+    explanation: 'ป้องกันน้ำค้างแข็งในฤดูใบไม้ผลิด้วยพัดลมป้องกันน้ำค้างแข็ง (방상팬) หรือผ้าคลุม → ①',
+  },
+  {
+    bankId: 'R72',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [퇴비·토양 관리]',
+    questionText: '다음 중 퇴비(堆肥)에 대한 설명으로 맞는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 유기물을 발효·분해시켜 만든 친환경 비료입니다.',
+      '② 화학 약품으로만 만든 비료입니다.',
+      '③ 토양을 딱딱하게 만들어 배수를 막습니다.',
+      '④ 식물 성장을 억제합니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ปุ๋ยหมัก (퇴비) คือปุ๋ยอินทรีย์ที่ได้จากการหมักสลายเศษอินทรีย์ → ①',
+  },
+  {
+    bankId: 'R73',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [저온저장고 관리]',
+    questionText: '다음을 읽고 내용과 맞지 않는 것을 고르십시오.\n\n"저온저장고는 농산물의 신선도를 유지하기 위해 0~5℃를 유지합니다. 저장고 출입 시에는 반드시 방한복을 착용하고, 혼자 장시간 작업은 금지입니다."',
+    imageKey: null,
+    options: [
+      '① 저장고에서는 방한복을 입어야 합니다.',
+      '② 저온저장고 온도는 30℃ 이상으로 유지합니다.',
+      '③ 혼자 장시간 작업은 금지입니다.',
+      '④ 농산물 신선도 유지를 위한 시설입니다.',
+    ],
+    correctIndex: 1,
+    explanation: 'ห้องเย็นรักษาอุณหภูมิ 0–5°C ไม่ใช่ 30°C → ① ผิด',
+  },
+  {
+    bankId: 'R74',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [농업 외국인 근로자 숙소 규정]',
+    questionText: '농업 분야 외국인 근로자 숙소에 관한 규정으로 맞는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 외국인 근로자는 스스로 숙소를 구해야 합니다.',
+      '② 숙소 제공은 사업주의 선택 사항입니다.',
+      '③ 사업주는 근로자에게 적절한 숙소를 제공하거나 숙소비를 지원해야 합니다.',
+      '④ 숙소비는 전액 근로자가 부담합니다.',
+    ],
+    correctIndex: 2,
+    explanation: 'นายจ้างในภาคเกษตรต้องจัดหาที่พักที่เหมาะสมหรือให้เงินสนับสนุนค่าที่พัก → ①',
+  },
+  {
+    bankId: 'R75',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [콤바인 수확기 안전]',
+    questionText: '콤바인(combine harvester) 작업 중 안전 수칙으로 맞는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 어린이도 운전할 수 있습니다.',
+      '② 수확 중 막힌 곳은 손으로 바로 제거합니다.',
+      '③ 기계가 작동 중일 때 점검해도 됩니다.',
+      '④ 작동 중에는 절대 기계 안으로 손을 넣지 않습니다.',
+    ],
+    correctIndex: 3,
+    explanation: 'ขณะเครื่องเกี่ยวข้าวทำงาน ห้ามเด็ดขาดที่จะสอดมือเข้าไปในเครื่อง → ①',
+  },
+  {
+    bankId: 'R76',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [시설원예 작업 환경]',
+    questionText: '비닐하우스 내 작업 시 주의할 점으로 맞는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 밀폐 시 온도가 급상승할 수 있으므로 환기를 자주 해야 합니다.',
+      '② 비닐하우스 내부는 항상 시원합니다.',
+      '③ 환기는 안 해도 됩니다.',
+      '④ 내부 작업 시 방독 마스크를 쓸 필요가 없습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'โรงเรือนพลาสติกปิดทำให้อุณหภูมิพุ่งสูง ต้องระบายอากาศบ่อยๆ → ①',
+  },
+  {
+    bankId: 'R77',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [대동물 취급 안전]',
+    questionText: '소·돼지 등 대동물 취급 시 안전 수칙으로 맞지 않는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 동물을 다룰 때는 안전화를 착용합니다.',
+      '② 동물 뒤에서 갑자기 접근해도 괜찮습니다.',
+      '③ 동물이 흥분하면 조용히 뒤로 물러납니다.',
+      '④ 혼자서 대동물을 다루는 것은 피합니다.',
+    ],
+    correctIndex: 1,
+    explanation: 'เข้าหาสัตว์ใหญ่จากด้านหลังอย่างกะทันหันอาจทำให้ถูกถีบได้ → ① ผิด (สัตว์อาจโจมตีได้)',
+  },
+  {
+    bankId: 'R78',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[농업 2026] [농약 안전표지·보관]',
+    questionText: '다음을 읽고 내용과 맞는 것을 고르십시오.\n\n"농약은 어린이 손이 닿지 않는 잠금 장치가 있는 곳에 보관해야 합니다. 음식물과 함께 보관해서는 안 되며, 원래 용기에 보관해야 합니다."',
+    imageKey: null,
+    options: [
+      '① 농약은 빈 음료수 병에 옮겨 담아도 됩니다.',
+      '② 농약은 냉장고에 음식과 함께 보관해도 됩니다.',
+      '③ 농약은 잠금 장치가 있는 곳에 보관해야 합니다.',
+      '④ 아이들이 쉽게 꺼낼 수 있는 곳에 보관합니다.',
+    ],
+    correctIndex: 2,
+    explanation: 'ยาฆ่าแมลงต้องเก็บในที่ล็อคที่เด็กเข้าไม่ถึง ห้ามเก็บรวมกับอาหาร → ①',
+  },
+
+  // ─── [산업 2026] INDUSTRY READING R79–R88 ────────────────────────────────
+  {
+    bankId: 'R79',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [MSDS/SDS 화학물질 안전보건자료]',
+    questionText: 'MSDS(물질안전보건자료)에 대한 설명으로 맞는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① MSDS는 구비할 필요가 없습니다.',
+      '② MSDS는 기계 수리 방법만 나와 있습니다.',
+      '③ MSDS는 사업주만 볼 수 있습니다.',
+      '④ 화학물질의 위험성, 취급방법, 응급처치 방법 등이 기재된 문서입니다.',
+    ],
+    correctIndex: 3,
+    explanation: 'MSDS (เอกสารข้อมูลความปลอดภัยของสาร) บันทึกอันตราย/วิธีจัดการ/การปฐมพยาบาล → ①',
+  },
+  {
+    bankId: 'R80',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [고소작업 안전]',
+    questionText: '다음을 읽고 내용과 맞는 것을 고르십시오.\n\n"고소작업(2m 이상)에서는 안전대를 착용하고 안전대 고리를 안전고리에 걸어야 합니다. 강풍·비·눈 등 악천후 시에는 작업을 즉시 중단합니다."',
+    imageKey: null,
+    options: [
+      '① 고소작업 중 악천후 시에는 작업을 중단해야 합니다.',
+      '② 2m 이상 고소작업에서는 안전대无 무방합니다.',
+      '③ 비가 와도 작업을 계속해도 됩니다.',
+      '④ 안전대 고리는 걸지 않아도 됩니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'งานบนที่สูงในสภาพอากาศเลวร้ายต้องหยุดทันที → ①',
+  },
+  {
+    bankId: 'R81',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [잠금·표지 장치(LOTO)]',
+    questionText: '기계 정비 전 잠금·표지(LOTO) 절차의 목적으로 맞는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 기계 속도를 높이기 위해서입니다.',
+      '② 작업자가 정비 중 기계가 갑자기 작동하여 발생하는 사고를 예방하기 위해서입니다.',
+      '③ 생산량을 늘리기 위해서입니다.',
+      '④ 에너지를 절약하기 위해서입니다.',
+    ],
+    correctIndex: 1,
+    explanation: 'ระบบ LOTO (Lock Out/Tag Out) ป้องกันเครื่องจักรสตาร์ทขณะซ่อมบำรุง → ①',
+  },
+  {
+    bankId: 'R82',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [개인보호장구(PPE) 선택]',
+    questionText: '용접 작업 시 반드시 착용해야 하는 개인보호장구로 맞지 않는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 가죽 용접 장갑',
+      '② 용접 차광 마스크',
+      '③ 수영 고글',
+      '④ 방염 앞치마',
+    ],
+    correctIndex: 2,
+    explanation: 'ว่ายน้ำ goggles ไม่เหมาะกับงานเชื่อม ต้องใช้หน้ากากกรองแสง/ถุงมือหนัง/ผ้ากันเปลวไฟ → ① ผิด',
+  },
+  {
+    bankId: 'R83',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [안전표지 읽기]',
+    questionText: '공장 벽에 붙은 파란 원 안에 흰색 안전모 그림 표지의 의미는 무엇입니까?',
+    imageKey: null,
+    options: [
+      '① 이 구역에서는 음식물 섭취가 가능합니다.',
+      '② 이 구역은 출입 금지입니다.',
+      '③ 이 구역은 화재 위험 지역입니다.',
+      '④ 이 구역에서는 반드시 안전모를 착용해야 합니다.',
+    ],
+    correctIndex: 3,
+    explanation: 'ป้ายวงกลมสีน้ำเงิน (ป้ายบังคับ) ภาพหมวกนิรภัยสีขาว = ต้องสวมหมวกนิรภัยในพื้นที่นี้ → ①',
+  },
+  {
+    bankId: 'R84',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [아차 사고(near-miss) 보고]',
+    questionText: '아차 사고(near-miss)를 보고해야 하는 이유로 맞는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 실제 사고로 이어지기 전에 위험 요인을 미리 제거하기 위해서입니다.',
+      '② 보고하면 월급이 올라가기 때문입니다.',
+      '③ 아차 사고는 중요하지 않아 보고할 필요가 없습니다.',
+      '④ 관리자에게 잘 보이기 위해서입니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'การรายงาน near-miss ช่วยขจัดอันตรายก่อนเกิดอุบัติเหตุจริง → ①',
+  },
+  {
+    bankId: 'R85',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [위험 작업 거부권]',
+    questionText: '다음을 읽고 내용과 맞는 것을 고르십시오.\n\n"산업안전보건법 제52조에 따라 근로자는 산업재해 발생 위험이 있을 때 작업을 중지하고 피할 수 있습니다. 이를 이유로 불이익을 받아서는 안 됩니다."',
+    imageKey: null,
+    options: [
+      '① 위험해도 작업을 계속해야 합니다.',
+      '② 근로자는 위험한 작업을 거부할 권리가 있습니다.',
+      '③ 작업 거부 시 해고될 수 있습니다.',
+      '④ 이 권리는 외국인 근로자에게는 적용되지 않습니다.',
+    ],
+    correctIndex: 1,
+    explanation: 'ตาม พ.ร.บ. มาตรา 52 ลูกจ้างมีสิทธิ์ปฏิเสธงานอันตราย และต้องไม่ถูกลงโทษ → ①',
+  },
+  {
+    bankId: 'R86',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [컨베이어 벨트 안전]',
+    questionText: '컨베이어 벨트 작업 시 안전 수칙으로 맞지 않는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 이상음 발생 시 즉시 운전을 중단합니다.',
+      '② 느슨한 옷이나 넥타이는 끼임 위험이 있으므로 피합니다.',
+      '③ 운반 중 컨베이어 위에 올라타도 됩니다.',
+      '④ 회전 부위에는 방호 덮개를 설치합니다.',
+    ],
+    correctIndex: 2,
+    explanation: 'ห้ามขึ้นไปบนสายพานลำเลียงขณะเดินเครื่อง → ① ผิด',
+  },
+  {
+    bankId: 'R87',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [전기 안전 작업]',
+    questionText: '전기 작업 시 안전 수칙으로 맞는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 고무장갑 없이 고압 전선을 만져도 됩니다.',
+      '② 전원이 연결된 상태에서 빠르게 작업합니다.',
+      '③ 젖은 손으로 전기 기기를 다뤄도 됩니다.',
+      '④ 전원을 차단하고 잠금 장치를 한 후 작업합니다.',
+    ],
+    correctIndex: 3,
+    explanation: 'งานไฟฟ้าต้องตัดแหล่งจ่ายไฟและล็อคก่อนเสมอ → ①',
+  },
+  {
+    bankId: 'R88',
+    section: EXAM_SECTIONS.READING,
+    groupLabel: '[산업 2026] [야간 작업 수당]',
+    questionText: '야간 근로(오후 10시~오전 6시)에 대한 설명으로 맞는 것을 고르십시오.',
+    imageKey: null,
+    options: [
+      '① 야간 근로 시 통상 임금의 50% 가산 수당을 받습니다.',
+      '② 야간 근로 수당은 별도로 없습니다.',
+      '③ 야간 근로 가산율은 25%입니다.',
+      '④ 외국인 근로자에게는 야간 수당이 적용되지 않습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ค่าทำงานกลางคืน (22:00–06:00) ต้องจ่ายเพิ่ม 50% ของค่าจ้างปกติ → ①',
+  },
 ];
 
-// ─── LISTENING QUESTION BANK (25 questions) ───────────────────────────────
+// ─── LISTENING QUESTION BANK (48 questions) ───────────────────────────────
 const listeningBank = [
   {
     bankId: 'L01',
     section: EXAM_SECTIONS.LISTENING,
-    groupLabel: '[대화를 듣고 알맞은 것을 고르십시오]',
-    questionText: '남자가 하는 말의 의미로 알맞은 것을 고르십시오.',
-    audioScript: '남자: 저는 지금 작업 중입니다. 잠깐 기다려 주세요.',
+    groupLabel: '[EPS 2026] [대화를 듣고 추론하기]',
+    questionText: '대화를 듣고 남자가 처한 상황으로 맞는 것을 고르십시오.',
+    audioScript: '여자: 안전모 어디 뒀어요? 남자: 저도 찾고 있었어요. 아까 A구역에 뒀는데 없어졌어요. 누가 가져간 것 같아요.',
     options: [
-      '① 지금 점심을 먹고 있습니다.',
-      '② 지금 작업 중입니다.',
-      '③ 지금 퇴근했습니다.',
-      '④ 지금 휴식 중입니다.',
+      '① 남자는 안전모를 잃어버린 것 같습니다.',
+      '② 남자는 안전모를 여자에게 줬습니다.',
+      '③ 남자는 새 안전모를 주문했습니다.',
+      '④ 남자는 안전모를 착용하고 있습니다.',
     ],
-    correctIndex: 1,
-    explanation: 'ชายพูดว่า "지금 작업 중입니다" = กำลังทำงานอยู่ → ②',
+    correctIndex: 0,
+    explanation: 'ชายวางหมวกไว้ที่โซน A แต่หายไป → น่าจะสูญหายหรือถูกหยิบไป → ①',
   },
   {
     bankId: 'L02',
@@ -908,17 +1411,17 @@ const listeningBank = [
   {
     bankId: 'L09',
     section: EXAM_SECTIONS.LISTENING,
-    groupLabel: '[안내 방송을 듣고 답하십시오]',
-    questionText: '작업장의 규칙으로 맞는 것을 고르십시오.',
-    audioScript: '방송: 작업장 내 음식물 반입을 금지합니다. 안전모와 안전화를 반드시 착용하시기 바랍니다.',
+    groupLabel: '[EPS 2026] [안내 방송] [스마트 안전 시스템]',
+    questionText: '이 안내 방송에서 오늘부터 새로 시행되는 것은 무엇입니까?',
+    audioScript: '방송: 오늘부터 공장 내 모든 구역에 QR코드 출입 확인 시스템이 도입됩니다. 작업 시작 전 본인의 사번으로 QR 스캔을 완료해야 합니다. 미완료 시 구역 출입이 제한되며, 시스템 사용 방법은 팀장에게 문의하십시오.',
     options: [
-      '① 음식물 반입 금지',
-      '② 안전모를 쓰지 않아도 됩니다.',
-      '③ 이어폰 사용이 가능합니다.',
-      '④ 운동화를 신어도 됩니다.',
+      '① QR코드 출입 확인 시스템이 시작됩니다.',
+      '② 새로운 기계가 도입됩니다.',
+      '③ 오늘부터 야근이 없습니다.',
+      '④ 구내식당 메뉴가 바뀝니다.',
     ],
     correctIndex: 0,
-    explanation: 'ห้ามนำอาหารเข้าสถานที่ทำงาน (음식물 반입 금지) → ①',
+    explanation: 'ประกาศเริ่มใช้ระบบสแกน QR code ยืนยันตัวตนก่อนเข้าพื้นที่ (스마트팩토리 2026 trend) → ①',
   },
   {
     bankId: 'L10',
@@ -1374,6 +1877,398 @@ const listeningBank = [
     correctIndex: 0,
     explanation: 'สัญญาพื้นฐาน EPS คือ 3 ปี ต่อได้สูงสุด 4 ปี 10 เดือน → ①',
   },
+
+  // ─── [농업 2026] NEW AGRICULTURE LISTENING (L41–L44) ──────────────────────
+  {
+    bankId: 'L41',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '스마트팜 앱에서 온도 경고가 떴을 때 어떻게 해야 한다고 했습니까?',
+    audioScript: '👩 여자: 선생님, 스마트팜 앱에 온도 경고가 떴어요. 어떻게 해야 해요?\n👨 남자: 앱에서 온도를 확인해 봐요. 28도가 넘으면 자동 환기 팬이 켜져야 하는데, 안 켜지면 수동으로 환기창을 열어야 해요. 그리고 저한테 바로 알려 주세요.',
+    voiceNote: '여자(FEMALE): 신입 농업 근로자 / 남자(MALE): 스마트팜 관리자',
+    options: [
+      '① 앱에서 온도를 확인하고, 필요하면 수동으로 환기창을 열고 관리자에게 알립니다.',
+      '② 경고를 무시하고 계속 작업합니다.',
+      '③ 앱을 끄고 스마트팜 전원을 차단합니다.',
+      '④ 온도가 아무리 높아도 환기창은 열지 않습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'เมื่อแอปแจ้งเตือนอุณหภูมิ: ตรวจสอบ → เปิดช่องระบายด้วยมือ → แจ้งผู้จัดการ → ①',
+  },
+  {
+    bankId: 'L42',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '선별 작업에서 규격 외 농산물은 어떻게 처리합니까?',
+    audioScript: '👩 여자: 선별 작업은 어떻게 해요?\n👨 남자: 수확한 딸기를 크기별로 나눠요. 큰 것은 1등급, 보통 것은 2등급, 작거나 모양이 나쁜 것은 규격 외로 나눠요.\n👩 여자: 규격 외는 버리나요?\n👨 남자: 아니요, 잼이나 주스 원료로 팔아요.',
+    voiceNote: '여자(FEMALE): 신입 근로자 / 남자(MALE): 선배 근로자',
+    options: [
+      '① 규격 외는 잼이나 주스 원료로 판매합니다.',
+      '② 규격 외는 모두 버립니다.',
+      '③ 규격 외도 1등급으로 포장합니다.',
+      '④ 크기 구분 없이 같은 등급으로 포장합니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ผลเก็บเกี่ยวที่ไม่ผ่านมาตรฐานขนาด (규격 외) นำไปขายเป็นวัตถุดิบทำแยมหรือน้ำผลไม้ → ①',
+  },
+  {
+    bankId: 'L43',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '트랙터에 이상이 생겼을 때 남자가 먼저 한 일은 무엇입니까?',
+    audioScript: '👨 남자: 트랙터 엔진에서 이상한 소리가 나서 즉시 작동을 멈췄어요.\n👩 여자: 잘하셨어요. 고장난 채로 계속 운전하면 큰 사고가 날 수 있어요. 관리자에게 보고하고 수리 신청했어요?\n👨 남자: 네, 바로 보고하고 농기계 수리 전문가를 불렀어요.',
+    voiceNote: '남자(MALE): 농업 근로자 / 여자(FEMALE): 농장 팀장',
+    options: [
+      '① 즉시 작동을 멈추고 관리자에게 보고했습니다.',
+      '② 소리를 무시하고 계속 운전했습니다.',
+      '③ 스스로 수리를 시도했습니다.',
+      '④ 퇴근 후에 보고했습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'เมื่อเครื่องแทรกเตอร์มีเสียงผิดปกติ: หยุดทันที + แจ้งผู้จัดการ → ①',
+  },
+  {
+    bankId: 'L44',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 안내방송] 🎧 방송을 듣고 답하십시오',
+    questionText: '이 안내 방송의 내용으로 맞는 것을 고르십시오.',
+    audioScript: '📢 안내 방송: 오늘 낮 12시부터 오후 2시까지 폭염 특보 발령으로 야외 농작업을 중단합니다. 모든 근로자는 휴게실에서 쉬고, 시원한 물을 충분히 마셔 주십시오. 오후 2시 이후 작업 재개 여부는 별도로 안내하겠습니다.',
+    voiceNote: '안내방송 (ANNOUNCEMENT)',
+    options: [
+      '① 폭염으로 낮 12시~오후 2시 야외 작업을 중단합니다.',
+      '② 폭염 특보와 상관없이 야외 작업을 계속합니다.',
+      '③ 오후 2시부터 바로 작업을 재개합니다.',
+      '④ 오전 작업만 중단됩니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'เนื่องจากคำเตือนคลื่นความร้อน งานกลางแจ้งหยุดตั้งแต่เที่ยงถึง 14:00 น. → ①',
+  },
+
+  // ─── [산업 2026] NEW INDUSTRY LISTENING (L45–L48) ────────────────────────
+  {
+    bankId: 'L45',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 강의] 🎧 강의를 듣고 답하십시오',
+    questionText: '강사가 설명한 중대재해처벌법에 대한 내용으로 맞는 것은?',
+    audioScript: '👩 강사: 2022년부터 시행된 중대재해처벌법은 사업주가 안전·보건 의무를 지키지 않아 사망 사고가 발생하면 1년 이상의 징역이나 10억 원 이하의 벌금에 처할 수 있습니다. 근로자 여러분도 위험한 상황은 즉시 보고하는 습관을 가져야 합니다.',
+    voiceNote: '여 강사(FEMALE INSTRUCTOR): 산업안전 교육',
+    options: [
+      '① 중대재해 발생 시 의무 위반 사업주는 징역 또는 벌금 처벌을 받을 수 있습니다.',
+      '② 중대재해처벌법은 근로자에게만 적용됩니다.',
+      '③ 이 법에서 사업주는 처벌받지 않습니다.',
+      '④ 이 법은 2010년부터 시행되었습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'พ.ร.บ. ลงโทษอุบัติเหตุร้ายแรง: นายจ้างผู้ฝ่าฝืนอาจถูกจำคุก ≥1 ปี หรือปรับ ≤1,000 ล้านวอน → ①',
+  },
+  {
+    bankId: 'L46',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 안내방송] 🎧 방송을 듣고 답하십시오',
+    questionText: '스마트팩토리 시스템 도입 후 달라지는 것으로 맞는 것은?',
+    audioScript: '📢 안내 방송: 다음 달부터 우리 공장에 스마트팩토리 시스템이 도입됩니다. IoT 센서가 생산 라인에 설치되어 실시간으로 불량을 감지합니다. 모든 생산 데이터는 중앙 서버에 자동 저장됩니다. 전 직원은 다음 주 화요일 스마트팩토리 교육에 반드시 참석해 주십시오.',
+    voiceNote: '안내방송 (ANNOUNCEMENT)',
+    options: [
+      '① IoT 센서로 실시간 불량을 감지합니다.',
+      '② 생산 데이터는 수작업으로 기록합니다.',
+      '③ 스마트팩토리 교육은 선택 사항입니다.',
+      '④ 시스템 도입 후에도 생산 방식은 변화가 없습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'หลังติดตั้งระบบ เซ็นเซอร์ IoT จะตรวจจับของเสียแบบเรียลไทม์ และข้อมูลจะบันทึกอัตโนมัติ → ①',
+  },
+  {
+    bankId: 'L47',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: 'MSDS(물질안전보건자료)를 반드시 확인해야 하는 이유는 무엇입니까?',
+    audioScript: '👩 여자: 이 화학물질 사용하기 전에 뭘 확인해야 해요?\n👨 남자: MSDS를 꼭 읽어야 해요. 이 물질이 얼마나 위험한지, 어떤 보호구가 필요한지, 사고가 나면 어떻게 해야 하는지 다 나와 있어요.\n👩 여자: 아, 미리 공부해야 하는군요.\n👨 남자: 맞아요. 모르고 쓰면 큰 사고가 날 수 있어요.',
+    voiceNote: '여자(FEMALE): 신입 근로자 / 남자(MALE): 선임 근로자',
+    options: [
+      '① 화학물질의 위험성, 필요 보호구, 사고 대응 방법을 알기 위해서입니다.',
+      '② MSDS는 읽지 않아도 됩니다.',
+      '③ MSDS는 관리자만 보는 서류입니다.',
+      '④ 화학물질은 모두 안전하므로 확인이 필요 없습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ต้องอ่าน MSDS เพื่อทราบอันตราย อุปกรณ์ป้องกันที่ต้องใช้ และวิธีรับมือกรณีฉุกเฉิน → ①',
+  },
+  {
+    bankId: 'L48',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 안내방송] 🎧 방송을 듣고 답하십시오',
+    questionText: '이 안내 방송에서 반드시 건강검진을 받아야 하는 근로자는 누구입니까?',
+    audioScript: '📢 안내 방송: 이번 달 25일에 연간 특수 건강검진이 있습니다. 소음·분진·유해화학물질을 취급하는 근로자는 반드시 검진을 받아야 합니다. 검진을 받지 않으면 회사가 법적 제재를 받을 수 있습니다. 검진 일정 신청은 인사팀에 문의하세요.',
+    voiceNote: '안내방송 (ANNOUNCEMENT)',
+    options: [
+      '① 소음·분진·유해물질 취급 근로자입니다.',
+      '② 건강검진은 희망자만 받으면 됩니다.',
+      '③ 건강검진은 사무직 근로자만 해당됩니다.',
+      '④ 올해 건강검진은 없습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ลูกจ้างที่สัมผัสเสียง ฝุ่น หรือสารเคมีอันตราย ต้องเข้ารับการตรวจสุขภาพพิเศษ → ①',
+  },
+
+  // ─── [농업 2026 확장] AGRICULTURE LISTENING L49–L56 ──────────────────────
+  {
+    bankId: 'L49',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '남자가 설명한 GAP 인증의 장점은 무엇입니까?',
+    audioScript: '👩 여자: GAP 인증 받으면 뭐가 좋아요?\n👨 남자: GAP 인증 농산물은 안전성을 인정받아서 대형 마트나 수출 시장에서 더 비싸게 팔 수 있어요. 소비자 신뢰도 높아지고요.\n👩 여자: 그럼 비용이 들어도 받는 게 낫겠네요.\n👨 남자: 맞아요. 장기적으로 소득이 늘어요.',
+    voiceNote: '남자(MALE): 농업 베테랑 / 여자(FEMALE): 신규 농업 근로자',
+    options: [
+      '① 인증 농산물은 더 높은 가격에 판매할 수 있습니다.',
+      '② GAP 인증을 받으면 농약을 더 많이 쓸 수 있습니다.',
+      '③ GAP 인증은 별 도움이 되지 않습니다.',
+      '④ GAP 인증은 수출에는 적용되지 않습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ผลิตภัณฑ์เกษตรรับรอง GAP ขายได้ราคาสูงกว่าในซูเปอร์มาร์เก็ตและตลาดส่งออก → ①',
+  },
+  {
+    bankId: 'L50',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '비닐하우스 환기 작업 시 주의해야 할 점은 무엇입니까?',
+    audioScript: '👨 남자: 비닐하우스 환기할 때 뭐 조심해야 해요?\n👩 여자: 갑자기 환기창을 다 열면 온도 변화가 너무 커서 작물이 스트레스를 받아요. 천천히 조금씩 열어야 해요. 그리고 강풍이 불 때는 환기창을 너무 많이 열지 마세요. 비닐이 찢어질 수 있어요.\n👨 남자: 알겠습니다.',
+    voiceNote: '남자(MALE): 신입 근로자 / 여자(FEMALE): 선임 농업 근로자',
+    options: [
+      '① 환기창은 천천히 조금씩 열고, 강풍 시 너무 많이 열지 않습니다.',
+      '② 환기창은 한번에 전부 열어야 합니다.',
+      '③ 강풍이 불 때 환기창을 최대로 엽니다.',
+      '④ 환기는 하루에 한 번만 합니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ต้องเปิดช่องระบายอากาศค่อยๆ ทีละน้อย และอย่าเปิดมากเมื่อลมแรง → ①',
+  },
+  {
+    bankId: 'L51',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 안내방송] 🎧 방송을 듣고 답하십시오',
+    questionText: '이 안내 방송의 내용으로 맞는 것을 고르십시오.',
+    audioScript: '📢 안내 방송: 금일 오후 퇴비 살포 작업이 있습니다. 퇴비 작업 시 발생하는 유해 가스를 주의하십시오. 반드시 방진 마스크를 착용하고, 작업 중 음식물 섭취를 금합니다. 작업 후에는 손과 얼굴을 깨끗이 씻고 작업복을 세탁하십시오.',
+    voiceNote: '안내방송 (ANNOUNCEMENT)',
+    options: [
+      '① 퇴비 작업 시 방진 마스크를 착용해야 합니다.',
+      '② 퇴비 작업 중에는 음식을 먹어도 됩니다.',
+      '③ 작업 후 세면은 하지 않아도 됩니다.',
+      '④ 퇴비 작업은 앞치마만 착용하면 됩니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'งานใส่ปุ๋ยหมักต้องสวมหน้ากากกันฝุ่น ห้ามกินอาหารระหว่างทำงาน และล้างมือหลังเสร็จ → ①',
+  },
+  {
+    bankId: 'L52',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '남자가 수해(홍수) 피해 후 해야 하는 첫 번째 행동은 무엇입니까?',
+    audioScript: '👩 여자: 어제 폭우 때문에 밭이 침수됐어요. 이럴 때 어떻게 해야 해요?\n👨 남자: 먼저 물이 빠지면 빠르게 배수 작업을 해야 해요. 그리고 침수된 작물 상태를 확인하고, 피해를 농업기술센터에 신고해야 보상을 받을 수 있어요.\n👩 여자: 아, 신고를 꼭 해야 하는군요.',
+    voiceNote: '여자(FEMALE): 농업 근로자 / 남자(MALE): 농장 선임',
+    options: [
+      '① 배수 작업을 하고 피해를 농업기술센터에 신고합니다.',
+      '② 피해는 신고하지 않아도 됩니다.',
+      '③ 침수된 밭을 그대로 둡니다.',
+      '④ 즉시 새 작물을 심습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'หลังน้ำท่วม: ระบายน้ำออก → ตรวจสอบพืชผล → แจ้ง ศูนย์เทคโนโลยีการเกษตร เพื่อขอรับการชดเชย → ①',
+  },
+  {
+    bankId: 'L53',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '저온저장고에서 작업할 때 주의할 점은 무엇입니까?',
+    audioScript: '👨 남자: 내일부터 저온저장고 작업에 투입돼요. 주의할 게 있어요?\n👩 여자: 네! 꼭 방한복 입고 들어가야 해요. 혼자 오래 있으면 저체온증 위험이 있어요. 항상 두 명 이상이 함께 작업하고, 들어가기 전에 동료에게 알리세요.\n👨 남자: 알겠습니다. 혼자 절대 들어가면 안 되는군요.',
+    voiceNote: '남자(MALE): 신입 근로자 / 여자(FEMALE): 선임 근로자',
+    options: [
+      '① 방한복을 입고, 두 명 이상이 함께 작업합니다.',
+      '② 짧은 소매 옷을 입어도 됩니다.',
+      '③ 혼자 작업해도 괜찮습니다.',
+      '④ 방한복 없이 빠르게 작업을 마치면 됩니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ต้องสวมชุดกันหนาว ทำงานเป็นคู่เสมอ และแจ้งเพื่อนก่อนเข้าห้องเย็น → ①',
+  },
+  {
+    bankId: 'L54',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 강의] 🎧 강의를 듣고 답하십시오',
+    questionText: '농업 기계 사용 전 점검 항목으로 강사가 말한 것은?',
+    audioScript: '👨 강사: 농업 기계를 쓰기 전에는 반드시 세 가지를 확인해야 합니다. 첫째, 엔진 오일과 연료 수준을 확인하세요. 둘째, 타이어 공기압 또는 바퀴 상태를 점검하세요. 셋째, 안전 장치가 제대로 작동하는지 확인하세요. 이 세 가지만 잘 지켜도 사고를 많이 예방할 수 있습니다.',
+    voiceNote: '남 강사(MALE INSTRUCTOR): 농기계 안전 교육',
+    options: [
+      '① 엔진 오일, 타이어 상태, 안전 장치를 점검합니다.',
+      '② 연료만 확인하면 됩니다.',
+      '③ 안전 장치 확인은 필요 없습니다.',
+      '④ 타이어는 점검하지 않아도 됩니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ก่อนใช้เครื่องจักรเกษตร: ตรวจน้ำมัน → ตรวจยาง → ตรวจระบบนิรภัย → ①',
+  },
+  {
+    bankId: 'L55',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '계절근로자로 일하는 여자가 궁금해하는 것은 무엇입니까?',
+    audioScript: '👩 여자: 저는 계절근로자로 이번 딸기 시즌만 일하는데요, 계약 기간이 끝나면 퇴직금 받을 수 있나요?\n👨 남자: 계속 근무 기간이 1년 이상이면 퇴직금을 받을 수 있어요. 계절근로자는 보통 3~5개월이라 1년 미만이면 퇴직금이 없어요. 하지만 같은 농장에서 매년 반복해서 일하면 합산될 수 있으니 확인해 보세요.',
+    voiceNote: '여자(FEMALE): 계절 근로자 / 남자(MALE): 인사 담당자',
+    options: [
+      '① 퇴직금을 받을 수 있는지 여부입니다.',
+      '② 다음 시즌 일자리를 구하는 것입니다.',
+      '③ 숙소 제공 여부입니다.',
+      '④ 교통비 지원 여부입니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'หญิงถามเรื่องค่าชดเชยการลาออก (퇴직금) สำหรับแรงงานตามฤดูกาล → ①',
+  },
+  {
+    bankId: 'L56',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[농업 2026 안내방송] 🎧 방송을 듣고 답하십시오',
+    questionText: '이 방송에서 농장 내 통행 규칙으로 맞는 것을 고르십시오.',
+    audioScript: '📢 안내 방송: 농장 내 안전 통행 규칙을 안내합니다. 농기계가 이동 중일 때는 안전 거리 3미터를 유지하십시오. 트랙터 후방에서는 절대 가까이 가지 마십시오. 농기계 이동 시간은 오전 8시~9시, 오후 4시~5시이며 이 시간에는 보행에 주의하십시오.',
+    voiceNote: '안내방송 (ANNOUNCEMENT)',
+    options: [
+      '① 농기계 이동 중에는 3미터 안전 거리를 유지합니다.',
+      '② 트랙터 후방에 가까이 서도 됩니다.',
+      '③ 안전 거리는 1미터입니다.',
+      '④ 농기계 이동 중에는 보행이 자유롭습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ขณะเครื่องจักรเกษตรเคลื่อนที่ต้องรักษาระยะห่างความปลอดภัย 3 เมตร → ①',
+  },
+
+  // ─── [산업 2026 확장] INDUSTRY LISTENING L57–L64 ──────────────────────────
+  {
+    bankId: 'L57',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '안전모가 반드시 필요한 이유로 남자가 설명한 것은 무엇입니까?',
+    audioScript: '👩 여자: 공장 안에서 왜 꼭 안전모를 써야 하나요? 불편한데요.\n👨 남자: 위에서 물건이 떨어지거나 부딪혔을 때 머리를 보호해 줘요. 실제로 안전모 덕분에 큰 사고를 막은 사례가 많아요. 불편해도 생명을 지키는 게 더 중요하잖아요.\n👩 여자: 맞는 말이네요. 이제 꼭 쓸게요.',
+    voiceNote: '여자(FEMALE): 신입 근로자 / 남자(MALE): 안전 담당자',
+    options: [
+      '① 위에서 물건이 떨어질 때 머리를 보호하기 위해서입니다.',
+      '② 안전모는 규정이 없으면 쓰지 않아도 됩니다.',
+      '③ 안전모는 여름에만 착용합니다.',
+      '④ 얼굴을 보호하기 위한 것입니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'หมวกนิรภัยไว้ป้องกันศีรษะจากวัตถุตกจากที่สูง → ①',
+  },
+  {
+    bankId: 'L58',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 강의] 🎧 강의를 듣고 답하십시오',
+    questionText: '강사가 설명한 아차 사고(near-miss) 보고 절차로 맞는 것은?',
+    audioScript: '👩 강사: 아차 사고가 발생했을 때 보고 절차를 설명합니다. 첫째, 발생 즉시 작업을 중단합니다. 둘째, 현장 상황을 사진이나 메모로 기록합니다. 셋째, 팀장 또는 안전 담당자에게 보고합니다. 넷째, 원인을 분석하고 재발 방지 대책을 세웁니다. 아차 사고 보고는 처벌이 아니라 안전을 위한 것임을 기억하세요.',
+    voiceNote: '여 강사(FEMALE INSTRUCTOR): 산업 안전 교육',
+    options: [
+      '① 작업 중단 → 기록 → 보고 → 원인 분석의 순서로 합니다.',
+      '② 아차 사고는 보고하지 않아도 됩니다.',
+      '③ 보고하면 처벌을 받습니다.',
+      '④ 사진 기록은 필요 없습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ขั้นตอน near-miss: หยุดทำงาน → บันทึก → รายงาน → วิเคราะห์สาเหตุ → ①',
+  },
+  {
+    bankId: 'L59',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '고소작업 전 여자가 반드시 해야 한다고 한 것은 무엇입니까?',
+    audioScript: '👨 남자: 내일 3층 외벽 작업 있어요. 주의사항이 있나요?\n👩 여자: 고소작업 전에 반드시 작업 허가서를 받아야 해요. 그리고 안전대를 착용하고 지지점에 고리를 걸어야 해요. 작업 전 비계나 사다리 상태도 꼭 점검하세요. 혼자 하지 말고 반드시 감시인을 두세요.\n👨 남자: 네, 잘 알겠습니다.',
+    voiceNote: '남자(MALE): 신입 근로자 / 여자(FEMALE): 안전 담당자',
+    options: [
+      '① 작업 허가서 취득, 안전대 착용, 비계 점검, 감시인 배치가 필요합니다.',
+      '② 작업 허가서 없이도 시작할 수 있습니다.',
+      '③ 안전대는 선택 사항입니다.',
+      '④ 혼자 작업해도 됩니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'งานบนที่สูง: รับใบอนุญาต + สวมสายรัดนิรภัย + ตรวจนั่งร้าน + มีผู้เฝ้าระวัง → ①',
+  },
+  {
+    bankId: 'L60',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 안내방송] 🎧 방송을 듣고 답하십시오',
+    questionText: '이 안내 방송에서 위험 작업 거부권에 대한 내용으로 맞는 것은?',
+    audioScript: '📢 안내 방송: 산업안전보건법에 따라 근로자는 급박한 위험이 있는 경우 작업을 즉시 중단하고 대피할 수 있습니다. 이를 이유로 해고나 불이익을 주는 것은 법으로 금지되어 있습니다. 위험 상황 발견 시 즉시 안전관리자에게 신고하십시오.',
+    voiceNote: '안내방송 (ANNOUNCEMENT)',
+    options: [
+      '① 근로자는 위험한 작업을 거부하고 대피할 권리가 있습니다.',
+      '② 위험해도 작업을 계속해야 합니다.',
+      '③ 작업 거부 시 해고될 수 있습니다.',
+      '④ 이 권리는 정규직에게만 적용됩니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ลูกจ้างมีสิทธิ์หยุดงานและอพยพได้เมื่อมีอันตรายเร่งด่วน และไม่สามารถถูกลงโทษ → ①',
+  },
+  {
+    bankId: 'L61',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '전기 작업 전 LOTO(잠금·표지) 절차에서 여자가 강조한 것은?',
+    audioScript: '👩 여자: 전기 작업 시작 전에 꼭 LOTO 절차를 지켜야 해요.\n👨 남자: LOTO가 뭐예요?\n👩 여자: 전원 차단 후 잠금 장치를 하고, "작업 중" 표지판을 다는 거예요. 잠금 열쇠는 작업자 본인만 갖고 있어야 해요. 이렇게 해야 다른 사람이 실수로 전원을 켜는 사고를 막을 수 있어요.\n👨 남자: 아, 중요한 절차네요.',
+    voiceNote: '여자(FEMALE): 안전 담당자 / 남자(MALE): 신입 전기 작업자',
+    options: [
+      '① 전원을 차단하고 잠금 장치 후 표지판을 달아야 합니다.',
+      '② LOTO는 선택 사항입니다.',
+      '③ 잠금 열쇠는 누구나 가질 수 있습니다.',
+      '④ 표지판은 붙이지 않아도 됩니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'LOTO: ตัดไฟ → ล็อค → ติดป้าย "กำลังซ่อม" กุญแจต้องอยู่กับช่างเท่านั้น → ①',
+  },
+  {
+    bankId: 'L62',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 안내방송] 🎧 방송을 듣고 답하십시오',
+    questionText: '이번 주 안전 점검 일정으로 맞는 것을 고르십시오.',
+    audioScript: '📢 안내 방송: 이번 주 목요일 오전 10시부터 12시까지 전 공장 소화기·비상구 안전 점검이 있습니다. 점검 시간 동안 A동 1층 통로는 임시 폐쇄됩니다. B동 비상계단을 이용해 주십시오. 점검 결과는 게시판에 공개될 예정입니다.',
+    voiceNote: '안내방송 (ANNOUNCEMENT)',
+    options: [
+      '① 목요일 오전 10시~12시에 소화기·비상구 점검이 있습니다.',
+      '② 점검은 월요일 오후에 있습니다.',
+      '③ 점검 결과는 공개되지 않습니다.',
+      '④ A동 통로는 계속 사용 가능합니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'วันพฤหัสบดี 10:00–12:00 น. ตรวจเครื่องดับเพลิงและทางออกฉุกเฉิน ทางเดินตึก A ปิดชั่วคราว → ①',
+  },
+  {
+    bankId: 'L63',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 대화] 🎧 남자/여자 대화를 듣고 답하십시오',
+    questionText: '여자가 외국인 근로자에게 설명한 사업장 변경 가능한 경우는?',
+    audioScript: '👨 남자: 저 지금 일하는 곳이 너무 힘들어서 다른 곳으로 바꾸고 싶어요. 가능한가요?\n👩 여자: 단순히 힘들다는 이유만으로는 어려워요. 사업장 변경은 사업장이 폐업하거나 임금 체불이 있거나 부당 대우를 받았을 때 가능해요. 고용지원센터에 가서 상담을 받아 보세요.\n👨 남자: 알겠습니다. 상담을 먼저 받겠습니다.',
+    voiceNote: '남자(MALE): 외국인 근로자 / 여자(FEMALE): 고용 상담원',
+    options: [
+      '① 폐업, 임금 체불, 부당 대우가 있을 때 사업장 변경이 가능합니다.',
+      '② 힘들면 언제든지 바꿀 수 있습니다.',
+      '③ 사업장 변경은 절대 불가능합니다.',
+      '④ 외국인은 사업장을 마음대로 바꿀 수 있습니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'เปลี่ยนสถานที่ทำงานได้เมื่อ: บริษัทปิด / ค้างค่าแรง / ถูกปฏิบัติไม่เป็นธรรม → ①',
+  },
+  {
+    bankId: 'L64',
+    section: EXAM_SECTIONS.LISTENING,
+    groupLabel: '[산업 2026 강의] 🎧 강의를 듣고 답하십시오',
+    questionText: '강사가 설명한 산업재해 발생 시 조치 순서로 맞는 것은?',
+    audioScript: '👨 강사: 산업재해가 발생하면 다음 순서로 행동하세요. 먼저 부상자를 안전한 곳으로 대피시킵니다. 둘째, 즉시 119에 신고하고 응급처치를 합니다. 셋째, 작업을 중단하고 현장을 보존합니다. 넷째, 관리자와 안전관리자에게 보고합니다. 다섯째, 산업재해조사표를 작성합니다. 이 순서를 꼭 기억해 주세요.',
+    voiceNote: '남 강사(MALE INSTRUCTOR): 산업안전 교육',
+    options: [
+      '① 대피 → 119 신고·응급처치 → 작업 중단·현장 보존 → 보고 → 조사표 작성 순서입니다.',
+      '② 조사표 작성이 가장 먼저입니다.',
+      '③ 119 신고보다 보고가 먼저입니다.',
+      '④ 현장 보존은 하지 않아도 됩니다.',
+    ],
+    correctIndex: 0,
+    explanation: 'ลำดับเมื่อเกิดอุบัติเหตุ: อพยพ → โทร 119 → หยุดงาน/รักษาสถานที่ → รายงาน → กรอกแบบสอบสวน → ①',
+  },
 ];
 
 // ─── GENERATE EXAM SET ─────────────────────────────────────────────────────
@@ -1395,19 +2290,41 @@ function seededShuffle(arr, seed) {
 /**
  * Shuffle the answer options of a question and return a new question object
  * with updated correctIndex. Uses a per-question seed so it's deterministic.
+ *
+ * If targetCorrect is provided, the correct answer is GUARANTEED to land at
+ * that position (0–3), while the other 3 options are shuffled randomly.
+ * This ensures uniform distribution (exactly 5 per position per exam set).
  */
-function shuffleOptions(q, seed) {
-  const indices = [0, 1, 2, 3];
-  // seeded shuffle of indices
+function shuffleOptions(q, seed, targetCorrect = null) {
+  const SYMS = ['①', '②', '③', '④'];
+  const strip = (opt) => opt.replace(/^[①②③④]\s*/, '').trim();
   let s = seed;
+
+  if (targetCorrect !== null) {
+    // Guaranteed placement: correct answer → targetCorrect; shuffle other 3
+    const otherOrig = [0, 1, 2, 3].filter(i => i !== q.correctIndex);
+    const otherNew  = [0, 1, 2, 3].filter(i => i !== targetCorrect);
+    for (let i = otherOrig.length - 1; i > 0; i--) {
+      s = (s * 1664525 + 1013904223) & 0xffffffff;
+      const j = Math.abs(s) % (i + 1);
+      [otherOrig[i], otherOrig[j]] = [otherOrig[j], otherOrig[i]];
+    }
+    const indices = new Array(4);
+    indices[targetCorrect] = q.correctIndex;
+    otherNew.forEach((newPos, k) => { indices[newPos] = otherOrig[k]; });
+    const newOptions = indices.map((origIdx, newPos) =>
+      `${SYMS[newPos]} ${strip(q.options[origIdx])}`
+    );
+    return { ...q, options: newOptions, correctIndex: targetCorrect };
+  }
+
+  // Fallback: full Fisher-Yates (no position guarantee)
+  const indices = [0, 1, 2, 3];
   for (let i = indices.length - 1; i > 0; i--) {
     s = (s * 1664525 + 1013904223) & 0xffffffff;
     const j = Math.abs(s) % (i + 1);
     [indices[i], indices[j]] = [indices[j], indices[i]];
   }
-  const SYMS = ['①', '②', '③', '④'];
-  // Strip leading symbol from option text (if any) then re-label
-  const strip = (opt) => opt.replace(/^[①②③④]\s*/, '').trim();
   const newOptions = indices.map((origIdx, newPos) =>
     `${SYMS[newPos]} ${strip(q.options[origIdx])}`
   );
@@ -1416,12 +2333,17 @@ function shuffleOptions(q, seed) {
 }
 
 /**
- * Generate one exam set (setNumber: 1-5, category: 'ALL'|'AGRICULTURE'|'INDUSTRY').
- * For topic categories, all matching questions appear first; remaining slots
- * are filled from the general pool (no cross-topic contamination).
+ * Generate one exam set.
+ * setNumber is now a full random seed (1–999999) so every session is unique.
+ * category: 'ALL'|'AGRICULTURE'|'INDUSTRY'
+ *
+ * The seed is spread across both question selection AND option shuffling,
+ * so two people with different seeds always get a different question order
+ * and different answer-option order.
  */
 export function generateExamSet(setNumber, category = EXAM_CATEGORIES.ALL) {
-  const seed = setNumber * 31337;
+  // Mix the seed thoroughly so nearby set numbers produce very different results
+  const seed = ((setNumber * 2654435761) ^ (setNumber << 13) ^ (setNumber >>> 7)) >>> 0;
   let pickedR, pickedL;
 
   if (category === EXAM_CATEGORIES.ALL) {
@@ -1448,24 +2370,29 @@ export function generateExamSet(setNumber, category = EXAM_CATEGORIES.ALL) {
     ].slice(0, 20);
   }
 
+  // Guarantee exactly 5 questions per correct-answer position (①②③④) in each section
+  const rTargets = seededShuffle([0,0,0,0,0, 1,1,1,1,1, 2,2,2,2,2, 3,3,3,3,3], seed + 99997);
+  const lTargets = seededShuffle([0,0,0,0,0, 1,1,1,1,1, 2,2,2,2,2, 3,3,3,3,3], seed + 99993);
+
   const readingQuestions = pickedR.map((q, i) => {
     const qSeed = (seed + i * 7919) & 0xffffffff;
-    return { ...shuffleOptions(q, qSeed), id: i + 1, section: EXAM_SECTIONS.READING };
+    return { ...shuffleOptions(q, qSeed, rTargets[i]), id: i + 1, section: EXAM_SECTIONS.READING };
   });
 
   const listeningQuestions = pickedL.map((q, i) => {
     const qSeed = (seed + 99991 + i * 7919) & 0xffffffff;
-    return { ...shuffleOptions(q, qSeed), id: i + 21, section: EXAM_SECTIONS.LISTENING };
+    return { ...shuffleOptions(q, qSeed, lTargets[i]), id: i + 21, section: EXAM_SECTIONS.LISTENING };
   });
 
   return [...readingQuestions, ...listeningQuestions];
 }
 
 /**
- * Pick a random set number (1-15) for a new exam session.
+ * Pick a unique random seed (1–999999) for each new exam session.
+ * The huge range ensures virtually no two test-takers get the same paper.
  */
 export function pickRandomSetNumber() {
-  return Math.floor(Math.random() * TOTAL_EXAM_SETS) + 1;
+  return Math.floor(Math.random() * 999999) + 1;
 }
 
 export const getSectionQuestions = (questions, section) =>

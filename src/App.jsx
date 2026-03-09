@@ -381,6 +381,7 @@ function App() {
         examinerName={examinerName}
         onNameChange={setExaminerName}
         onStart={handleStart}
+        onReshuffle={() => setAssignedSet(pickRandomSetNumber())}
       />
     );
   }

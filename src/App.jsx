@@ -56,6 +56,7 @@ function App() {
   const speechPauseRef = useRef(null);
   const progressIntervalRef = useRef(null);
   const playFnRef = useRef(null);
+  const autoTimerRef = useRef(null);       // 600ms auto-play delay timer
   const safariResumeRef = useRef(null);
   const cancelSpeechFnRef = useRef(null); // cancel fn returned by speakConversation
   const audioRef = useRef(null);           // HTML5 Audio element for MP3 playback
@@ -104,6 +105,12 @@ function App() {
   };
 
   const cancelSpeech = () => {
+    // Cancel pending auto-play timer
+    if (autoTimerRef.current) {
+      clearTimeout(autoTimerRef.current);
+      autoTimerRef.current = null;
+    }
+    playFnRef.current = null;
     // Stop HTML5 audio
     if (audioRef.current) {
       audioRef.current.pause();
@@ -165,6 +172,12 @@ function App() {
 
     // ── HTML5 Audio path (uses pre-generated MP3 files) ─────────────────────
     const playMp3 = () => {
+      // Cancel any existing audio before starting new one
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = '';
+        audioRef.current = null;
+      }
       const audio = new Audio(`/audio/${question.bankId}.mp3`);
       audioRef.current = audio;
       setListeningPhase('playing');
@@ -267,8 +280,14 @@ function App() {
     };
 
     // Auto-play after short delay (lets React finish rendering)
-    const autoTimer = setTimeout(playMp3, 600);
-    playFnRef.current = () => { clearTimeout(autoTimer); playMp3(); };
+    autoTimerRef.current = setTimeout(() => {
+      autoTimerRef.current = null;
+      playMp3();
+    }, 600);
+    playFnRef.current = () => {
+      if (autoTimerRef.current) { clearTimeout(autoTimerRef.current); autoTimerRef.current = null; }
+      playMp3();
+    };
   }, []);
 
   // Called when user taps fallback "Play" button

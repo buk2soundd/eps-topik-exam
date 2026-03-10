@@ -543,7 +543,7 @@ const AdminPage = () => {
   }, [loggedIn]);
 
   const handleDelete = async (id) => {
-    if (!window.confirm('ລຶບຂໍ້ມູນຜູ້ສອບຄົນນີ້?')) return;
+    if (!window.confirm('ລຶບຂໍ້ມູນຜູ້ສອບຄົນນີ້?\n(ຜູ້ສອບຈະສາມາດສອບໃໝ່ໄດ້ຫຼັງຈາກລຶບ)')) return;
     setDeleting(id);
     try {
       await deleteExamResult(id);
@@ -831,7 +831,7 @@ const AdminPage = () => {
                       <Th onClick={() => toggleSort('created_at')}>
                         ວັນທີ <SortIcon k="created_at" />
                       </Th>
-                      <Th center>ລຶບ</Th>
+                      <Th center>ປົດລັອກ/ລຶບ</Th>
                     </tr>
                   </thead>
                   <tbody>
@@ -873,6 +873,7 @@ const AdminPage = () => {
                           <button
                             onClick={() => handleDelete(r.id)}
                             disabled={deleting === r.id}
+                            title="ລຶບ = ປົດລັອກໃຫ້ສອບໃໝ່"
                             className="text-red-400 hover:text-red-600 disabled:opacity-40 transition-colors"
                           >
                             <Trash2 size={16} />

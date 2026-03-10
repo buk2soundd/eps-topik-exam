@@ -15,7 +15,7 @@ import {
   pickRandomSetNumber,
   POINTS_PER_QUESTION,
 } from './data/examData';
-import { saveExamResult } from './lib/db';
+import { saveExamResult, checkNameSubmitted } from './lib/db';
 import { parseConversationScript, getKoreanVoices, loadKoreanVoices, speakConversation } from './lib/tts';
 
 const MIN_FONT = 12;
@@ -35,6 +35,8 @@ function App() {
   const [examinerName, setExaminerName] = useState('');
   const [examQuestions, setExamQuestions] = useState([]);
   const examStartTimeRef = useRef(null);
+  const [isNameBlocked, setIsNameBlocked] = useState(false);
+  const [nameCheckLoading, setNameCheckLoading] = useState(false);
 
   // ── Exam state ────────────────────────────────────────────────────────────
   const [currentQuestionId, setCurrentQuestionId] = useState(1);
@@ -67,17 +69,37 @@ function App() {
   const isListeningQuestion = currentSection === EXAM_SECTIONS.LISTENING;
 
   // ── Start exam ────────────────────────────────────────────────────────────
-  const handleStart = useCallback(() => {
-    // Unlock Web Speech API for the whole session via this user gesture
+  const handleStart = useCallback(async () => {
+    // Unlock Web Speech API synchronously (must be inside user-gesture call)
     if (typeof window !== 'undefined' && window.speechSynthesis) {
       window.speechSynthesis.cancel();
       const unlock = new SpeechSynthesisUtterance('\u00A0');
       unlock.volume = 0;
       unlock.lang = 'ko-KR';
       window.speechSynthesis.speak(unlock);
-      // Preload Korean voices now (after user gesture unlocks TTS)
       loadKoreanVoices();
     }
+
+    // Check if this name has already submitted (async DB lookup)
+    setNameCheckLoading(true);
+    try {
+      const alreadySubmitted = await checkNameSubmitted(examinerName.trim());
+      if (alreadySubmitted) {
+        setIsNameBlocked(true);
+        setNameCheckLoading(false);
+        if (typeof window !== 'undefined' && window.speechSynthesis) {
+          window.speechSynthesis.cancel();
+        }
+        return;
+      }
+    } catch (e) {
+      console.warn('[DB] checkNameSubmitted failed:', e.message);
+      // fail-open: allow exam if DB check errors
+    } finally {
+      setNameCheckLoading(false);
+    }
+
+    setIsNameBlocked(false);
     const questions = generateExamSet(assignedSet, selectedCategory);
     setExamQuestions(questions);
     setExamStarted(true);
@@ -86,7 +108,7 @@ function App() {
     setAnswers({});
     setRemainingSeconds(EXAM_DURATION_SECONDS);
     examStartTimeRef.current = Date.now();
-  }, [assignedSet, selectedCategory]);
+  }, [assignedSet, selectedCategory, examinerName]);
 
   // ── Main exam timer ───────────────────────────────────────────────────────
   useEffect(() => {
@@ -398,8 +420,10 @@ function App() {
         selectedCategory={selectedCategory}
         onCategoryChange={setSelectedCategory}
         examinerName={examinerName}
-        onNameChange={setExaminerName}
+        onNameChange={(v) => { setExaminerName(v); setIsNameBlocked(false); }}
         onStart={handleStart}
+        isBlocked={isNameBlocked}
+        blockLoading={nameCheckLoading}
         onReshuffle={() => setAssignedSet(pickRandomSetNumber())}
       />
     );

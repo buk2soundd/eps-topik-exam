@@ -44,9 +44,9 @@ const CATEGORY_OPTIONS = [
   },
 ];
 
-const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examinerName, onNameChange, onStart, onReshuffle }) => {
+const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examinerName, onNameChange, onStart, onReshuffle, isBlocked, blockLoading }) => {
   const cat = CATEGORY_OPTIONS.find((c) => c.key === selectedCategory) || CATEGORY_OPTIONS[0];
-  const canStart = examinerName.trim().length >= 2;
+  const canStart = examinerName.trim().length >= 2 && !isBlocked && !blockLoading;
   // pick color from seed: colorIdx 0-9 based on last digit of seed
   const colorIdx = assignedSet % 10;
   const setColor = SET_COLORS[colorIdx];
@@ -171,8 +171,14 @@ const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examiner
               className="w-full border-2 border-gray-200 focus:border-[#1a3a6b] rounded-xl pl-9 pr-4 py-3 text-sm outline-none text-gray-700 transition-colors"
             />
           </div>
-          {!canStart && examinerName.length > 0 && (
+          {!canStart && examinerName.length > 0 && !isBlocked && !blockLoading && (
             <p className="text-xs text-red-400 mt-1">ກະລຸນາໃສ່ຊື່ຢ່າງໜ້ອຍ 2 ຕົວອັກສອນ</p>
+          )}
+          {isBlocked && (
+            <div className="mt-2 bg-red-50 border border-red-300 rounded-xl p-3 text-xs text-red-700">
+              <div className="font-bold mb-0.5">🚫 ຊື່ນີ້ໄດ້ທຳການສອບແລ້ວ</div>
+              <div>ກະລຸນາຕິດຕໍ່ Admin ເພື່ອປົດລັອກ ແລ້ວລອງໃໝ່</div>
+            </div>
           )}
         </div>
 
@@ -184,8 +190,20 @@ const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examiner
             className="w-full hover:opacity-90 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed text-white font-extrabold py-4 rounded-xl text-lg tracking-widest uppercase transition-all shadow-lg flex items-center justify-center gap-2"
             style={{ background: cat.color }}
           >
-            เริ่มสอบ
-            <ChevronRight size={22} />
+            {blockLoading ? (
+              <>
+                <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24" fill="none">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                </svg>
+                ກຳລັງກວດສອບ...
+              </>
+            ) : (
+              <>
+                เริ่มสอบ
+                <ChevronRight size={22} />
+              </>
+            )}
           </button>
           <p className="text-center text-xs text-gray-400 mt-2">
             시작 버튼을 누르면 타이머가 작동합니다

@@ -48,6 +48,25 @@ export async function getExamResults() {
 }
 
 /**
+ * Check whether a given examiner name has already submitted an exam.
+ * Returns false (fail-open) if Supabase is not configured or on error.
+ */
+export async function checkNameSubmitted(name) {
+  if (!supabase || !name) return false;
+  try {
+    const { data, error } = await supabase
+      .from(TABLE)
+      .select('id')
+      .ilike('examiner_name', name.trim())
+      .limit(1);
+    if (error) return false;
+    return data && data.length > 0;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Delete a single exam result by id.
  * Silently skips if Supabase is not configured.
  */

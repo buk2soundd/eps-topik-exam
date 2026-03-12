@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Volume2, Clock } from 'lucide-react';
-import { EXAM_SECTIONS, LISTENING_PLAY_TIMES, LISTENING_ANSWER_TIME_SEC } from '../data/examData';
-import { QUESTION_IMAGE_COMPONENTS } from './ExamImages';
+import { Volume2 } from 'lucide-react';
+import { EXAM_SECTIONS } from '../data/examData';
+import { QUESTION_IMAGE_COMPONENTS, IMAGE_OPTION_COMPONENTS } from './ExamImages';
 
 // ── Real-photo with SVG fallback ───────────────────────────────────────────
 // Shows a real image from imageUrl; if it fails to load, falls back to SVG.
@@ -53,98 +53,29 @@ const SoundWave = ({ active }) => (
 const ListeningPlayer = ({ phase, playCount, secondsLeft, onTapToPlay }) => {
   if (!phase || phase === 'done') return null;
 
-  // ── loading: auto-play in progress, show spinner + fallback tap button ───
-  if (phase === 'loading') {
+  // ── loading / playing: show big headphone icon ─────────────────────
+  if (phase === 'loading' || phase === 'playing') {
+    const isPlaying = phase === 'playing';
     return (
-      <div className="rounded-xl border-2 border-blue-300 bg-blue-50 p-5 mb-5 flex flex-col items-center gap-4">
-        {/* Spinner */}
-        <div className="flex items-center gap-3">
-          <div className="w-6 h-6 border-3 border-blue-400 border-t-transparent rounded-full animate-spin" />
-          <span className="text-blue-700 font-semibold text-sm">🎧 ກຳລັງໂຫລດສຽງ...</span>
+      <div className="flex flex-col items-center justify-center py-8 mb-5 gap-4">
+        <div className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-all
+          ${isPlaying ? 'bg-blue-600 animate-pulse' : 'bg-gray-300'}`}>
+          <Volume2 size={36} className="text-white" />
         </div>
-        {/* Fallback: only shows if auto-play was blocked by browser */}
-        <button
-          onClick={onTapToPlay}
-          className="text-xs text-blue-500 underline underline-offset-2 active:text-blue-700"
-        >
-          ສຽງບໍ່ອອກ? ກົດທີ່ນີ້
-        </button>
+        {isPlaying && <SoundWave active={true} />}
+        {phase === 'loading' && (
+          <button
+            onClick={onTapToPlay}
+            className="text-xs text-blue-400 underline underline-offset-2 mt-1"
+          >
+            ສຽງບໍ່ອອກ? ກົດທີ່ນີ້
+          </button>
+        )}
       </div>
     );
   }
 
-  // ── playing: sound wave + play counter ───────────────────────────────────
-  if (phase === 'playing') {
-    return (
-      <div className="rounded-xl border-2 border-blue-400 bg-blue-50 p-5 mb-5">
-        <div className="flex items-center justify-between">
-          {/* Left: icon + label */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow">
-              <Volume2 size={20} className="text-white" />
-            </div>
-            <div>
-              <div className="text-blue-800 font-bold text-sm">▶ ກຳລັງຫຼິ້ນ</div>
-              <div className="text-blue-500 text-xs mt-0.5">
-                ຄັ້ງທີ {playCount + 1} / {LISTENING_PLAY_TIMES}
-              </div>
-            </div>
-          </div>
-          {/* Right: animated bars */}
-          <SoundWave active={true} />
-        </div>
-      </div>
-    );
-  }
-
-  // ── pause: between plays ──────────────────────────────────────────────────
-  if (phase === 'pause') {
-    return (
-      <div className="rounded-xl border-2 border-gray-300 bg-gray-50 p-5 mb-5">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gray-400 flex items-center justify-center">
-            <Volume2 size={20} className="text-white" />
-          </div>
-          <div>
-            <div className="text-gray-600 font-bold text-sm">⏸ ລໍຖ້າສັ້ນໆ...</div>
-            <div className="text-gray-400 text-xs mt-0.5">
-              ກຳລັງຈະຫຼິ້ນຄັ້ງທີ {playCount + 1} / {LISTENING_PLAY_TIMES}
-            </div>
-          </div>
-          <SoundWave active={false} />
-        </div>
-      </div>
-    );
-  }
-
-  // ── answering: countdown timer, answer selection open ────────────────────
-  if (phase === 'answering') {
-    const pct = Math.max(0, Math.min(100, ((LISTENING_ANSWER_TIME_SEC - secondsLeft) / LISTENING_ANSWER_TIME_SEC) * 100));
-    const urgent = secondsLeft <= 5;
-    return (
-      <div className={`rounded-xl border-2 p-5 mb-5 transition-colors ${urgent ? 'border-red-400 bg-red-50' : 'border-amber-400 bg-amber-50'}`}>
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2">
-            <Clock size={18} className={`${urgent ? 'text-red-500' : 'text-amber-600'} animate-pulse`} />
-            <span className={`font-bold text-sm ${urgent ? 'text-red-700' : 'text-amber-800'}`}>
-              ✏️ ເລືອກຄຳຕອບ
-            </span>
-          </div>
-          <span className={`font-bold text-lg tabular-nums ${urgent ? 'text-red-600' : 'text-amber-700'}`}>
-            {secondsLeft}ວ
-          </span>
-        </div>
-        {/* Countdown bar */}
-        <div className="w-full bg-gray-200 rounded-full h-2">
-          <div
-            className={`h-2 rounded-full transition-all duration-1000 ${urgent ? 'bg-red-400' : 'bg-amber-400'}`}
-            style={{ width: `${100 - pct}%` }}
-          />
-        </div>
-      </div>
-    );
-  }
-
+  // pause / done — show nothing (answer options remain accessible)
   return null;
 };
 
@@ -168,37 +99,35 @@ const QuestionArea = ({
   }
 
   const isListening = question.section === EXAM_SECTIONS.LISTENING;
-  // Lock answer selection while audio is loading or playing (real exam behavior)
-  const answersLocked = isListening && (listeningPhase === 'loading' || listeningPhase === 'playing');
+  // For listening: answers are always selectable (no lock)
+  const answersLocked = false;
+  // Hide question text/label during all active listening phases (including pause & done)
+  const audioActive = isListening && listeningPhase !== null;
 
   return (
     <article
-      className="flex flex-col h-full overflow-y-auto p-6"
-      style={{ fontSize: `${fontSize}px` }}
+      className="flex flex-col h-full overflow-y-auto p-4 md:p-5"
+      style={{ fontSize: `${fontSize}px`, color: '#333', background: '#fff', fontFamily: 'Dotum, ሴ체, 굴림, Arial, sans-serif' }}
     >
       {/* Question number badge */}
-      <div className="mb-4 flex items-center gap-3">
-        <span className="inline-block border-2 border-gray-600 text-gray-700 font-bold px-4 py-1 text-base tracking-wider">
-          [ {question.id} ]
-        </span>
-        {isListening && (
-          <span className="text-xs bg-purple-100 text-purple-700 font-semibold px-3 py-1 rounded-full border border-purple-300">
-            🎧 ການຟັງ
+      <div className="mb-3 flex items-center gap-2">
+        <span className="font-bold text-[#1a3a6b] text-base">[{question.id}]</span>
+        {isListening ? (
+          <span
+            className="text-[10px] font-semibold px-2 py-0.5"
+            style={{ background: '#d7e4f2', color: '#1a3a6b', border: '1px solid #9ab8d4' }}
+          >
+            🎧 ຟັງ
           </span>
-        )}
-        {!isListening && (
-          <span className="text-xs bg-blue-100 text-blue-700 font-semibold px-3 py-1 rounded-full border border-blue-300">
-            📖 ການອ່ານ
+        ) : (
+          <span
+            className="text-[10px] font-semibold px-2 py-0.5"
+            style={{ background: '#e8eef8', color: '#1a3a6b', border: '1px solid #b0c8e4' }}
+          >
+            📖 ອ່ານ
           </span>
         )}
       </div>
-
-      {/* Group label */}
-      {question.groupLabel && (
-        <p className="text-gray-600 text-sm font-semibold mb-2 p-2 bg-gray-50 rounded border-l-4 border-gray-300 leading-relaxed">
-          {question.groupLabel}
-        </p>
-      )}
 
       {/* Listening auto-play status */}
       {isListening && (
@@ -210,10 +139,22 @@ const QuestionArea = ({
         />
       )}
 
-      {/* Question text */}
-      <p className="text-gray-800 font-semibold mb-5 leading-relaxed">
-        {question.questionText}
-      </p>
+      {/* Group label — hidden during audio playback for listening */}
+      {question.groupLabel && !audioActive && (
+        <p
+          className="text-sm mb-3 leading-relaxed"
+          style={{ border: '1px solid #333', padding: '9px', color: '#333' }}
+        >
+          {question.groupLabel}
+        </p>
+      )}
+
+      {/* Question text — hidden during audio playback for listening */}
+      {!audioActive && (
+        <p className="font-semibold mb-3 leading-relaxed" style={{ color: '#333' }}>
+          {question.questionText}
+        </p>
+      )}
 
       {/* Image — prefer real photo (imageUrl) over SVG, with fallback */}
       {(() => {
@@ -228,35 +169,73 @@ const QuestionArea = ({
         );
       })()}
 
-      {/* Answer options */}
-      <div className={`flex flex-col gap-3 mt-2 ${answersLocked ? 'pointer-events-none opacity-50' : ''}`}>
-        {question.options.map((option, idx) => {
-          const isSelected = selectedAnswer === idx;
-          return (
-            <button
-              key={idx}
-              onClick={() => !answersLocked && onSelectAnswer(question.id, idx)}
-              disabled={answersLocked}
-              className={`flex items-start gap-3 w-full text-left px-4 py-3 rounded-lg border-2 transition-all
-                ${
-                  isSelected
-                    ? 'border-[#1a3a6b] bg-blue-50 text-[#1a3a6b] font-semibold shadow-sm'
-                    : 'border-gray-200 bg-white text-gray-800 hover:border-gray-400 hover:bg-gray-50'
-                }
-              `}
-            >
-              <span className="shrink-0 text-lg leading-snug">{OPTION_SYMBOLS[idx]}</span>
-              <span className="leading-relaxed">{option.replace(/^[①②③④]\s?/, '')}</span>
-            </button>
-          );
-        })}
-      </div>
-
-      {answersLocked && (
-        <p className="mt-3 text-center text-xs text-blue-500 font-medium">
-          🔒 ສາມາດເລືອກຄຳຕອບໄດ້ຫຼັງຈາກຫຼິ້ນສຽງຈົບ
-        </p>
+      {/* Answer options: image-option 2×2 grid OR normal text list */}
+      {(question.imageOptions?.length === 4 || question.imageOptionUrls?.length === 4) ? (
+        <div className="grid grid-cols-2 gap-3 mt-2">
+          {(question.imageOptionUrls || question.imageOptions).map((imgOrKey, idx) => {
+            const isUrl = !!question.imageOptionUrls;
+            const ImgComp = !isUrl ? IMAGE_OPTION_COMPONENTS[imgOrKey] : null;
+            const isSelected = selectedAnswer === idx;
+            return (
+              <button
+                key={idx}
+                onClick={() => onSelectAnswer(question.id, idx)}
+                className="flex flex-col items-center transition-all p-1"
+                style={{
+                  border: isSelected ? '2px solid #1a3a6b' : '2px solid #ccc',
+                  background: isSelected ? '#d7e4f2' : '#fff',
+                }}
+              >
+                <div className="w-full">
+                  {isUrl ? (
+                    <img
+                      src={imgOrKey}
+                      alt={`선택지 ${OPTION_SYMBOLS[idx]}`}
+                      className="w-full rounded"
+                      style={{ maxHeight: '130px', objectFit: 'contain', background: '#f8f8f8' }}
+                    />
+                  ) : ImgComp ? <ImgComp /> : <div className="h-20 bg-gray-100 rounded"/>}
+                </div>
+                <span className={`mt-1 text-sm font-semibold ${
+                  isSelected ? 'text-[#1a3a6b]' : 'text-[#333]'
+                }`}>
+                  {OPTION_SYMBOLS[idx]}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="mt-3" style={{ border: '1px solid #ccc' }}>
+          {question.options.map((option, idx) => {
+            const isSelected = selectedAnswer === idx;
+            return (
+              <button
+                key={idx}
+                onClick={() => onSelectAnswer(question.id, idx)}
+                className="flex items-center w-full text-left px-3 py-3 transition-colors"
+                style={{
+                  borderBottom: idx < question.options.length - 1 ? '1px solid #e0e0e0' : 'none',
+                  background: isSelected ? '#d7e4f2' : '#fff',
+                  color: isSelected ? '#1a3a6b' : '#333',
+                  fontWeight: isSelected ? '600' : 'normal',
+                }}
+              >
+                <span className="shrink-0 w-7 text-base leading-none">{OPTION_SYMBOLS[idx]}</span>
+                {isSelected && (
+                  <span
+                    className="w-2 h-2 rounded-full mr-2 shrink-0"
+                    style={{ background: '#1a3a6b' }}
+                  />
+                )}
+                <span className="leading-relaxed">{option.replace(/^[①②③④]\s?/, '')}</span>
+              </button>
+            );
+          })}
+        </div>
       )}
+
+
     </article>
   );
 };

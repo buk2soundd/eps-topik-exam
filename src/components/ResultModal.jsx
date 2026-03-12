@@ -1,6 +1,7 @@
 import React from 'react';
 import { X } from 'lucide-react';
 import { EXAM_SECTIONS, TOTAL_QUESTIONS, POINTS_PER_QUESTION } from '../data/examData';
+import { getSettings } from '../lib/settings';
 
 const OPTION_SYMBOLS = ['①', '②', '③', '④'];
 
@@ -138,19 +139,21 @@ const ResultModal = ({ answers, examQuestions, setNumber, onClose, onRestart }) 
               </div>
             </div>
 
-            {/* Pass/Fail */}
-            <div
-              className={`w-full text-center rounded-lg py-2 font-bold text-sm tracking-wide ${
-                totalScore * POINTS_PER_QUESTION >= 120
-                  ? 'bg-green-100 text-green-700'
-                  : 'bg-red-100 text-red-700'
-              }`}
-            >
-              {totalScore * POINTS_PER_QUESTION >= 120 ? '✓ ຜ່ານ' : '✗ ບໍ່ຜ່ານ'}
-              <div className="text-xs font-normal text-gray-500 mt-0.5">
-                (ຜ່ານຕ່ຳສຸດ: 120 ຄະແນນ)
-              </div>
-            </div>
+            {/* Pass/Fail — uses runtime passScore from settings */}
+            {(() => {
+              const passScore = getSettings().passScore;
+              const totalPoints = totalScore * POINTS_PER_QUESTION;
+              return (
+                <div className={`w-full text-center rounded-lg py-2 font-bold text-sm tracking-wide ${
+                  totalPoints >= passScore ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                }`}>
+                  {totalPoints >= passScore ? '✓ ຜ່ານ' : '✗ ບໍ່ຜ່ານ'}
+                  <div className="text-xs font-normal text-gray-500 mt-0.5">
+                    (ຜ່ານຕ່ຳສຸດ: {passScore} ຄະແນນ)
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* Restart */}
             <button

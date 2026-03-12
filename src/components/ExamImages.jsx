@@ -1050,6 +1050,451 @@ export const ImageWorkSeqInd = () => (
   </svg>
 );
 
+// ═══════════════════════════════════════════════════════════════════════════
+// IMAGE-OPTION COMPONENTS  (used in imageOptions[] on questions)
+// Each exports 4 small SVG panels — one per answer choice ①②③④
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ── R89-OPT: Agriculture PPE — 4 items (helmet / goggles / boots / gloves)
+export const AgriPPE_helmet = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f0f9ff"/>
+    {/* Hard hat */}
+    <ellipse cx="60" cy="52" rx="36" ry="10" fill="#facc15"/>
+    <path d="M24 52 Q24 28 60 24 Q96 28 96 52 Z" fill="#fbbf24"/>
+    <rect x="20" y="52" width="80" height="6" rx="3" fill="#f59e0b"/>
+    {/* brim highlight */}
+    <ellipse cx="60" cy="52" rx="36" ry="4" fill="none" stroke="#92400e" strokeWidth="1.5"/>
+    <text x="60" y="84" textAnchor="middle" fontSize="11" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">안전모</text>
+    <text x="60" y="96" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">hard hat</text>
+  </svg>
+);
+export const AgriPPE_goggles = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f0fdf4"/>
+    {/* Goggles strap */}
+    <rect x="10" y="38" width="100" height="22" rx="11" fill="#d1d5db"/>
+    {/* Left lens */}
+    <rect x="16" y="40" width="36" height="18" rx="8" fill="#bfdbfe" stroke="#1d4ed8" strokeWidth="2"/>
+    {/* Right lens */}
+    <rect x="68" y="40" width="36" height="18" rx="8" fill="#bfdbfe" stroke="#1d4ed8" strokeWidth="2"/>
+    {/* Nose bridge */}
+    <rect x="52" y="45" width="16" height="6" rx="3" fill="#9ca3af"/>
+    <text x="60" y="78" textAnchor="middle" fontSize="11" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">보안경</text>
+    <text x="60" y="90" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">safety goggles</text>
+  </svg>
+);
+export const AgriPPE_boots = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#fefce8"/>
+    {/* Boot outline */}
+    <path d="M30 72 L30 32 Q30 22 42 22 L56 22 Q66 22 66 32 L66 58 L82 58 Q90 58 90 66 L90 72 Z" fill="#44403c" stroke="#1c1917" strokeWidth="1.5"/>
+    {/* Boot highlight */}
+    <path d="M34 34 Q34 26 44 26 L54 26 Q60 26 60 34 L60 40" fill="none" stroke="#78716c" strokeWidth="2"/>
+    {/* Sole */}
+    <rect x="28" y="70" width="64" height="7" rx="3" fill="#1c1917"/>
+    <text x="60" y="88" textAnchor="middle" fontSize="11" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">안전화</text>
+    <text x="60" y="98" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">safety boots</text>
+  </svg>
+);
+export const AgriPPE_gloves = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#fff7ed"/>
+    {/* Glove body */}
+    <path d="M30 70 L30 46 Q30 40 36 40 L40 40 L40 28 Q40 22 46 22 Q52 22 52 28 L52 40 L56 40 L56 30 Q56 24 62 24 Q68 24 68 30 L68 40 L72 40 L72 34 Q72 28 78 28 Q84 28 84 34 L84 44 L88 44 Q94 44 94 52 L94 70 Z" fill="#d97706"/>
+    <text x="60" y="84" textAnchor="middle" fontSize="11" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">보호 장갑</text>
+    <text x="60" y="96" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">protective gloves</text>
+  </svg>
+);
+
+// ── R90-OPT: Industry tools — drill / wrench / electric drill / angle grinder
+export const IndTool_hammer = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f8fafc"/>
+    {/* Handle */}
+    <rect x="54" y="48" width="14" height="44" rx="5" fill="#92400e"/>
+    {/* Head */}
+    <rect x="28" y="26" width="64" height="26" rx="6" fill="#374151"/>
+    {/* Head highlight */}
+    <rect x="30" y="28" width="60" height="5" rx="2" fill="#6b7280"/>
+    <text x="60" y="98" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">해머(망치)</text>
+  </svg>
+);
+export const IndTool_wrench = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f8fafc"/>
+    {/* Wrench body */}
+    <rect x="28" y="44" width="64" height="14" rx="7" fill="#374151"/>
+    {/* Open end */}
+    <path d="M28 44 Q20 44 18 51 Q20 58 28 58" fill="none" stroke="#374151" strokeWidth="5"/>
+    <path d="M22 46 L14 46 L14 56 L22 56" fill="#374151"/>
+    {/* Box end */}
+    <rect x="84" y="38" width="18" height="26" rx="5" fill="#374151"/>
+    <rect x="88" y="44" width="10" height="14" rx="3" fill="#6b7280"/>
+    <text x="60" y="76" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">스패너(렌치)</text>
+    <text x="60" y="88" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">wrench/spanner</text>
+  </svg>
+);
+export const IndTool_drillBit = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f8fafc"/>
+    {/* Drill body */}
+    <rect x="20" y="38" width="56" height="26" rx="8" fill="#1d4ed8"/>
+    {/* Drill bit */}
+    <rect x="76" y="47" width="26" height="8" rx="2" fill="#9ca3af"/>
+    <polygon points="102,47 110,51 102,55" fill="#6b7280"/>
+    {/* Trigger */}
+    <rect x="36" y="62" width="12" height="16" rx="4" fill="#1e40af"/>
+    {/* Chuck */}
+    <rect x="72" y="44" width="8" height="14" rx="3" fill="#374151"/>
+    <text x="60" y="90" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">전동 드릴</text>
+    <text x="60" y="100" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">electric drill</text>
+  </svg>
+);
+export const IndTool_angleGrinder = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f8fafc"/>
+    {/* Body */}
+    <rect x="18" y="34" width="50" height="28" rx="8" fill="#374151"/>
+    {/* Guard */}
+    <path d="M68 42 Q86 42 86 58 Q86 72 68 72 L68 60 Q76 60 76 52 Q76 44 68 44 Z" fill="#6b7280"/>
+    {/* Wheel */}
+    <circle cx="74" cy="57" r="14" fill="#d1d5db" stroke="#9ca3af" strokeWidth="2"/>
+    <circle cx="74" cy="57" r="4" fill="#374151"/>
+    {/* Sparks */}
+    {[[82,68],[90,72],[86,62]].map(([x,y],i)=>(
+      <line key={i} x1="82" y1="64" x2={x} y2={y} stroke="#fbbf24" strokeWidth="2"/>
+    ))}
+    <text x="52" y="78" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">그라인더</text>
+    <text x="52" y="90" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">angle grinder</text>
+  </svg>
+);
+
+// ── R91-OPT: Agri actions — seeding / watering / harvesting / spraying pesticide
+export const AgriAction_seeding = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f0fdf4"/>
+    {/* Ground */}
+    <rect x="0" y="68" width="120" height="32" fill="#92400e"/>
+    {/* Furrow lines */}
+    {[20,50,80].map(x=><ellipse key={x} cx={x} cy="68" rx="16" ry="4" fill="#78350f"/>)}
+    {/* Seeds */}
+    {[20,50,80].map(x=><ellipse key={x+'s'} cx={x} cy="64" rx="5" ry="4" fill="#d97706"/>)}
+    {/* Hand scattering */}
+    <path d="M88 28 Q100 26 104 38 Q100 40 96 36 Q92 42 88 44" fill="#fde68a" stroke="#d97706" strokeWidth="1.5"/>
+    {/* Seed dots in air */}
+    {[[70,42],[75,36],[80,45],[85,30]].map(([x,y],i)=>(
+      <circle key={i} cx={x} cy={y} r="3" fill="#d97706"/>
+    ))}
+    <text x="60" y="88" textAnchor="middle" fontSize="11" fontFamily="Arial" fill="#14532d" fontWeight="bold">파종</text>
+    <text x="60" y="99" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">seeding</text>
+  </svg>
+);
+export const AgriAction_watering = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#eff6ff"/>
+    {/* Watering can body */}
+    <ellipse cx="46" cy="52" rx="24" ry="18" fill="#3b82f6"/>
+    <rect x="22" y="52" width="48" height="14" rx="0" fill="#2563eb"/>
+    {/* Spout */}
+    <path d="M70 46 Q90 40 94 48" fill="none" stroke="#1d4ed8" strokeWidth="5" strokeLinecap="round"/>
+    <path d="M94 48 L88 52 L84 46 Z" fill="#1d4ed8"/>
+    {/* Handle */}
+    <path d="M34 36 Q24 28 26 46" fill="none" stroke="#1d4ed8" strokeWidth="4" strokeLinecap="round"/>
+    {/* Water drops */}
+    {[[92,56],[97,62],[90,64],[86,58]].map(([x,y],i)=>(
+      <ellipse key={i} cx={x} cy={y} rx="2.5" ry="3.5" fill="#93c5fd"/>
+    ))}
+    {/* Plant */}
+    <rect x="56" y="68" width="6" height="16" fill="#16a34a"/>
+    <ellipse cx="59" cy="66" rx="10" ry="8" fill="#22c55e"/>
+    <text x="60" y="92" textAnchor="middle" fontSize="11" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">물주기</text>
+    <text x="60" y="100" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">watering</text>
+  </svg>
+);
+export const AgriAction_harvesting = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#fefce8"/>
+    {/* Rice stalks */}
+    {[22,40,58,76,94].map(x=>(
+      <g key={x}>
+        <rect x={x-2} y="44" width="4" height="30" fill="#92400e"/>
+        <ellipse cx={x} cy="40" rx="8" ry="10" fill="#ca8a04"/>
+        {/* grain dots */}
+        {[-6,-2,2,6].map(dx=><circle key={dx} cx={x+dx} cy={38+Math.abs(dx)} r="2.5" fill="#fbbf24"/>)}
+      </g>
+    ))}
+    {/* Ground */}
+    <rect x="0" y="72" width="120" height="28" fill="#92400e"/>
+    {/* Sickle */}
+    <path d="M96 56 Q108 48 108 60 Q108 70 96 66" fill="none" stroke="#374151" strokeWidth="3.5" strokeLinecap="round"/>
+    <rect x="96" y="62" width="14" height="4" rx="2" fill="#92400e"/>
+    <text x="60" y="90" textAnchor="middle" fontSize="11" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">수확</text>
+    <text x="60" y="100" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">harvesting</text>
+  </svg>
+);
+export const AgriAction_pesticide = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f0fdf4"/>
+    {/* Person in PPE */}
+    <circle cx="60" cy="22" r="10" fill="#fde68a"/>
+    {/* Protective suit */}
+    <path d="M46 38 L74 38 L78 72 L62 74 L62 74 L58 74 L42 72 Z" fill="#6ee7b7"/>
+    {/* Mask */}
+    <rect x="50" y="18" width="20" height="10" rx="5" fill="#4ade80" stroke="#16a34a" strokeWidth="1.5"/>
+    {/* Sprayer tank on back */}
+    <rect x="76" y="38" width="16" height="26" rx="4" fill="#374151"/>
+    {/* Hose */}
+    <path d="M76 50 Q70 48 66 60 Q62 68 58 66" fill="none" stroke="#374151" strokeWidth="3"/>
+    {/* Nozzle spray */}
+    {[[50,68],[46,73],[42,68],[54,74]].map(([x,y],i)=>(
+      <circle key={i} cx={x} cy={y} r="2" fill="#86efac" opacity="0.8"/>
+    ))}
+    <text x="60" y="88" textAnchor="middle" fontSize="11" fontFamily="Arial" fill="#14532d" fontWeight="bold">농약 살포</text>
+    <text x="60" y="99" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">pesticide spray</text>
+  </svg>
+);
+
+// ── R92-OPT: Industry safety signs — 4 signs (red circle ban / yellow triangle / blue circle mandatory / green rectangle)
+export const SafetySign_redBan = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#fff"/>
+    <circle cx="60" cy="46" r="32" fill="white" stroke="#dc2626" strokeWidth="7"/>
+    <line x1="38" y1="24" x2="82" y2="68" stroke="#dc2626" strokeWidth="7" strokeLinecap="round"/>
+    {/* No smoking icon inside */}
+    <circle cx="55" cy="44" r="8" fill="#374151"/>
+    <rect x="62" y="41" width="12" height="4" rx="2" fill="#374151"/>
+    <text x="60" y="88" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#dc2626" fontWeight="bold">금지 표지</text>
+    <text x="60" y="99" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">prohibition</text>
+  </svg>
+);
+export const SafetySign_yellowWarning = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#fff"/>
+    <polygon points="60,14 102,80 18,80" fill="#fef08a" stroke="#ca8a04" strokeWidth="5"/>
+    <text x="60" y="66" textAnchor="middle" fontSize="32" fontWeight="bold" fill="#92400e" fontFamily="Arial">!</text>
+    <text x="60" y="88" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#92400e" fontWeight="bold">경고 표지</text>
+    <text x="60" y="99" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">warning</text>
+  </svg>
+);
+export const SafetySign_blueMandatory = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#fff"/>
+    <circle cx="60" cy="44" r="32" fill="#1d4ed8"/>
+    {/* Hard hat icon */}
+    <ellipse cx="60" cy="52" rx="18" ry="5" fill="white"/>
+    <path d="M42 52 Q42 34 60 30 Q78 34 78 52 Z" fill="white"/>
+    <text x="60" y="88" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#1d4ed8" fontWeight="bold">지시 표지</text>
+    <text x="60" y="99" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">mandatory</text>
+  </svg>
+);
+export const SafetySign_greenInfo = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#fff"/>
+    <rect x="14" y="22" width="92" height="52" rx="6" fill="#16a34a"/>
+    {/* Exit arrow */}
+    <rect x="28" y="36" width="24" height="24" rx="2" fill="white"/>
+    <polygon points="52,46 52,52 70,48" fill="white"/>
+    <rect x="70" y="42" width="18" height="14" rx="2" fill="white"/>
+    <text x="60" y="86" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#16a34a" fontWeight="bold">안내 표지</text>
+    <text x="60" y="97" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">information</text>
+  </svg>
+);
+
+// ── L-OPT: Listening image options — 4 workplace scenes
+// L65/L66 AGRI: greenhouse / outdoor field / livestock barn / fruit orchard
+export const AgriScene_greenhouse = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#ecfdf5"/>
+    {/* Frame */}
+    <path d="M10 80 L10 40 L60 12 L110 40 L110 80 Z" fill="none" stroke="#6ee7b7" strokeWidth="3"/>
+    {/* Panels */}
+    <path d="M10 40 L60 12 L110 40" fill="#bbf7d0" opacity="0.5"/>
+    {/* Vertical supports */}
+    {[35,60,85].map(x=><line key={x} x1={x} y1={x<60?12+(x-10)*0.56:12+(110-x)*0.56} x2={x} y2="80" stroke="#6ee7b7" strokeWidth="1.5"/>)}
+    {/* Horizontal rails */}
+    <line x1="10" y1="58" x2="110" y2="58" stroke="#6ee7b7" strokeWidth="1.5"/>
+    {/* Plants inside */}
+    {[22,44,66,88].map(x=>(
+      <g key={x}>
+        <rect x={x-2} y="64" width="4" height="16" fill="#16a34a"/>
+        <ellipse cx={x} cy="62" rx="9" ry="7" fill="#22c55e"/>
+      </g>
+    ))}
+    <text x="60" y="94" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#14532d" fontWeight="bold">비닐하우스</text>
+  </svg>
+);
+export const AgriScene_outdoorField = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#fefce8"/>
+    {/* Sky */}
+    <rect x="0" y="0" width="120" height="55" fill="#bfdbfe"/>
+    {/* Sun */}
+    <circle cx="90" cy="18" r="12" fill="#fbbf24"/>
+    {/* Ground */}
+    <rect x="0" y="55" width="120" height="45" fill="#92400e"/>
+    {/* Crop rows */}
+    {[0,1,2,3].map(row=>(
+      <g key={row}>
+        {[10,32,54,76,98].map(x=>(
+          <g key={x}>
+            <rect x={x-2} y={58+row*8} width="3" height="7" fill="#16a34a"/>
+            <ellipse cx={x} cy={56+row*8} rx="6" ry="4" fill="#22c55e"/>
+          </g>
+        ))}
+      </g>
+    ))}
+    <text x="60" y="96" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#92400e" fontWeight="bold">야외 밭 작업</text>
+  </svg>
+);
+export const AgriScene_livestock = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#fef9c3"/>
+    {/* Barn */}
+    <rect x="14" y="40" width="92" height="44" fill="#d97706"/>
+    <polygon points="14,40 60,12 106,40" fill="#b45309"/>
+    {/* Barn door */}
+    <rect x="46" y="60" width="28" height="24" rx="2" fill="#92400e"/>
+    {/* Window */}
+    <rect x="20" y="50" width="18" height="14" rx="2" fill="#fef08a" stroke="#92400e" strokeWidth="1.5"/>
+    <line x1="29" y1="50" x2="29" y2="64" stroke="#92400e" strokeWidth="1"/>
+    <line x1="20" y1="57" x2="38" y2="57" stroke="#92400e" strokeWidth="1"/>
+    {/* Cow silhouette */}
+    <ellipse cx="84" cy="62" rx="14" ry="9" fill="#f5f5f4"/>
+    <ellipse cx="86" cy="54" rx="8" ry="6" fill="#f5f5f4"/>
+    {/* Legs */}
+    {[74,80,88,94].map(x=><rect key={x} x={x} y="70" width="4" height="12" rx="2" fill="#d6d3d1"/>)}
+    <text x="60" y="94" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#92400e" fontWeight="bold">축사(가축 농장)</text>
+  </svg>
+);
+export const AgriScene_orchard = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f0fdf4"/>
+    {/* Sky */}
+    <rect x="0" y="0" width="120" height="50" fill="#dbeafe"/>
+    {/* Ground */}
+    <rect x="0" y="72" width="120" height="28" fill="#92400e"/>
+    {/* Trees */}
+    {[22,58,94].map(x=>(
+      <g key={x}>
+        <rect x={x-3} y="52" width="6" height="22" fill="#92400e"/>
+        <ellipse cx={x} cy="44" rx="18" ry="16" fill="#16a34a"/>
+        {/* Fruits */}
+        {[[-10,46],[-4,36],[6,40],[12,50],[-8,56],[4,54]].map(([dx,dy],i)=>(
+          <circle key={i} cx={x+dx} cy={dy} r="4" fill="#dc2626"/>
+        ))}
+      </g>
+    ))}
+    <text x="60" y="94" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#14532d" fontWeight="bold">과수원(사과 과수원)</text>
+  </svg>
+);
+
+// ── L-OPT: Industry scenes — welding / machine assembly / conveyor belt / forklift
+export const IndScene_welding = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#1e1b18"/>
+    {/* Work bench */}
+    <rect x="10" y="62" width="100" height="8" rx="2" fill="#44403c"/>
+    {/* Metal piece being welded */}
+    <rect x="30" y="54" width="60" height="8" rx="2" fill="#6b7280"/>
+    {/* Welder silhouette */}
+    <circle cx="62" cy="30" r="10" fill="#57534e"/>
+    {/* Welding mask */}
+    <rect x="54" y="28" width="16" height="12" rx="3" fill="#1c1917"/>
+    <rect x="56" y="30" width="12" height="6" rx="1" fill="#fbbf24" opacity="0.6"/>
+    <rect x="42" y="40" width="40" height="22" rx="4" fill="#57534e"/>
+    {/* Arms */}
+    <rect x="30" y="44" width="14" height="8" rx="4" fill="#57534e"/>
+    <rect x="76" y="44" width="14" height="8" rx="4" fill="#57534e"/>
+    {/* Torch & sparks */}
+    <rect x="40" y="52" width="16" height="4" rx="2" fill="#374151"/>
+    {[[56,50],[60,46],[64,52],[52,46],[68,48]].map(([x,y],i)=>(
+      <line key={i} x1="56" y1="52" x2={x} y2={y} stroke="#fbbf24" strokeWidth="1.5"/>
+    ))}
+    {/* Welding flash */}
+    <circle cx="56" cy="52" r="4" fill="#fef08a" opacity="0.8"/>
+    <text x="60" y="86" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="white" fontWeight="bold">용접 작업</text>
+    <text x="60" y="97" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#9ca3af">welding</text>
+  </svg>
+);
+export const IndScene_assembly = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f8fafc"/>
+    {/* Work table */}
+    <rect x="10" y="64" width="100" height="8" rx="2" fill="#d1d5db"/>
+    {/* Machine part being assembled */}
+    <rect x="28" y="44" width="64" height="20" rx="4" fill="#374151"/>
+    {/* Bolts */}
+    {[36,52,68,84].map(x=>(
+      <g key={x}>
+        <circle cx={x} cy="54" r="5" fill="#6b7280"/>
+        <circle cx={x} cy="54" r="2" fill="#9ca3af"/>
+      </g>
+    ))}
+    {/* Worker hands */}
+    <path d="M20 48 Q14 42 14 54 Q14 60 22 58" fill="#fde68a" stroke="#d97706" strokeWidth="1.5"/>
+    <path d="M100 48 Q106 42 106 54 Q106 60 98 58" fill="#fde68a" stroke="#d97706" strokeWidth="1.5"/>
+    {/* Screwdriver */}
+    <rect x="94" y="38" width="4" height="22" rx="2" fill="#374151"/>
+    <rect x="92" y="36" width="8" height="6" rx="1" fill="#d97706"/>
+    <text x="60" y="84" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">조립 작업</text>
+    <text x="60" y="95" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">assembly</text>
+  </svg>
+);
+export const IndScene_conveyor = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f8fafc"/>
+    {/* Belt frame */}
+    <rect x="8" y="50" width="104" height="18" rx="4" fill="#374151"/>
+    {/* Belt surface */}
+    <rect x="8" y="52" width="104" height="14" rx="0" fill="#6b7280"/>
+    {/* Belt stripes */}
+    {[0,1,2,3,4,5,6].map(i=>(
+      <rect key={i} x={8+i*16} y="52" width="8" height="14" fill="#4b5563" opacity="0.5"/>
+    ))}
+    {/* End rollers */}
+    <circle cx="12" cy="59" r="10" fill="#374151" stroke="#111827" strokeWidth="2"/>
+    <circle cx="108" cy="59" r="10" fill="#374151" stroke="#111827" strokeWidth="2"/>
+    <circle cx="12" cy="59" r="4" fill="#6b7280"/>
+    <circle cx="108" cy="59" r="4" fill="#6b7280"/>
+    {/* Products on belt */}
+    {[30,55,80].map(x=>(
+      <rect key={x} x={x} y="46" width="18" height="12" rx="2" fill="#fbbf24" stroke="#d97706" strokeWidth="1"/>
+    ))}
+    <text x="60" y="84" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">컨베이어 벨트</text>
+    <text x="60" y="95" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">conveyor belt</text>
+  </svg>
+);
+export const IndScene_forklift = () => (
+  <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" className="w-full rounded border border-gray-200 bg-white">
+    <rect width="120" height="100" fill="#f8fafc"/>
+    {/* Ground */}
+    <rect x="0" y="78" width="120" height="22" fill="#e5e7eb"/>
+    {/* Forklift body */}
+    <rect x="14" y="50" width="52" height="28" rx="4" fill="#fbbf24"/>
+    {/* Cab */}
+    <rect x="36" y="36" width="30" height="18" rx="3" fill="#fbbf24"/>
+    {/* Window */}
+    <rect x="40" y="38" width="22" height="12" rx="2" fill="#bfdbfe"/>
+    {/* Driver */}
+    <circle cx="52" cy="36" r="7" fill="#fde68a"/>
+    {/* Mast */}
+    <rect x="8" y="18" width="6" height="62" rx="2" fill="#374151"/>
+    {/* Forks */}
+    <rect x="2" y="70" width="34" height="5" rx="1" fill="#374151"/>
+    <rect x="2" y="76" width="34" height="5" rx="1" fill="#374151"/>
+    {/* Load on forks */}
+    <rect x="4" y="52" width="30" height="18" rx="2" fill="#d97706"/>
+    {/* Wheels */}
+    <circle cx="28" cy="78" r="8" fill="#1f2937" stroke="#111827" strokeWidth="1.5"/>
+    <circle cx="60" cy="78" r="8" fill="#1f2937" stroke="#111827" strokeWidth="1.5"/>
+    <circle cx="28" cy="78" r="3" fill="#6b7280"/>
+    <circle cx="60" cy="78" r="3" fill="#6b7280"/>
+    <text x="72" y="60" textAnchor="middle" fontSize="10" fontFamily="Arial" fill="#1e3a5f" fontWeight="bold">지게차</text>
+    <text x="74" y="72" textAnchor="middle" fontSize="9" fontFamily="Arial" fill="#555">forklift</text>
+  </svg>
+);
+
 // ── Map: bankId → image component ─────────────────────────────────────────
 export const QUESTION_IMAGE_COMPONENTS = {
   // General
@@ -1072,4 +1517,32 @@ export const QUESTION_IMAGE_COMPONENTS = {
   R34: BlankBohoJangbi,      // 보호 장비: ___
   R35: ImageWorkSeqInd,      // 작업 순서 A-B-C
   R36: ImageSpanner,         // 스패너  그림과 관계있는 내용
+};
+
+// ── Map: imageOption key → small SVG panel component ──────────────────────
+export const IMAGE_OPTION_COMPONENTS = {
+  AgriPPE_helmet,
+  AgriPPE_goggles,
+  AgriPPE_boots,
+  AgriPPE_gloves,
+  IndTool_hammer,
+  IndTool_wrench,
+  IndTool_drillBit,
+  IndTool_angleGrinder,
+  AgriAction_seeding,
+  AgriAction_watering,
+  AgriAction_harvesting,
+  AgriAction_pesticide,
+  SafetySign_redBan,
+  SafetySign_yellowWarning,
+  SafetySign_blueMandatory,
+  SafetySign_greenInfo,
+  AgriScene_greenhouse,
+  AgriScene_outdoorField,
+  AgriScene_livestock,
+  AgriScene_orchard,
+  IndScene_welding,
+  IndScene_assembly,
+  IndScene_conveyor,
+  IndScene_forklift,
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClipboardList, Clock, BookOpen, Headphones, ChevronRight, Tractor, Factory, LayoutGrid, User, Shuffle } from 'lucide-react';
+import { ClipboardList, Clock, BookOpen, Headphones, ChevronRight, Tractor, Factory, LayoutGrid, User, Shuffle, GraduationCap, Wrench, BookMarked } from 'lucide-react';
 import { EXAM_CATEGORIES } from '../data/examData';
 
 const SET_COLORS = [
@@ -44,7 +44,7 @@ const CATEGORY_OPTIONS = [
   },
 ];
 
-const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examinerName, onNameChange, onStart, onReshuffle, isBlocked, blockLoading }) => {
+const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examinerName, onNameChange, onStart, onReshuffle, isBlocked, blockLoading, onOpenVocab, onOpenIndustry, onOpenGrammar, onOpenStandardVocab }) => {
   const cat = CATEGORY_OPTIONS.find((c) => c.key === selectedCategory) || CATEGORY_OPTIONS[0];
   const canStart = examinerName.trim().length >= 2 && !isBlocked && !blockLoading;
   // pick color from seed: colorIdx 0-9 based on last digit of seed
@@ -55,8 +55,8 @@ const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examiner
   const setCode = String(assignedSet).padStart(6, '0');
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-100 to-blue-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden">
+    <div className="min-h-screen bg-linear-to-br from-slate-100 to-blue-50 flex items-start justify-center p-3 sm:p-4 sm:items-center">
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden my-2 sm:my-0">
 
         {/* Header */}
         <div className="bg-[#1a3a6b] px-8 py-6 text-white text-center">
@@ -208,6 +208,42 @@ const StartScreen = ({ assignedSet, selectedCategory, onCategoryChange, examiner
           <p className="text-center text-xs text-gray-400 mt-2">
             시작 버튼을 누르면 타이머가 작동합니다
           </p>
+
+          {/* Vocab Button */}
+          <button
+            onClick={onOpenVocab}
+            className="w-full mt-3 flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-[#1a3a6b] text-[#1a3a6b] font-bold text-sm hover:bg-blue-50 transition-colors active:scale-95"
+          >
+            <GraduationCap size={18} />
+            ຄຳສັບ EPS-TOPIK / 어휘 학습
+          </button>
+
+          {/* Industry Exam Button */}
+          <button
+            onClick={onOpenIndustry}
+            className="w-full mt-2 flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-orange-500 text-orange-600 font-bold text-sm hover:bg-orange-50 transition-colors active:scale-95"
+          >
+            <Wrench size={18} />
+            ຂໍ້ສອບສາຂາອຸດສາຫາກຳ / 특별시험
+          </button>
+
+          {/* Grammar Button */}
+          <button
+            onClick={onOpenGrammar}
+            className="w-full mt-2 flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-purple-500 text-purple-600 font-bold text-sm hover:bg-purple-50 transition-colors active:scale-95"
+          >
+            <BookMarked size={18} />
+            ໄວຍາກອນ EPS-TOPIK / 문법 패턴
+          </button>
+
+          {/* Standard Textbook Vocab Button */}
+          <button
+            onClick={onOpenStandardVocab}
+            className="w-full mt-2 flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-teal-500 text-teal-600 font-bold text-sm hover:bg-teal-50 transition-colors active:scale-95"
+          >
+            <BookOpen size={18} />
+            ຄຳສັບ 표준교재 1권 / 어휘 1,146 ຄຳ
+          </button>
         </div>
 
       </div>

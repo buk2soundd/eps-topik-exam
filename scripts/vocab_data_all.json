@@ -1,0 +1,3201 @@
+[
+  {
+    "chapter": 31,
+    "title": "날씨·기후 / ດິນຟ້າອາກາດ",
+    "words": [
+      {
+        "word": "기온",
+        "meaning": "ອຸນຫະພູມ",
+        "img": "/images/vocab/ch31_00.jpg"
+      },
+      {
+        "word": "최고기온",
+        "meaning": "ອຸນຫະພູມສູງສຸດ",
+        "img": "/images/vocab/ch31_01.jpg"
+      },
+      {
+        "word": "영상",
+        "meaning": "ສູງກ່ວາສູນ",
+        "img": "/images/vocab/ch31_02.jpg"
+      },
+      {
+        "word": "영하",
+        "meaning": "ຕໍ່າກ່ວາສູນລົງມາ(ອາກາດຕິດລົບ)",
+        "img": "/images/vocab/ch31_03.jpg"
+      },
+      {
+        "word": "습도",
+        "meaning": "ລະດັບຄວາມຊຸ່ມ",
+        "img": "/images/vocab/ch31_04.jpg"
+      },
+      {
+        "word": "기온이 올라가다",
+        "meaning": "ອຸນຫະພູມສູງ",
+        "img": "/images/vocab/ch31_05.jpg"
+      },
+      {
+        "word": "최저기온",
+        "meaning": "ອຸນຫະພູມຕໍ່າສຸດ",
+        "img": "/images/vocab/ch31_06.jpg"
+      },
+      {
+        "word": "기온이 높다",
+        "meaning": "ອຸນຫະພູມສູງ",
+        "img": "/images/vocab/ch31_07.jpg"
+      },
+      {
+        "word": "기온이 낮다",
+        "meaning": "ອຸນຫະພູມຕໍ່າ",
+        "img": "/images/vocab/ch31_08.jpg"
+      },
+      {
+        "word": "기온이 내려가다",
+        "meaning": "ອຸນຫະພູມຕໍ່າລົງ",
+        "img": "/images/vocab/ch31_09.jpg"
+      },
+      {
+        "word": "습하다",
+        "meaning": "ມີຄວາມຊຸ່ມ",
+        "img": "/images/vocab/ch31_10.jpg"
+      },
+      {
+        "word": "건조하다",
+        "meaning": "ແຫ້ງ",
+        "img": "/images/vocab/ch31_11.jpg"
+      },
+      {
+        "word": "인구가 많다",
+        "meaning": "ປະຊາກອນຫຼາຍ",
+        "img": "/images/vocab/ch31_13.jpg"
+      },
+      {
+        "word": "교통이 편리하다",
+        "meaning": "ການຄົມມະນາຄົມ",
+        "img": "/images/vocab/ch31_14.jpg"
+      },
+      {
+        "word": "인구가 적다",
+        "meaning": "ປະຊາກອນໜ້ອຍ",
+        "img": "/images/vocab/ch31_15.jpg"
+      },
+      {
+        "word": "복잡하다",
+        "meaning": "ສັບສົນ ວຸ້ນວາຍ",
+        "img": "/images/vocab/ch31_16.jpg"
+      },
+      {
+        "word": "한적하다",
+        "meaning": "ງຽບສະຫງົບ",
+        "img": "/images/vocab/ch31_17.jpg"
+      },
+      {
+        "word": "공기가 맑다",
+        "meaning": "ອາກາດ ປອດໂປ່ງແຈ່ມໃສ",
+        "img": "/images/vocab/ch31_18.jpg"
+      },
+      {
+        "word": "교통이 불편하다",
+        "meaning": "ການຄົມມະນາຄົມ ບໍ່ສະດວກສະບາຍ ການຄົມມະນາຄົມ ມີຄວາມຫຍຸ້ງຍາກ",
+        "img": "/images/vocab/ch31_19.jpg"
+      },
+      {
+        "word": "시끄럽다",
+        "meaning": "ສຽງດັງ ຟົດນັນ",
+        "img": "/images/vocab/ch31_20.jpg"
+      },
+      {
+        "word": "조용하다",
+        "meaning": "ມິດງຽບ",
+        "img": "/images/vocab/ch31_21.jpg"
+      },
+      {
+        "word": "유명하다",
+        "meaning": "ມີຊື່ສຽງ",
+        "img": "/images/vocab/ch31_22.jpg"
+      },
+      {
+        "word": "친절하다",
+        "meaning": "ໃຈດີ",
+        "img": "/images/vocab/ch31_23.jpg"
+      },
+      {
+        "word": "우리 고향은 서울보다 공기가 맑아요",
+        "meaning": "",
+        "img": "/images/vocab/ch31_24.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 32,
+    "title": "한국 음식 / ອາຫານເກົາຫຼີ",
+    "words": [
+      {
+        "word": "뜨겁다",
+        "meaning": "ຮ້ອນ",
+        "img": "/images/vocab/ch32_00.jpg"
+      },
+      {
+        "word": "삼계탕",
+        "meaning": "ຊໍາແກທັງ",
+        "img": "/images/vocab/ch32_01.jpg"
+      },
+      {
+        "word": "냉면",
+        "meaning": "ໝີ່ເຢັນ (ແນັງມຢັອນ)",
+        "img": "/images/vocab/ch32_02.jpg"
+      },
+      {
+        "word": "팥죽",
+        "meaning": "ເຂົ້າຕົ້ມຖົ່ວ",
+        "img": "/images/vocab/ch32_03.jpg"
+      },
+      {
+        "word": "군고구마",
+        "meaning": "ປີ້ງມັນດ້າງ",
+        "img": "/images/vocab/ch32_04.jpg"
+      },
+      {
+        "word": "찐빵",
+        "meaning": "ໜຶ້ງເຂົ້າຈີ່",
+        "img": "/images/vocab/ch32_05.jpg"
+      },
+      {
+        "word": "차다/차갑다",
+        "meaning": "ເຍືອກເຢັນ ເຢັນ",
+        "img": "/images/vocab/ch32_06.jpg"
+      },
+      {
+        "word": "콩국수",
+        "meaning": "ແກງຖົ່ວ",
+        "img": "/images/vocab/ch32_07.jpg"
+      },
+      {
+        "word": "팥빙수",
+        "meaning": "ພັດບິງຊູ",
+        "img": "/images/vocab/ch32_08.jpg"
+      },
+      {
+        "word": "호떡",
+        "meaning": "ໂຮ່ຕັອກ",
+        "img": "/images/vocab/ch32_09.jpg"
+      },
+      {
+        "word": "보기 팥빙수 삼계탕 군고구마 팥죽 콩국수 찐빵 냉면 호떡",
+        "meaning": "",
+        "img": "/images/vocab/ch32_10.jpg"
+      },
+      {
+        "word": "고기",
+        "meaning": "ຊີ້ນ",
+        "img": "/images/vocab/ch32_11.jpg"
+      },
+      {
+        "word": "소고기",
+        "meaning": "ຊີ້ນງົວ",
+        "img": "/images/vocab/ch32_12.jpg"
+      },
+      {
+        "word": "생선",
+        "meaning": "ປາ",
+        "img": "/images/vocab/ch32_13.jpg"
+      },
+      {
+        "word": "채소",
+        "meaning": "ຜັກ",
+        "img": "/images/vocab/ch32_14.jpg"
+      },
+      {
+        "word": "양파",
+        "meaning": "ຜັກບົ່ວ",
+        "img": "/images/vocab/ch32_15.jpg"
+      },
+      {
+        "word": "돼지고기",
+        "meaning": "ຊີ້ນໝູ",
+        "img": "/images/vocab/ch32_16.jpg"
+      },
+      {
+        "word": "닭고기",
+        "meaning": "ຊີ້ນໄກ່",
+        "img": "/images/vocab/ch32_17.jpg"
+      },
+      {
+        "word": "양고기",
+        "meaning": "ຊີ້ນແກະ",
+        "img": "/images/vocab/ch32_18.jpg"
+      },
+      {
+        "word": "끓이다",
+        "meaning": "ຕົ້ມ",
+        "img": "/images/vocab/ch32_19.jpg"
+      },
+      {
+        "word": "마늘",
+        "meaning": "ຫົວຜັກບົວໃຫຍ່",
+        "img": "/images/vocab/ch32_20.jpg"
+      },
+      {
+        "word": "감자",
+        "meaning": "ຫົວຜັກທຽມ",
+        "img": "/images/vocab/ch32_21.jpg"
+      },
+      {
+        "word": "당근",
+        "meaning": "ມັນຟຣັ່ງ",
+        "img": "/images/vocab/ch32_22.jpg"
+      },
+      {
+        "word": "볶다",
+        "meaning": "ຂົ້ວ",
+        "img": "/images/vocab/ch32_23.jpg"
+      },
+      {
+        "word": "삶다",
+        "meaning": "ໜຶ້ງ",
+        "img": "/images/vocab/ch32_24.jpg"
+      },
+      {
+        "word": "굽다",
+        "meaning": "ປີ້ງ",
+        "img": "/images/vocab/ch32_25.jpg"
+      },
+      {
+        "word": "튀기다",
+        "meaning": "ຈືນ",
+        "img": "/images/vocab/ch32_26.jpg"
+      },
+      {
+        "word": "복날에는 삼계탕을 먹어요",
+        "meaning": "",
+        "img": "/images/vocab/ch32_27.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 33,
+    "title": "한국 명절 / ວັນພັກເກົາຫຼີ",
+    "words": [
+      {
+        "word": "한복을 입다",
+        "meaning": "ນຸ່ງຊຸດປະຈຳຊາດເກົາຫຼີ",
+        "img": "/images/vocab/ch33_00.jpg"
+      },
+      {
+        "word": "세뱃돈을 주다",
+        "meaning": "ໃຫ້ເງິນ ຂອງຂວັນປີໃໝ່",
+        "img": "/images/vocab/ch33_01.jpg"
+      },
+      {
+        "word": "세배하다",
+        "meaning": "ໄຫວ້ ຂໍຄະມາ",
+        "img": "/images/vocab/ch33_02.jpg"
+      },
+      {
+        "word": "덕담을 하다",
+        "meaning": "ອວຍພອນ ໃຫ້ພອນ",
+        "img": "/images/vocab/ch33_03.jpg"
+      },
+      {
+        "word": "덕담을 듣다",
+        "meaning": "ຮັບຄຳອວຍພອນ",
+        "img": "/images/vocab/ch33_04.jpg"
+      },
+      {
+        "word": "세뱃돈을 받다",
+        "meaning": "ຮັບເງິນ ຂອງຂວັນປີໃໝ່",
+        "img": "/images/vocab/ch33_05.jpg"
+      },
+      {
+        "word": "떡국을 먹다",
+        "meaning": "ກິນແກ້ງຕ໋ອກ",
+        "img": "/images/vocab/ch33_06.jpg"
+      },
+      {
+        "word": "윷놀이를 하다",
+        "meaning": "ຫຼີນເກມຢັດ (",
+        "img": "/images/vocab/ch33_07.jpg"
+      },
+      {
+        "word": "고향에 내려가다",
+        "meaning": "ໄປຍຽມຍາມ ບ້ານເກີດ",
+        "img": "/images/vocab/ch33_08.jpg"
+      },
+      {
+        "word": "성묘하다",
+        "meaning": "ໄຫວ້ຫຼຸມຟັງສົບ ຂອງບັນພະບຸລຸດ",
+        "img": "/images/vocab/ch33_09.jpg"
+      },
+      {
+        "word": "친척집에 가다",
+        "meaning": "ໄປຍຽມຍາມ ເຮືອນພີ່ນ້ອງ",
+        "img": "/images/vocab/ch33_10.jpg"
+      },
+      {
+        "word": "차례를 지내다",
+        "meaning": "ເຮັດພິທີໄຫວ້ ບັນພະບຸລຸດ",
+        "img": "/images/vocab/ch33_11.jpg"
+      },
+      {
+        "word": "절하다",
+        "meaning": "ໄຫວ້ ກາບໄຫວ້",
+        "img": "/images/vocab/ch33_12.jpg"
+      },
+      {
+        "word": "송편을 만들다",
+        "meaning": "ເຮັດເຂົ້າໜົມ ຊົງປີຍອນ",
+        "img": "/images/vocab/ch33_13.jpg"
+      },
+      {
+        "word": "보름달을 보다",
+        "meaning": "ຊົມພະຈັນເຕັມດວງ",
+        "img": "/images/vocab/ch33_14.jpg"
+      },
+      {
+        "word": "소원을 빌다",
+        "meaning": "ຂໍອະທິຖານ",
+        "img": "/images/vocab/ch33_15.jpg"
+      },
+      {
+        "word": "송편을 만드는 체험도 할 수 있어요",
+        "meaning": "",
+        "img": "/images/vocab/ch33_16.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 34,
+    "title": "경조사 / ງານມົງຄົນ",
+    "words": [
+      {
+        "word": "생일",
+        "meaning": "ວັນເກີດ",
+        "img": "/images/vocab/ch34_00.jpg"
+      },
+      {
+        "word": "어버이날",
+        "meaning": "ວັນພໍ່",
+        "img": "/images/vocab/ch34_01.jpg"
+      },
+      {
+        "word": "백일",
+        "meaning": "ວັນຄົບຮອບ ວັນ",
+        "img": "/images/vocab/ch34_02.jpg"
+      },
+      {
+        "word": "어린이날",
+        "meaning": "ວັນເດັກນ້ອຍ",
+        "img": "/images/vocab/ch34_03.jpg"
+      },
+      {
+        "word": "집들이",
+        "meaning": "ຂຶ້ນເຮືອນໃໝ່",
+        "img": "/images/vocab/ch34_04.jpg"
+      },
+      {
+        "word": "환갑",
+        "meaning": "ວັນຄົບຮອບ ວັນເກີດ",
+        "img": "/images/vocab/ch34_05.jpg"
+      },
+      {
+        "word": "스승의 날",
+        "meaning": "ວັນຄູ",
+        "img": "/images/vocab/ch34_06.jpg"
+      },
+      {
+        "word": "결혼기념일",
+        "meaning": "ວັນຄົບຮອບ ແຕ່ງງານ",
+        "img": "/images/vocab/ch34_07.jpg"
+      },
+      {
+        "word": "칠순",
+        "meaning": "ວັນຄົບຮອບ ວັນເກີດ",
+        "img": "/images/vocab/ch34_08.jpg"
+      },
+      {
+        "word": "결혼식",
+        "meaning": "ພິທີແຕ່ງງານ ງານແຕ່ງງານ",
+        "img": "/images/vocab/ch34_10.jpg"
+      },
+      {
+        "word": "신랑",
+        "meaning": "ເຈົ້າບ່າວ",
+        "img": "/images/vocab/ch34_11.jpg"
+      },
+      {
+        "word": "청첩장",
+        "meaning": "ບັດເຊີນໄປງານແຕ່ງງານ",
+        "img": "/images/vocab/ch34_12.jpg"
+      },
+      {
+        "word": "축의금",
+        "meaning": "ເງິນໃສ່ຊອງ (ສຳລັບສະແດງຄວາມຍິນດີ)",
+        "img": "/images/vocab/ch34_13.jpg"
+      },
+      {
+        "word": "사진 촬영을 하다",
+        "meaning": "ຖ່າຍຮູບພາບ",
+        "img": "/images/vocab/ch34_14.jpg"
+      },
+      {
+        "word": "신부",
+        "meaning": "ເຈົ້າສາວ",
+        "img": "/images/vocab/ch34_15.jpg"
+      },
+      {
+        "word": "주례",
+        "meaning": "ພິທີການ ຜູ້ດໍາເນີນ ພິທີແຕ່ງງານ",
+        "img": "/images/vocab/ch34_16.jpg"
+      },
+      {
+        "word": "하객",
+        "meaning": "ແຂກ ຜູ້ຖືກເຊີນ",
+        "img": "/images/vocab/ch34_17.jpg"
+      },
+      {
+        "word": "피로연을 하다",
+        "meaning": "ງານລ້ຽງຫຼັງງານແຕ່ງງານ",
+        "img": "/images/vocab/ch34_18.jpg"
+      },
+      {
+        "word": "폐백을 드리다",
+        "meaning": "ການຈັດພິທີແພແບັກ (ເພື່ອທຳຄວາມເຄົາລົບ ຄອບຄົວຝ່າຍເຈົ້າບ່າວ)",
+        "img": "/images/vocab/ch34_19.jpg"
+      },
+      {
+        "word": "아기 옷을 선물하는 게 어때요",
+        "meaning": "",
+        "img": "/images/vocab/ch34_21.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 35,
+    "title": "한국 문화·오락 / ວັດທະນະທຳ",
+    "words": [
+      {
+        "word": "케이팝(",
+        "meaning": "ເຄ ປ໊ອບ(",
+        "img": "/images/vocab/ch35_00.jpg"
+      },
+      {
+        "word": "한류",
+        "meaning": "ກະແສເກົາຫຼີ",
+        "img": "/images/vocab/ch35_01.jpg"
+      },
+      {
+        "word": "영화",
+        "meaning": "ໜັງເລື່ອງ",
+        "img": "/images/vocab/ch35_02.jpg"
+      },
+      {
+        "word": "예능프로그램",
+        "meaning": "ລາຍການ ບັນເທິງຕ່າງໆ",
+        "img": "/images/vocab/ch35_03.jpg"
+      },
+      {
+        "word": "영화배우",
+        "meaning": "ນັກສະແດງ",
+        "img": "/images/vocab/ch35_04.jpg"
+      },
+      {
+        "word": "음악프로그램",
+        "meaning": "ລາຍການດົນຕີ",
+        "img": "/images/vocab/ch35_05.jpg"
+      },
+      {
+        "word": "가수",
+        "meaning": "ນັກຮ້ອງ",
+        "img": "/images/vocab/ch35_06.jpg"
+      },
+      {
+        "word": "아이돌",
+        "meaning": "ເນັດໄອດໍ",
+        "img": "/images/vocab/ch35_07.jpg"
+      },
+      {
+        "word": "수출하다",
+        "meaning": "ສົ່ງອອກ",
+        "img": "/images/vocab/ch35_09.jpg"
+      },
+      {
+        "word": "선진국",
+        "meaning": "ປະເທດ ທີ່ພັດທະນາແລ້ວ",
+        "img": "/images/vocab/ch35_10.jpg"
+      },
+      {
+        "word": "수입하다",
+        "meaning": "ນໍາເຂົ້າ",
+        "img": "/images/vocab/ch35_11.jpg"
+      },
+      {
+        "word": "수출품",
+        "meaning": "ສິນຄ້າສົ່ງອອກ",
+        "img": "/images/vocab/ch35_12.jpg"
+      },
+      {
+        "word": "수입품",
+        "meaning": "ສິນຄ້ານຳເຂົ້າ",
+        "img": "/images/vocab/ch35_13.jpg"
+      },
+      {
+        "word": "개발도상국",
+        "meaning": "ປະເທດ ກຳລັງພັດທະນາ",
+        "img": "/images/vocab/ch35_14.jpg"
+      },
+      {
+        "word": "무역",
+        "meaning": "ການຄ້າ",
+        "img": "/images/vocab/ch35_15.jpg"
+      },
+      {
+        "word": "경제 발전",
+        "meaning": "ການພັດທະນາ ເສດຖະກິດ",
+        "img": "/images/vocab/ch35_16.jpg"
+      },
+      {
+        "word": "한국 드라마가 재미있잖아요",
+        "meaning": "",
+        "img": "/images/vocab/ch35_17.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 36,
+    "title": "외모·복장 / ການແຕ່ງກາຍ",
+    "words": [
+      {
+        "word": "작업복",
+        "meaning": "ຊຸດເຮັດວຽກ",
+        "img": "/images/vocab/ch36_00.jpg"
+      },
+      {
+        "word": "단정하다",
+        "meaning": "ເປັນລະບຽບຮຽບຮ້ອຍ",
+        "img": "/images/vocab/ch36_01.jpg"
+      },
+      {
+        "word": "유니폼",
+        "meaning": "ເຄື່ອງແບບ",
+        "img": "/images/vocab/ch36_02.jpg"
+      },
+      {
+        "word": "단추를 잠그다",
+        "meaning": "ໃສ່ກະດຸມ",
+        "img": "/images/vocab/ch36_03.jpg"
+      },
+      {
+        "word": "깔끔하다",
+        "meaning": "ເປັນລະບຽບຈົບງາມ",
+        "img": "/images/vocab/ch36_04.jpg"
+      },
+      {
+        "word": "단추를",
+        "meaning": "ແກ້ກະດຸມ",
+        "img": "/images/vocab/ch36_05.jpg"
+      },
+      {
+        "word": "지퍼를 올리다",
+        "meaning": "ຮີດຊິບຂຶ້ນ",
+        "img": "/images/vocab/ch36_06.jpg"
+      },
+      {
+        "word": "지퍼를 내리다",
+        "meaning": "ຮີດຊິບລົງ",
+        "img": "/images/vocab/ch36_07.jpg"
+      },
+      {
+        "word": "넥타이를",
+        "meaning": "ມັດກາລະວັດ",
+        "img": "/images/vocab/ch36_08.jpg"
+      },
+      {
+        "word": "매다",
+        "meaning": "",
+        "img": "/images/vocab/ch36_10.jpg"
+      },
+      {
+        "word": "넥타이를 풀다",
+        "meaning": "ລັກສະນະເປັນລະບຽບຮຽນຮ້ອຍ ແມ່ນເບິ່ງຈົບງາມດີ",
+        "img": "/images/vocab/ch36_11.jpg"
+      },
+      {
+        "word": "예의가 있다",
+        "meaning": "ມີມາລະຍາດ",
+        "img": "/images/vocab/ch36_12.jpg"
+      },
+      {
+        "word": "존중하다",
+        "meaning": "ເຄົາລົບ",
+        "img": "/images/vocab/ch36_13.jpg"
+      },
+      {
+        "word": "예의가 없다",
+        "meaning": "ບໍ່ມີມາລະຍາດ",
+        "img": "/images/vocab/ch36_14.jpg"
+      },
+      {
+        "word": "반말을 하다",
+        "meaning": "ເວົ້າບໍ່ສຸພາບ",
+        "img": "/images/vocab/ch36_15.jpg"
+      },
+      {
+        "word": "존댓말을 하다",
+        "meaning": "ເວົ້າສຸພາບ",
+        "img": "/images/vocab/ch36_16.jpg"
+      },
+      {
+        "word": "함부로 하다",
+        "meaning": "ປະພຶດໂດຍບໍ່ຄິດ ຮອບຄອບ",
+        "img": "/images/vocab/ch36_17.jpg"
+      },
+      {
+        "word": "배려하다",
+        "meaning": "ປະພຶດຢ່າງເໝາະສົມ",
+        "img": "/images/vocab/ch36_18.jpg"
+      },
+      {
+        "word": "칭찬하다",
+        "meaning": "ຍ້ອງຍໍຊົມເຊີຍ",
+        "img": "/images/vocab/ch36_19.jpg"
+      },
+      {
+        "word": "피해를 주다",
+        "meaning": "ສ້າງຄວາມເສຍຫາຍ",
+        "img": "/images/vocab/ch36_20.jpg"
+      },
+      {
+        "word": "불쾌하다",
+        "meaning": "ອາລົມເສຍ",
+        "img": "/images/vocab/ch36_21.jpg"
+      },
+      {
+        "word": "무시하다",
+        "meaning": "ປະຕິເສດ ບໍ່ສົນໃຈ",
+        "img": "/images/vocab/ch36_22.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 37,
+    "title": "집·건물 / ເຮືອນ·ອາຄານ",
+    "words": [
+      {
+        "word": "복도에서 큰 소리로 떠들면 안 돼요",
+        "meaning": "ຫ້າມໃຊ້ສຽງດັງ ຢູ່ທາງຍ່າງ.",
+        "img": "/images/vocab/ch37_00.jpg"
+      },
+      {
+        "word": "복도",
+        "meaning": "ທາງຍ່າງ",
+        "img": "/images/vocab/ch37_01.jpg"
+      },
+      {
+        "word": "계단",
+        "meaning": "ຄັນໄດ",
+        "img": "/images/vocab/ch37_02.jpg"
+      },
+      {
+        "word": "출입문",
+        "meaning": "ປະຕຸເຂົ້າ ອອກ",
+        "img": "/images/vocab/ch37_03.jpg"
+      },
+      {
+        "word": "세탁실",
+        "meaning": "ຫ້ອງຊັກເຄື່ອງ",
+        "img": "/images/vocab/ch37_04.jpg"
+      },
+      {
+        "word": "샤워실",
+        "meaning": "ຫ້ອງອາບນໍ້າ",
+        "img": "/images/vocab/ch37_05.jpg"
+      },
+      {
+        "word": "룸메이트",
+        "meaning": "ເພື່ອນຮ່ວມຫ້ອງ",
+        "img": "/images/vocab/ch37_06.jpg"
+      },
+      {
+        "word": "관리인",
+        "meaning": "",
+        "img": "/images/vocab/ch37_07.jpg"
+      },
+      {
+        "word": "냉방",
+        "meaning": "ເຄື່ອງທຳຄວາມເຢັນ",
+        "img": "/images/vocab/ch37_08.jpg"
+      },
+      {
+        "word": "난방",
+        "meaning": "ເຄື່ອງທຳຄວາມຮ້ອນ",
+        "img": "/images/vocab/ch37_09.jpg"
+      },
+      {
+        "word": "에어컨",
+        "meaning": "ແອ",
+        "img": "/images/vocab/ch37_10.jpg"
+      },
+      {
+        "word": "선풍기",
+        "meaning": "ພັດລົມ",
+        "img": "/images/vocab/ch37_11.jpg"
+      },
+      {
+        "word": "스위치를 켜다",
+        "meaning": "ເປີດສະຫວິດ",
+        "img": "/images/vocab/ch37_12.jpg"
+      },
+      {
+        "word": "전기난로",
+        "meaning": "ເຄື່ອງທຳຄວາມຮ້ອນໄຟຟ້າ",
+        "img": "/images/vocab/ch37_13.jpg"
+      },
+      {
+        "word": "전기장판",
+        "meaning": "ຜ້າຫົ່ມໄຟຟ້າ",
+        "img": "/images/vocab/ch37_14.jpg"
+      },
+      {
+        "word": "스위치를 끄다",
+        "meaning": "ປິດສະຫວິດ",
+        "img": "/images/vocab/ch37_15.jpg"
+      },
+      {
+        "word": "플러그를 꽂다",
+        "meaning": "ສຽບປັກໄຟ",
+        "img": "/images/vocab/ch37_16.jpg"
+      },
+      {
+        "word": "플러그를 뽑다",
+        "meaning": "ຖອດປັກໄຟ",
+        "img": "/images/vocab/ch37_17.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 38,
+    "title": "직장생활 / ຊີວິດການເຮັດວຽກ",
+    "words": [
+      {
+        "word": "동료",
+        "meaning": "ເພື່ອນຮ່ວມງານ",
+        "img": "/images/vocab/ch38_00.jpg"
+      },
+      {
+        "word": "사이가 좋다",
+        "meaning": "ຄວາມສຳພັນ ດີ",
+        "img": "/images/vocab/ch38_01.jpg"
+      },
+      {
+        "word": "상사",
+        "meaning": "ຫົວໜ້າ",
+        "img": "/images/vocab/ch38_02.jpg"
+      },
+      {
+        "word": "부하",
+        "meaning": "ລູກນ້ອງ",
+        "img": "/images/vocab/ch38_03.jpg"
+      },
+      {
+        "word": "분위기가 좋다",
+        "meaning": "ບັນຍາກາດດີ",
+        "img": "/images/vocab/ch38_04.jpg"
+      },
+      {
+        "word": "사이가 나쁘다",
+        "meaning": "ຄວາມສຳພັນ ບໍ່ດີ",
+        "img": "/images/vocab/ch38_05.jpg"
+      },
+      {
+        "word": "격려하다",
+        "meaning": "ໃຫ້ກຳລັງໃຈ",
+        "img": "/images/vocab/ch38_06.jpg"
+      },
+      {
+        "word": "서로 위해주다",
+        "meaning": "ຊ່ວຍເຫຼືອ ເຊິ່ງກັນແລະກັນ",
+        "img": "/images/vocab/ch38_07.jpg"
+      },
+      {
+        "word": "분위기가 나쁘다",
+        "meaning": "ບັນຍາກາດບໍ່ດີ",
+        "img": "/images/vocab/ch38_08.jpg"
+      },
+      {
+        "word": "자유롭다",
+        "meaning": "ເປັນອິດສະຫຼະ",
+        "img": "/images/vocab/ch38_09.jpg"
+      },
+      {
+        "word": "규율이 엄격하다",
+        "meaning": "ກົດລະບຽບ ເຂັ້ມງວດ",
+        "img": "/images/vocab/ch38_10.jpg"
+      },
+      {
+        "word": "때리다",
+        "meaning": "ຕົບ",
+        "img": "/images/vocab/ch38_11.jpg"
+      },
+      {
+        "word": "맞다",
+        "meaning": "ຖືກ",
+        "img": "/images/vocab/ch38_12.jpg"
+      },
+      {
+        "word": "화가 나다",
+        "meaning": "ໃຈຮ້າຍ",
+        "img": "/images/vocab/ch38_13.jpg"
+      },
+      {
+        "word": "욕을 하다",
+        "meaning": "ປ້ອຍດ່າ",
+        "img": "/images/vocab/ch38_14.jpg"
+      },
+      {
+        "word": "짜증을 내다",
+        "meaning": "ງຸດງິດ",
+        "img": "/images/vocab/ch38_15.jpg"
+      },
+      {
+        "word": "화를 내다",
+        "meaning": "ຮ້າຍ",
+        "img": "/images/vocab/ch38_16.jpg"
+      },
+      {
+        "word": "장난이 심한 동생 때문에 화가 났어요",
+        "meaning": "ໃຈຮ້າຍ ຍ້ອນນ້ອງຢອກຮຸນແຮງເກີນໄປ ສະນັ້ນ",
+        "img": "/images/vocab/ch38_17.jpg"
+      },
+      {
+        "word": "싸움을 하다",
+        "meaning": "ຕີກັນ",
+        "img": "/images/vocab/ch38_18.jpg"
+      },
+      {
+        "word": "말다툼을 하다",
+        "meaning": "ຖຽງກັນ",
+        "img": "/images/vocab/ch38_19.jpg"
+      },
+      {
+        "word": "오해하다",
+        "meaning": "ເຂົ້າໃຈຜິດ",
+        "img": "/images/vocab/ch38_20.jpg"
+      },
+      {
+        "word": "오해를 풀다",
+        "meaning": "ປັບຄວາມເຂົ້າໃຈ",
+        "img": "/images/vocab/ch38_21.jpg"
+      },
+      {
+        "word": "사과하다",
+        "meaning": "ຂໍໂທດ",
+        "img": "/images/vocab/ch38_22.jpg"
+      },
+      {
+        "word": "화해하다",
+        "meaning": "ຄືນດີກັນ",
+        "img": "/images/vocab/ch38_23.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 39,
+    "title": "회사 행사 / ກິດຈະກຳບໍລິສັດ",
+    "words": [
+      {
+        "word": "회식을 하다",
+        "meaning": "ຈັດງານລ້ຽງຫ້ອງການ",
+        "img": "/images/vocab/ch39_00.jpg"
+      },
+      {
+        "word": "한잔하다",
+        "meaning": "ດື່ມ",
+        "img": "/images/vocab/ch39_01.jpg"
+      },
+      {
+        "word": "참석하다",
+        "meaning": "ເຂົ້າຮ່ວມ",
+        "img": "/images/vocab/ch39_02.jpg"
+      },
+      {
+        "word": "빠지다",
+        "meaning": "ບໍ່ເຂົ້າຮ່ວມ",
+        "img": "/images/vocab/ch39_03.jpg"
+      },
+      {
+        "word": "한턱내다",
+        "meaning": "ດູແລ (ການຢູ່ກິນ) ຈ່າຍໃຫ້.",
+        "img": "/images/vocab/ch39_04.jpg"
+      },
+      {
+        "word": "보기 가",
+        "meaning": "ຣີຮັນ ໄດ້ຍິນວ່າ ມື້ນີ້ໄດ້ຮັບໂບນັດສ໌ບໍ",
+        "img": "/images/vocab/ch39_05.jpg"
+      },
+      {
+        "word": "차에 가다",
+        "meaning": "ໄປຕໍ່ຮອບ",
+        "img": "/images/vocab/ch39_06.jpg"
+      },
+      {
+        "word": "술을 받다",
+        "meaning": "ຮັບການເຢັ້ນເຫຼົາ",
+        "img": "/images/vocab/ch39_07.jpg"
+      },
+      {
+        "word": "건배하다",
+        "meaning": "ຕຸບຈອກ",
+        "img": "/images/vocab/ch39_08.jpg"
+      },
+      {
+        "word": "한턱낼게요",
+        "meaning": "ແມ່ນແລ້ວ. ຄ້າຍວ່າກາຍເປັນເສດຖີທັນທີເລີຍ. ມື້ນີ້ ຂ້ອຍຈະຈ່າຍລ້ຽງເຈົ້າເດີ.",
+        "img": "/images/vocab/ch39_09.jpg"
+      },
+      {
+        "word": "환영하다",
+        "meaning": "ຍິນດີຕ້ອນຮັບ ຕ້ອນຮັບ",
+        "img": "/images/vocab/ch39_10.jpg"
+      },
+      {
+        "word": "단합대회",
+        "meaning": "ການເຕົ້າລວມ ການຮ່ວມຊຸມນຸມ",
+        "img": "/images/vocab/ch39_11.jpg"
+      },
+      {
+        "word": "환송하다",
+        "meaning": "ລາກ່ອນ ບອກລາ",
+        "img": "/images/vocab/ch39_12.jpg"
+      },
+      {
+        "word": "축하하다",
+        "meaning": "ສະແດງຄວາມຍີນດີ",
+        "img": "/images/vocab/ch39_13.jpg"
+      },
+      {
+        "word": "친해지다",
+        "meaning": "ໃກ້ສິດ ເປັນໝິດ",
+        "img": "/images/vocab/ch39_14.jpg"
+      },
+      {
+        "word": "신입사원을 환영하는 파티가 있어요",
+        "meaning": "ມີງານລ້ຽງ ຕ້ອນຮັບພະນັກງານໃໝ່.",
+        "img": "/images/vocab/ch39_15.jpg"
+      },
+      {
+        "word": "등반 대회",
+        "meaning": "ງານກິດຈະກຳໄຕ່ພູ",
+        "img": "/images/vocab/ch39_16.jpg"
+      },
+      {
+        "word": "야유회",
+        "meaning": "ກິນເຂົ້າປ່າ",
+        "img": "/images/vocab/ch39_17.jpg"
+      },
+      {
+        "word": "체육대회",
+        "meaning": "ງານກິດຈະກຳກິລາ",
+        "img": "/images/vocab/ch39_18.jpg"
+      },
+      {
+        "word": "오늘 회식을 하자고 해요",
+        "meaning": "",
+        "img": "/images/vocab/ch39_19.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 40,
+    "title": "직장 내 성희롱 / ການຄຸກຄາມທາງເພດ",
+    "words": [
+      {
+        "word": "불쾌감",
+        "meaning": "ຄວາມຮູ້ສຶກ ບໍ່ເພິງພໍໃຈ",
+        "img": "/images/vocab/ch40_00.jpg"
+      },
+      {
+        "word": "신체 접촉",
+        "meaning": "ການຈັບເນື້ອ ຕ້ອງໂຕ",
+        "img": "/images/vocab/ch40_01.jpg"
+      },
+      {
+        "word": "수치심",
+        "meaning": "ຄວາມຮູ້ສຶກ ອັບອາຍ",
+        "img": "/images/vocab/ch40_02.jpg"
+      },
+      {
+        "word": "거부감",
+        "meaning": "ຄວາມຮູ້ສຶກ ປະຕິເສດ",
+        "img": "/images/vocab/ch40_03.jpg"
+      },
+      {
+        "word": "성적 농담",
+        "meaning": "ການເວົ້າຕະຫຼົກ",
+        "img": "/images/vocab/ch40_04.jpg"
+      },
+      {
+        "word": "음담패설",
+        "meaning": "ການສະແດງຄວາມຄິດເຫັນ",
+        "img": "/images/vocab/ch40_05.jpg"
+      },
+      {
+        "word": "음란물",
+        "meaning": "ສື່ລາມົກອະນາຈານ",
+        "img": "/images/vocab/ch40_06.jpg"
+      },
+      {
+        "word": "동영상",
+        "meaning": "ວິດີໂອ",
+        "img": "/images/vocab/ch40_07.jpg"
+      },
+      {
+        "word": "성범죄",
+        "meaning": "ການລະເມີດທາງເພດ",
+        "img": "/images/vocab/ch40_08.jpg"
+      },
+      {
+        "word": "가해자",
+        "meaning": "ຜູ້ກະທໍາ ໂຈດ",
+        "img": "/images/vocab/ch40_09.jpg"
+      },
+      {
+        "word": "피해자",
+        "meaning": "ຜູ້ຖືກກະທໍາ ຈໍາເລີຍ",
+        "img": "/images/vocab/ch40_10.jpg"
+      },
+      {
+        "word": "증거",
+        "meaning": "ຫຼັກຖານ",
+        "img": "/images/vocab/ch40_11.jpg"
+      },
+      {
+        "word": "증인",
+        "meaning": "ພະຍານ",
+        "img": "/images/vocab/ch40_12.jpg"
+      },
+      {
+        "word": "요구하다",
+        "meaning": "ຮ້ອງຂໍ ຮຽກຮ້ອງ",
+        "img": "/images/vocab/ch40_13.jpg"
+      },
+      {
+        "word": "의사를 표현하다",
+        "meaning": "ການສະແດງ ເຈດຈໍານົງ ຫຼື",
+        "img": "/images/vocab/ch40_14.jpg"
+      },
+      {
+        "word": "신고하다",
+        "meaning": "ລາຍງານ ແຈ້ງ",
+        "img": "/images/vocab/ch40_15.jpg"
+      },
+      {
+        "word": "강요하다",
+        "meaning": "ບັງຄັບ",
+        "img": "/images/vocab/ch40_16.jpg"
+      },
+      {
+        "word": "불이익을 주다",
+        "meaning": "ເຮັດໃຫ້ເສຍປະໂຫຍດ",
+        "img": "/images/vocab/ch40_17.jpg"
+      },
+      {
+        "word": "불쾌감을 느꼈다면 그건 성희롱이에요",
+        "meaning": "",
+        "img": "/images/vocab/ch40_19.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 41,
+    "title": "수공구·기계 / ເຄື່ອງມື·ຈັກ",
+    "words": [
+      {
+        "word": "펜치",
+        "meaning": "ຄີມ",
+        "img": "/images/vocab/ch41_00.jpg"
+      },
+      {
+        "word": "니퍼",
+        "meaning": "ຄີມຕັດ",
+        "img": "/images/vocab/ch41_01.jpg"
+      },
+      {
+        "word": "플라이어",
+        "meaning": "ຄີມລັອກ",
+        "img": "/images/vocab/ch41_02.jpg"
+      },
+      {
+        "word": "드라이버",
+        "meaning": "ໂຕລະບິດ",
+        "img": "/images/vocab/ch41_03.jpg"
+      },
+      {
+        "word": "끊다",
+        "meaning": "ດືງ ໂຄ້ງ",
+        "img": "/images/vocab/ch41_04.jpg"
+      },
+      {
+        "word": "절단하다",
+        "meaning": "ຕັດຖີ້ມ",
+        "img": "/images/vocab/ch41_05.jpg"
+      },
+      {
+        "word": "망치",
+        "meaning": "ຄ້ອນຕີ",
+        "img": "/images/vocab/ch41_06.jpg"
+      },
+      {
+        "word": "구부리다",
+        "meaning": "ໂຄ້ງ ມາຍອອກ",
+        "img": "/images/vocab/ch41_07.jpg"
+      },
+      {
+        "word": "박다",
+        "meaning": "ຕອກ",
+        "img": "/images/vocab/ch41_08.jpg"
+      },
+      {
+        "word": "전기 드릴",
+        "meaning": "ສະວ່ານໄຟຟ້າ",
+        "img": "/images/vocab/ch41_09.jpg"
+      },
+      {
+        "word": "스패너",
+        "meaning": "ກະແຈປາກ",
+        "img": "/images/vocab/ch41_10.jpg"
+      },
+      {
+        "word": "뚫다",
+        "meaning": "ເຈາະ",
+        "img": "/images/vocab/ch41_11.jpg"
+      },
+      {
+        "word": "자르다",
+        "meaning": "ຕັດ",
+        "img": "/images/vocab/ch41_12.jpg"
+      },
+      {
+        "word": "두드리다",
+        "meaning": "ທັບ ຕອກ",
+        "img": "/images/vocab/ch41_13.jpg"
+      },
+      {
+        "word": "조이다",
+        "meaning": "ໄຂ ແກ້",
+        "img": "/images/vocab/ch41_14.jpg"
+      },
+      {
+        "word": "못/나사못",
+        "meaning": "ຕະປູ ຕະປູກຽວ",
+        "img": "/images/vocab/ch41_15.jpg"
+      },
+      {
+        "word": "전기 절단기",
+        "meaning": "ຈັກຕັດເຫຼັກໄຟຟ້າ",
+        "img": "/images/vocab/ch41_20.jpg"
+      },
+      {
+        "word": "가스 용접기",
+        "meaning": "ເຄື່ອງເຊື່ອມດ້ວຍແກັດ",
+        "img": "/images/vocab/ch41_21.jpg"
+      },
+      {
+        "word": "에어 콤프레서",
+        "meaning": "ຈັກປໍ້າລົມ",
+        "img": "/images/vocab/ch41_22.jpg"
+      },
+      {
+        "word": "전기 용접기",
+        "meaning": "ຕູ້ເຊື່ອມໄຟຟ້າ",
+        "img": "/images/vocab/ch41_23.jpg"
+      },
+      {
+        "word": "호이스트",
+        "meaning": "ໂສ້ຍົກ",
+        "img": "/images/vocab/ch41_24.jpg"
+      },
+      {
+        "word": "용접봉",
+        "meaning": "ທູບຈອດ",
+        "img": "/images/vocab/ch41_25.jpg"
+      },
+      {
+        "word": "밴딩기",
+        "meaning": "ເຄື່ອງລີດ ອັດຕະໂນມັດ",
+        "img": "/images/vocab/ch41_26.jpg"
+      },
+      {
+        "word": "컨트롤 판넬",
+        "meaning": "ກະດານຄວບຄຸມ",
+        "img": "/images/vocab/ch41_27.jpg"
+      },
+      {
+        "word": "핸드카",
+        "meaning": "ລໍ້ລາກ",
+        "img": "/images/vocab/ch41_28.jpg"
+      },
+      {
+        "word": "전선 릴",
+        "meaning": "ກໍ້ປັກສຽບ",
+        "img": "/images/vocab/ch41_29.jpg"
+      },
+      {
+        "word": "드라이버로 해 보세요",
+        "meaning": "",
+        "img": "/images/vocab/ch41_30.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 42,
+    "title": "기계 작동·포장 / ການໃຊ້ຈັກ·ການຫໍ່",
+    "words": [
+      {
+        "word": "작동하다",
+        "meaning": "ການນຳໃຊ້ ການເຮັດວຽກ",
+        "img": "/images/vocab/ch42_00.jpg"
+      },
+      {
+        "word": "사용하다/쓰다",
+        "meaning": "ໃຊ້",
+        "img": "/images/vocab/ch42_01.jpg"
+      },
+      {
+        "word": "누르다",
+        "meaning": "ກົດ",
+        "img": "/images/vocab/ch42_02.jpg"
+      },
+      {
+        "word": "올리다",
+        "meaning": "ເອົາຂຶ້ນ ເປີດຂຶ້ນ",
+        "img": "/images/vocab/ch42_03.jpg"
+      },
+      {
+        "word": "내리다",
+        "meaning": "ເອົາລົງ ປິດລົງ",
+        "img": "/images/vocab/ch42_04.jpg"
+      },
+      {
+        "word": "빼다",
+        "meaning": "ເອົາອອກ",
+        "img": "/images/vocab/ch42_05.jpg"
+      },
+      {
+        "word": "돌리다",
+        "meaning": "ໝູນ",
+        "img": "/images/vocab/ch42_06.jpg"
+      },
+      {
+        "word": "끼우다",
+        "meaning": "ເອົາເຂົ້າ",
+        "img": "/images/vocab/ch42_07.jpg"
+      },
+      {
+        "word": "꽂다",
+        "meaning": "ກົດເຂົ້າ",
+        "img": "/images/vocab/ch42_08.jpg"
+      },
+      {
+        "word": "걸다",
+        "meaning": "ແຂວນ",
+        "img": "/images/vocab/ch42_09.jpg"
+      },
+      {
+        "word": "적재하다",
+        "meaning": "ບັນຈຸ",
+        "img": "/images/vocab/ch42_10.jpg"
+      },
+      {
+        "word": "재다",
+        "meaning": "ແທກ",
+        "img": "/images/vocab/ch42_12.jpg"
+      },
+      {
+        "word": "붙이다",
+        "meaning": "ຕິດ",
+        "img": "/images/vocab/ch42_13.jpg"
+      },
+      {
+        "word": "자르다",
+        "meaning": "ຕັດ",
+        "img": "/images/vocab/ch42_14.jpg"
+      },
+      {
+        "word": "오리다",
+        "meaning": "ຕັດອອກ",
+        "img": "/images/vocab/ch42_15.jpg"
+      },
+      {
+        "word": "접다",
+        "meaning": "ພັບ",
+        "img": "/images/vocab/ch42_16.jpg"
+      },
+      {
+        "word": "제작하다",
+        "meaning": "ສ້າງ ເຮັດ",
+        "img": "/images/vocab/ch42_17.jpg"
+      },
+      {
+        "word": "달다",
+        "meaning": "ແຂວນ ຫີ້ວ",
+        "img": "/images/vocab/ch42_18.jpg"
+      },
+      {
+        "word": "조절하다",
+        "meaning": "ປັບ",
+        "img": "/images/vocab/ch42_19.jpg"
+      },
+      {
+        "word": "완성하다",
+        "meaning": "ສຳເລັດ",
+        "img": "/images/vocab/ch42_20.jpg"
+      },
+      {
+        "word": "옮기다",
+        "meaning": "ເຄື່ອນຍ້າຍ",
+        "img": "/images/vocab/ch42_21.jpg"
+      },
+      {
+        "word": "이 기계 어떻게 작동하는지 알아요",
+        "meaning": "",
+        "img": "/images/vocab/ch42_22.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 43,
+    "title": "건설 현장 / ສະຖານທີ່ກໍ່ສ້າງ",
+    "words": [
+      {
+        "word": "건설",
+        "meaning": "ການກໍ່ສ້າງ",
+        "img": "/images/vocab/ch43_00.jpg"
+      },
+      {
+        "word": "시멘트",
+        "meaning": "ຊີມັງ",
+        "img": "/images/vocab/ch43_01.jpg"
+      },
+      {
+        "word": "공사장",
+        "meaning": "ສະຖານທີ່ກໍ່ສ້າງ",
+        "img": "/images/vocab/ch43_02.jpg"
+      },
+      {
+        "word": "벽돌",
+        "meaning": "ດິນຈີ່",
+        "img": "/images/vocab/ch43_03.jpg"
+      },
+      {
+        "word": "철근",
+        "meaning": "ເຫຼັກເສັ້ນ",
+        "img": "/images/vocab/ch43_04.jpg"
+      },
+      {
+        "word": "땅을 파다",
+        "meaning": "ຂຸດດິນ",
+        "img": "/images/vocab/ch43_05.jpg"
+      },
+      {
+        "word": "콘크리트",
+        "meaning": "ຄອນກຣີດ",
+        "img": "/images/vocab/ch43_06.jpg"
+      },
+      {
+        "word": "건물을 짓다",
+        "meaning": "ສ້າງຕຶກອາຄານ",
+        "img": "/images/vocab/ch43_07.jpg"
+      },
+      {
+        "word": "비계",
+        "meaning": "ຮ້າງ(ໄວ້ຂຶ້ນບ່ອນສູງ)",
+        "img": "/images/vocab/ch43_08.jpg"
+      },
+      {
+        "word": "거푸집을 설치하다",
+        "meaning": "ການຕິດຕັ້ງແບບ",
+        "img": "/images/vocab/ch43_09.jpg"
+      },
+      {
+        "word": "철근을 조립하다",
+        "meaning": "ການປະກອບເຫຼັກເສັ້ນ",
+        "img": "/images/vocab/ch43_10.jpg"
+      },
+      {
+        "word": "콘크리트를 타설하다",
+        "meaning": "ເທປູນ",
+        "img": "/images/vocab/ch43_11.jpg"
+      },
+      {
+        "word": "분류하다",
+        "meaning": "ແຍກປະເພດ",
+        "img": "/images/vocab/ch43_12.jpg"
+      },
+      {
+        "word": "묶다",
+        "meaning": "ມັດ",
+        "img": "/images/vocab/ch43_13.jpg"
+      },
+      {
+        "word": "싸다/포장하다",
+        "meaning": "ຫໍ່",
+        "img": "/images/vocab/ch43_14.jpg"
+      },
+      {
+        "word": "담다/넣다",
+        "meaning": "ໃສ່ (ໃສ່ໃນ)",
+        "img": "/images/vocab/ch43_15.jpg"
+      },
+      {
+        "word": "내리다",
+        "meaning": "ເອົາລົງ ເອົາອອກ",
+        "img": "/images/vocab/ch43_16.jpg"
+      },
+      {
+        "word": "나르다",
+        "meaning": "ຂົນສົ່ງ",
+        "img": "/images/vocab/ch43_17.jpg"
+      },
+      {
+        "word": "쌓다",
+        "meaning": "ກອງຂຶ້ນ",
+        "img": "/images/vocab/ch43_18.jpg"
+      },
+      {
+        "word": "싣다",
+        "meaning": "ຂົນ(ເຄື່ອງ)ໃສ່",
+        "img": "/images/vocab/ch43_19.jpg"
+      },
+      {
+        "word": "출하하다",
+        "meaning": "ສົ່ງສິນຄ້າ",
+        "img": "/images/vocab/ch43_20.jpg"
+      },
+      {
+        "word": "납품하다",
+        "meaning": "ຈັດສົ່ງສິນຄ້າ",
+        "img": "/images/vocab/ch43_21.jpg"
+      },
+      {
+        "word": "철근을 옮겨 놓으세요",
+        "meaning": "",
+        "img": "/images/vocab/ch43_22.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 44,
+    "title": "도장·폐기물 / ຮ້ອຍສີ·ຂອງເສຍ",
+    "words": [
+      {
+        "word": "폐기물",
+        "meaning": "ສິ່ງເສດເຫຼືອ",
+        "img": "/images/vocab/ch44_00.jpg"
+      },
+      {
+        "word": "환풍기",
+        "meaning": "ພັດລົມດູດອາກາດ",
+        "img": "/images/vocab/ch44_01.jpg"
+      },
+      {
+        "word": "폐수",
+        "meaning": "ນໍ້າເສຍ",
+        "img": "/images/vocab/ch44_02.jpg"
+      },
+      {
+        "word": "폐유",
+        "meaning": "ນໍ້າມັນເສດເຫຼືອ",
+        "img": "/images/vocab/ch44_03.jpg"
+      },
+      {
+        "word": "분뇨/배설물",
+        "meaning": "ຂີ້ເຖົ່າ ອາຈົມ",
+        "img": "/images/vocab/ch44_04.jpg"
+      },
+      {
+        "word": "사다리",
+        "meaning": "ຂັ້ນໄດ",
+        "img": "/images/vocab/ch44_05.jpg"
+      },
+      {
+        "word": "손수레",
+        "meaning": "ລົດເຂັນ",
+        "img": "/images/vocab/ch44_06.jpg"
+      },
+      {
+        "word": "일륜차",
+        "meaning": "ລໍ້ຍູ້",
+        "img": "/images/vocab/ch44_07.jpg"
+      },
+      {
+        "word": "마대",
+        "meaning": "ກະສອບ ເປົາ",
+        "img": "/images/vocab/ch44_08.jpg"
+      },
+      {
+        "word": "바구니",
+        "meaning": "ກະຕ່າ",
+        "img": "/images/vocab/ch44_09.jpg"
+      },
+      {
+        "word": "비닐 끈",
+        "meaning": "ສາຍຢາງ",
+        "img": "/images/vocab/ch44_10.jpg"
+      },
+      {
+        "word": "페인트 작업을 했거든요",
+        "meaning": "",
+        "img": "/images/vocab/ch44_11.jpg"
+      },
+      {
+        "word": "분뇨",
+        "meaning": "",
+        "img": "/images/vocab/ch44_12.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 45,
+    "title": "농업 / ກະສິກຳ",
+    "words": [
+      {
+        "word": "호미",
+        "meaning": "ຈົກສັ້ນ",
+        "img": "/images/vocab/ch45_00.jpg"
+      },
+      {
+        "word": "농장",
+        "meaning": "ຟາມ",
+        "img": "/images/vocab/ch45_01.jpg"
+      },
+      {
+        "word": "과수원",
+        "meaning": "ສວນໝາກໄມ້",
+        "img": "/images/vocab/ch45_02.jpg"
+      },
+      {
+        "word": "비닐하우스",
+        "meaning": "ເຮືອນແກ້ວ",
+        "img": "/images/vocab/ch45_03.jpg"
+      },
+      {
+        "word": "곡괭이",
+        "meaning": "ຈົກ",
+        "img": "/images/vocab/ch45_04.jpg"
+      },
+      {
+        "word": "모종삽",
+        "meaning": "ຊ້ວນມື",
+        "img": "/images/vocab/ch45_05.jpg"
+      },
+      {
+        "word": "괭이",
+        "meaning": "ຈົກນ້ອຍ",
+        "img": "/images/vocab/ch45_06.jpg"
+      },
+      {
+        "word": "호스",
+        "meaning": "ທໍ່ຍາງ",
+        "img": "/images/vocab/ch45_07.jpg"
+      },
+      {
+        "word": "물뿌리개",
+        "meaning": "ບົວຫົດ ນຳ",
+        "img": "/images/vocab/ch45_08.jpg"
+      },
+      {
+        "word": "콤바인",
+        "meaning": "ເຄື່ອງຈັກເກັບກ່ຽວ",
+        "img": "/images/vocab/ch45_09.jpg"
+      },
+      {
+        "word": "갈퀴",
+        "meaning": "ຄາດ",
+        "img": "/images/vocab/ch45_10.jpg"
+      },
+      {
+        "word": "쇠스랑",
+        "meaning": "ຊ້ວນສາງ",
+        "img": "/images/vocab/ch45_11.jpg"
+      },
+      {
+        "word": "농약 분무기",
+        "meaning": "ເຄື່ອງສິດນຳ້ຢາ",
+        "img": "/images/vocab/ch45_12.jpg"
+      },
+      {
+        "word": "경운기",
+        "meaning": "ເຄື່ອງຈັກປູກ",
+        "img": "/images/vocab/ch45_13.jpg"
+      },
+      {
+        "word": "파종 상자",
+        "meaning": "ຖາດໃສ່ເບ້ຍໄມ້",
+        "img": "/images/vocab/ch45_14.jpg"
+      },
+      {
+        "word": "키우다/기르다/",
+        "meaning": "ລ້ຽງ ປູກ ເພາະ",
+        "img": "/images/vocab/ch45_16.jpg"
+      },
+      {
+        "word": "재배하다",
+        "meaning": "ໃສ່ຝຸ່ນ",
+        "img": "/images/vocab/ch45_17.jpg"
+      },
+      {
+        "word": "거두다/수확하다",
+        "meaning": "ເກັບກ່ຽວ",
+        "img": "/images/vocab/ch45_18.jpg"
+      },
+      {
+        "word": "따다",
+        "meaning": "ເກັບ",
+        "img": "/images/vocab/ch45_19.jpg"
+      },
+      {
+        "word": "캐다",
+        "meaning": "ຂຸດຂຶ້ນ ຂຸດອອກ",
+        "img": "/images/vocab/ch45_20.jpg"
+      },
+      {
+        "word": "비료를 뿌리다",
+        "meaning": "ໃຫ້ຝຸ່ນ",
+        "img": "/images/vocab/ch45_21.jpg"
+      },
+      {
+        "word": "씨앗을 뿌리다",
+        "meaning": "ຫວ່ານແກ່ນ",
+        "img": "/images/vocab/ch45_22.jpg"
+      },
+      {
+        "word": "모종을 심다",
+        "meaning": "ປູກເບ້ຍ",
+        "img": "/images/vocab/ch45_23.jpg"
+      },
+      {
+        "word": "물을 주다",
+        "meaning": "ຫົດນຳ້",
+        "img": "/images/vocab/ch45_24.jpg"
+      },
+      {
+        "word": "거름을 주다",
+        "meaning": "ຈົ່ງຕອບຄໍາຖາມ ໂດຍທີ່ບໍ່ເບິ່ງພາກສ່ວນຄໍາສັບຂ້າງເທິງນັ້ນ.",
+        "img": "/images/vocab/ch45_25.jpg"
+      },
+      {
+        "word": "잡초를 뽑다",
+        "meaning": "ເສຍຫຍ້າ",
+        "img": "/images/vocab/ch45_26.jpg"
+      },
+      {
+        "word": "벌레를 잡다",
+        "meaning": "ກຳຈັດບົ້ງ ຂ້າບົ້ງ",
+        "img": "/images/vocab/ch45_27.jpg"
+      },
+      {
+        "word": "농약을 치다",
+        "meaning": "ຊີດຢາຂ້າແມງໄມ້",
+        "img": "/images/vocab/ch45_28.jpg"
+      },
+      {
+        "word": "호미를 챙겼는데요",
+        "meaning": "",
+        "img": "/images/vocab/ch45_29.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 46,
+    "title": "어업 / ການປະມົງ",
+    "words": [
+      {
+        "word": "그물",
+        "meaning": "ແຫຕຶກປາ",
+        "img": "/images/vocab/ch46_00.jpg"
+      },
+      {
+        "word": "통발",
+        "meaning": "ແນວຂັງປາ",
+        "img": "/images/vocab/ch46_01.jpg"
+      },
+      {
+        "word": "집어등",
+        "meaning": "ໄຟລໍ້ປາ",
+        "img": "/images/vocab/ch46_02.jpg"
+      },
+      {
+        "word": "양망기",
+        "meaning": "ເຄື່ອງລາກແຫ",
+        "img": "/images/vocab/ch46_03.jpg"
+      },
+      {
+        "word": "밧줄",
+        "meaning": "ເຊືອກ",
+        "img": "/images/vocab/ch46_04.jpg"
+      },
+      {
+        "word": "도르래",
+        "meaning": "ລູກລອກ ລໍ້ໝູນ",
+        "img": "/images/vocab/ch46_05.jpg"
+      },
+      {
+        "word": "쇠사슬",
+        "meaning": "ໂສ້",
+        "img": "/images/vocab/ch46_06.jpg"
+      },
+      {
+        "word": "고리",
+        "meaning": "ຂໍ",
+        "img": "/images/vocab/ch46_07.jpg"
+      },
+      {
+        "word": "부자/부표",
+        "meaning": "ເຄື່ອງທຸ່ນເທິງໜ້ານໍ້າ",
+        "img": "/images/vocab/ch46_08.jpg"
+      },
+      {
+        "word": "뜰채",
+        "meaning": "ສະໝໍ",
+        "img": "/images/vocab/ch46_09.jpg"
+      },
+      {
+        "word": "수중 펌프",
+        "meaning": "ເຄື່ອງປໍ້ານໍ້າ",
+        "img": "/images/vocab/ch46_10.jpg"
+      },
+      {
+        "word": "낚시 바늘",
+        "meaning": "ເບັດຕຶກປາ",
+        "img": "/images/vocab/ch46_11.jpg"
+      },
+      {
+        "word": "바늘대",
+        "meaning": "ເຂັມແຫ",
+        "img": "/images/vocab/ch46_12.jpg"
+      },
+      {
+        "word": "스티로폼 상자",
+        "meaning": "ກ໋ອງໂຟມຮັກສາຄວາມເຢັນ",
+        "img": "/images/vocab/ch46_13.jpg"
+      },
+      {
+        "word": "수경",
+        "meaning": "ແວ່ນຕາກັນນໍ້າ ແວ່ນຕາລອຍນໍ້າ",
+        "img": "/images/vocab/ch46_14.jpg"
+      },
+      {
+        "word": "갈퀴",
+        "meaning": "ຄາດ",
+        "img": "/images/vocab/ch46_15.jpg"
+      },
+      {
+        "word": "더 신경 쓰도록 하자",
+        "meaning": "",
+        "img": "/images/vocab/ch46_16.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 47,
+    "title": "재고·물류 / ສາງ·ການຂົນສົ່ງ",
+    "words": [
+      {
+        "word": "물류 창고",
+        "meaning": "່າງ ເກັບ ເຄື່ອງ",
+        "img": "/images/vocab/ch47_00.jpg"
+      },
+      {
+        "word": "냉동 창고",
+        "meaning": "ສາງ ເຢັນ ເກັບ ເຄື່ອງ",
+        "img": "/images/vocab/ch47_01.jpg"
+      },
+      {
+        "word": "컨테이너",
+        "meaning": "ຕູ້ຄອນ ເທັນ ເນີ",
+        "img": "/images/vocab/ch47_02.jpg"
+      },
+      {
+        "word": "출고하다",
+        "meaning": "ເອົາ ເຄື່ອງ ອອກ ສາງ",
+        "img": "/images/vocab/ch47_03.jpg"
+      },
+      {
+        "word": "입고하다",
+        "meaning": "ເອົາ ເຂົ້າໄວ້ ໃນ ສາງ",
+        "img": "/images/vocab/ch47_04.jpg"
+      },
+      {
+        "word": "보관하다",
+        "meaning": "ເກັບ ມ້ຽນ ເກັບ ຮັກ ສາ",
+        "img": "/images/vocab/ch47_05.jpg"
+      },
+      {
+        "word": "저장하다",
+        "meaning": "ເກັບ ຮັກ ສາ",
+        "img": "/images/vocab/ch47_06.jpg"
+      },
+      {
+        "word": "재고를 파악하다",
+        "meaning": "ກວດກາສາງ",
+        "img": "/images/vocab/ch47_07.jpg"
+      },
+      {
+        "word": "덮개를 덮다",
+        "meaning": "ເອົາ ຜ້າ ປິດ ສິນ ຄ້າ",
+        "img": "/images/vocab/ch47_08.jpg"
+      },
+      {
+        "word": "온도를 유지하다",
+        "meaning": "ຮັກ ສາ ອຸນ ຫະ ພູມ ໄວ້",
+        "img": "/images/vocab/ch47_09.jpg"
+      },
+      {
+        "word": "관리하다",
+        "meaning": "ຈັດ ການ ຄວບ ຄຸມ ດູ ແລ",
+        "img": "/images/vocab/ch47_10.jpg"
+      },
+      {
+        "word": "원목을 재단하다",
+        "meaning": "ການ ຕັດ ໄມ້",
+        "img": "/images/vocab/ch47_12.jpg"
+      },
+      {
+        "word": "사포질하다",
+        "meaning": "ພັດ ກະ ດາດ ຊາຍ",
+        "img": "/images/vocab/ch47_13.jpg"
+      },
+      {
+        "word": "홈을 파다",
+        "meaning": "ຂຸດ ຮ່ອງ",
+        "img": "/images/vocab/ch47_14.jpg"
+      },
+      {
+        "word": "구멍을 뚫다",
+        "meaning": "ເຈາະ ອຸບ ມົງ",
+        "img": "/images/vocab/ch47_15.jpg"
+      },
+      {
+        "word": "연마하다/샌딩하다",
+        "meaning": "ເປັນ ເງົາ ມັນ ຄັດ ມັນ ໃຫ້ ງາມ ຂຶ້ນ",
+        "img": "/images/vocab/ch47_16.jpg"
+      },
+      {
+        "word": "줄자",
+        "meaning": "ວັດ ແທກ(ໄມ້ ແມັດ)",
+        "img": "/images/vocab/ch47_17.jpg"
+      },
+      {
+        "word": "도장하다",
+        "meaning": "ທາ ສີ",
+        "img": "/images/vocab/ch47_18.jpg"
+      },
+      {
+        "word": "도색하다",
+        "meaning": "ທາ ສີ ລົງ ສີ",
+        "img": "/images/vocab/ch47_19.jpg"
+      },
+      {
+        "word": "직각자",
+        "meaning": "ມູມ ສາກ",
+        "img": "/images/vocab/ch47_20.jpg"
+      },
+      {
+        "word": "수평대",
+        "meaning": "ນ້ຳ ທ່ຽງ",
+        "img": "/images/vocab/ch47_21.jpg"
+      },
+      {
+        "word": "재고를 파악하는 것이 중요해요",
+        "meaning": "",
+        "img": "/images/vocab/ch47_22.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 48,
+    "title": "안전 / ຄວາມປອດໄພ",
+    "words": [
+      {
+        "word": "손가락이 잘리다",
+        "meaning": "ນິ້ວມືຂາດ",
+        "img": "/images/vocab/ch48_00.jpg"
+      },
+      {
+        "word": "발이 깔리다",
+        "meaning": "ໜີບຕີນ",
+        "img": "/images/vocab/ch48_01.jpg"
+      },
+      {
+        "word": "손가락이 끼이다",
+        "meaning": "ນີ້ວມື້ຖືກໜີບ",
+        "img": "/images/vocab/ch48_02.jpg"
+      },
+      {
+        "word": "손가락이 베이다",
+        "meaning": "ບາດນິ້ວມື້",
+        "img": "/images/vocab/ch48_03.jpg"
+      },
+      {
+        "word": "손가락이 데다",
+        "meaning": "ນີ້ວມື້ຖືກໄຟລ້ວກ",
+        "img": "/images/vocab/ch48_04.jpg"
+      },
+      {
+        "word": "화상을 입다",
+        "meaning": "ຖືກໄຟໄໝ້",
+        "img": "/images/vocab/ch48_05.jpg"
+      },
+      {
+        "word": "못에 찔리다",
+        "meaning": "ຍ້ຽມເຫຼັກຕະປູ",
+        "img": "/images/vocab/ch48_06.jpg"
+      },
+      {
+        "word": "유리가 박히다",
+        "meaning": "ຕີນຖືກແກ້ວບາດ",
+        "img": "/images/vocab/ch48_07.jpg"
+      },
+      {
+        "word": "찰과상을 입다",
+        "meaning": "ຖືກຂູດ",
+        "img": "/images/vocab/ch48_08.jpg"
+      },
+      {
+        "word": "가스에 중독되다",
+        "meaning": "ອາກາດເປັນຜິດ",
+        "img": "/images/vocab/ch48_09.jpg"
+      },
+      {
+        "word": "다치지 않도록 조심하세요",
+        "meaning": "",
+        "img": "/images/vocab/ch48_10.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 49,
+    "title": "보호구·사고 / ອຸປະກອນນິລະໄພ",
+    "words": [
+      {
+        "word": "착용하다",
+        "meaning": "ໃສ່",
+        "img": "/images/vocab/ch49_00.jpg"
+      },
+      {
+        "word": "보호복",
+        "meaning": "ຊຸດ ນິລະໄພ",
+        "img": "/images/vocab/ch49_01.jpg"
+      },
+      {
+        "word": "안전모",
+        "meaning": "ໝວກ ນິລະໄພ",
+        "img": "/images/vocab/ch49_02.jpg"
+      },
+      {
+        "word": "보안면",
+        "meaning": "ໜ້າກາກ ນິລະໄພ",
+        "img": "/images/vocab/ch49_03.jpg"
+      },
+      {
+        "word": "용접면",
+        "meaning": "ໜ້າກາກຈອດເຫຼັກ",
+        "img": "/images/vocab/ch49_04.jpg"
+      },
+      {
+        "word": "보안경",
+        "meaning": "ແວ່ນ ຕານິລະໄພ",
+        "img": "/images/vocab/ch49_05.jpg"
+      },
+      {
+        "word": "귀덮개",
+        "meaning": "ແນວຄອບຫູ ນິລະໄພ",
+        "img": "/images/vocab/ch49_06.jpg"
+      },
+      {
+        "word": "마스크",
+        "meaning": "ອຸປະກອນ ປິດປາກ",
+        "img": "/images/vocab/ch49_07.jpg"
+      },
+      {
+        "word": "귀마개",
+        "meaning": "ແນວອັດຫູ ນິລະໄພ",
+        "img": "/images/vocab/ch49_08.jpg"
+      },
+      {
+        "word": "안전대",
+        "meaning": "ສາຍຮັດ ນິລະໄພ",
+        "img": "/images/vocab/ch49_09.jpg"
+      },
+      {
+        "word": "안전화",
+        "meaning": "ເກີບ ນິລະໄພ",
+        "img": "/images/vocab/ch49_10.jpg"
+      },
+      {
+        "word": "목장갑",
+        "meaning": "ຖົງມືຜ້າສໍາລັບ",
+        "img": "/images/vocab/ch49_11.jpg"
+      },
+      {
+        "word": "안전장갑",
+        "meaning": "ຖົງມື (ໜັງ) ນິລະໄພ",
+        "img": "/images/vocab/ch49_12.jpg"
+      },
+      {
+        "word": "안전장화",
+        "meaning": "ເກີບໂບກ ນິລະໄພ",
+        "img": "/images/vocab/ch49_13.jpg"
+      },
+      {
+        "word": "부딪히다/충돌하다",
+        "meaning": "ຕໍາ ປະສານກັນ",
+        "img": "/images/vocab/ch49_14.jpg"
+      },
+      {
+        "word": "구덩이에 빠지다",
+        "meaning": "ຕົກລົງຂຸມ",
+        "img": "/images/vocab/ch49_15.jpg"
+      },
+      {
+        "word": "넘어지다",
+        "meaning": "ລົ້ມ",
+        "img": "/images/vocab/ch49_16.jpg"
+      },
+      {
+        "word": "미끄러지다",
+        "meaning": "ມື່ນ",
+        "img": "/images/vocab/ch49_17.jpg"
+      },
+      {
+        "word": "떨어지다/추락하다",
+        "meaning": "ຕົກ ຕົກຈາກບ່ອນສູງ",
+        "img": "/images/vocab/ch49_18.jpg"
+      },
+      {
+        "word": "감전되다",
+        "meaning": "ຖືກໄຟຊ໋ອດ",
+        "img": "/images/vocab/ch49_19.jpg"
+      },
+      {
+        "word": "파편이 튀다",
+        "meaning": "ເສດສ່ວນຟົ້ງອອກມາ",
+        "img": "/images/vocab/ch49_20.jpg"
+      },
+      {
+        "word": "맞다",
+        "meaning": "ຖືກຕີ",
+        "img": "/images/vocab/ch49_21.jpg"
+      },
+      {
+        "word": "기계에 감기다",
+        "meaning": "ຖືກຕິດຢູ່",
+        "img": "/images/vocab/ch49_22.jpg"
+      },
+      {
+        "word": "가스가 새다/",
+        "meaning": "ກາສຮົ່ວ",
+        "img": "/images/vocab/ch49_23.jpg"
+      },
+      {
+        "word": "폭발하다",
+        "meaning": "ລະເບີດ",
+        "img": "/images/vocab/ch49_24.jpg"
+      },
+      {
+        "word": "불이 나다",
+        "meaning": "ໄຟໄໝ້",
+        "img": "/images/vocab/ch49_25.jpg"
+      },
+      {
+        "word": "안전화를 안 신으면 다칠 수 있어요",
+        "meaning": "",
+        "img": "/images/vocab/ch49_26.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 50,
+    "title": "건강 관리 / ການດູແລສຸຂະພາບ",
+    "words": [
+      {
+        "word": "안전 수칙을 지키다",
+        "meaning": "ຫຼັກ ການ ຮັກ ສາ ຄວາມ ປອດ ໄພ",
+        "img": "/images/vocab/ch50_00.jpg"
+      },
+      {
+        "word": "주의하다",
+        "meaning": "ຂໍ້ ຄວນ ລະ ວັງ",
+        "img": "/images/vocab/ch50_01.jpg"
+      },
+      {
+        "word": "안전 수칙을 어기다",
+        "meaning": "ການລະເມິດຫຼັກການຄວາມ ປອດ ໄພ",
+        "img": "/images/vocab/ch50_02.jpg"
+      },
+      {
+        "word": "규칙을 준수하다",
+        "meaning": "ການ ປະ ຕິ ບັດ ຕາມ ກົດ ລະ ບຽບ",
+        "img": "/images/vocab/ch50_03.jpg"
+      },
+      {
+        "word": "살피다",
+        "meaning": "ພິ ຈາ ລະ ນາ",
+        "img": "/images/vocab/ch50_04.jpg"
+      },
+      {
+        "word": "점검하다",
+        "meaning": "ກວດ ເຊັກ ເບີ່ງ",
+        "img": "/images/vocab/ch50_05.jpg"
+      },
+      {
+        "word": "정비하다",
+        "meaning": "ຈັດ ການ ບໍ ລິ ຫານ ຈັດ ການ",
+        "img": "/images/vocab/ch50_06.jpg"
+      },
+      {
+        "word": "조치를 취하다",
+        "meaning": "ມີແຜນຮັບມື (ການສະດຸ້ງໄວຕໍ່ອຸປະຕິເຫດ)",
+        "img": "/images/vocab/ch50_07.jpg"
+      },
+      {
+        "word": "보수하다",
+        "meaning": "ສ້ອມ ແຊມ",
+        "img": "/images/vocab/ch50_08.jpg"
+      },
+      {
+        "word": "개선하다",
+        "meaning": "ແກ້ ໄຂ ປັບ ປຸງ",
+        "img": "/images/vocab/ch50_09.jpg"
+      },
+      {
+        "word": "건강을 챙기다",
+        "meaning": "ເບີ່ງ ແຍງ ສຸ ຂະ ພາບ",
+        "img": "/images/vocab/ch50_10.jpg"
+      },
+      {
+        "word": "표준 체중을 유지하다",
+        "meaning": "ຮັກ ສາ ນ້ຳ ໜັກ ໃນ ເກນ ມາດ ຕະ ຖານ",
+        "img": "/images/vocab/ch50_11.jpg"
+      },
+      {
+        "word": "건강을 해치다",
+        "meaning": "ທຳ ລາຍ ສຸ ຂະ ພາບ",
+        "img": "/images/vocab/ch50_12.jpg"
+      },
+      {
+        "word": "청결을 유지하다",
+        "meaning": "ຮັກ ສາ ຄວາມ ສະ ອາດ",
+        "img": "/images/vocab/ch50_13.jpg"
+      },
+      {
+        "word": "유산소 운동을 하다",
+        "meaning": "ອອກ ກຳ ລັງ ກາຍ ເພື່ອລະລາຍໄຂມັນ",
+        "img": "/images/vocab/ch50_14.jpg"
+      },
+      {
+        "word": "스트레칭을 하다",
+        "meaning": "ການ ຍຶດ ເສັ້ນ ຍຶດ ສາຍ",
+        "img": "/images/vocab/ch50_15.jpg"
+      },
+      {
+        "word": "골고루 섭취하다",
+        "meaning": "ກິນ ຢ່າງ ສະ ໝ່ຳ ສະ ເໝີ",
+        "img": "/images/vocab/ch50_16.jpg"
+      },
+      {
+        "word": "휴식을 취하다",
+        "meaning": "ພັກ ຜ່ອນ ສະ ໝອງ",
+        "img": "/images/vocab/ch50_17.jpg"
+      },
+      {
+        "word": "기분 전환을 하다",
+        "meaning": "ຄາຍ ຄຽດ ປ່ຽນ ບັນ ຍາ ກາດ",
+        "img": "/images/vocab/ch50_18.jpg"
+      },
+      {
+        "word": "건강 검진을 받다",
+        "meaning": "ຮັບ ການກວດ ສຸ ຂະ ພາບ",
+        "img": "/images/vocab/ch50_19.jpg"
+      },
+      {
+        "word": "열심히 해 준 덕분이에요",
+        "meaning": "",
+        "img": "/images/vocab/ch50_20.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 51,
+    "title": "취업·입국 / ການເຮັດວຽກ·ເຂົ້າເມືອງ",
+    "words": [
+      {
+        "word": "제조업",
+        "meaning": "ອຸດສາຫະກຳ ການຜະລິດ",
+        "img": "/images/vocab/ch51_00.jpg"
+      },
+      {
+        "word": "농업",
+        "meaning": "ກະສິກຳ",
+        "img": "/images/vocab/ch51_01.jpg"
+      },
+      {
+        "word": "건설업",
+        "meaning": "ອຸດສາຫະກຳ ການກໍ່ສ້າງ",
+        "img": "/images/vocab/ch51_02.jpg"
+      },
+      {
+        "word": "서비스업",
+        "meaning": "ການບໍລິການ",
+        "img": "/images/vocab/ch51_03.jpg"
+      },
+      {
+        "word": "축산업",
+        "meaning": "ການລ໊ຽງສັດ",
+        "img": "/images/vocab/ch51_04.jpg"
+      },
+      {
+        "word": "어업",
+        "meaning": "ການປະມົງ",
+        "img": "/images/vocab/ch51_05.jpg"
+      },
+      {
+        "word": "고용허가제",
+        "meaning": "ລະບົບການອະນຸຍາດ ການຈ້າງງານ",
+        "img": "/images/vocab/ch51_06.jpg"
+      },
+      {
+        "word": "문의하다",
+        "meaning": "ສອບຖາມ",
+        "img": "/images/vocab/ch51_07.jpg"
+      },
+      {
+        "word": "신분증",
+        "meaning": "ບັດປະຈຳຕົວ",
+        "img": "/images/vocab/ch51_08.jpg"
+      },
+      {
+        "word": "증명 사진",
+        "meaning": "ຮູບຖ່າຍຕິດບັດ",
+        "img": "/images/vocab/ch51_09.jpg"
+      },
+      {
+        "word": "수험료",
+        "meaning": "ໃບບິນຈ່າຍຄ່າທຳນຽມ",
+        "img": "/images/vocab/ch51_10.jpg"
+      },
+      {
+        "word": "수험표",
+        "meaning": "ບັດເຂົ້າຫ້ອງເສັງ",
+        "img": "/images/vocab/ch51_11.jpg"
+      },
+      {
+        "word": "접수증",
+        "meaning": "ໃບຢັ້ງຢືນ ການສະໝັກ",
+        "img": "/images/vocab/ch51_12.jpg"
+      },
+      {
+        "word": "성적표",
+        "meaning": "ຕາຕະລາງ ຄະແນນ",
+        "img": "/images/vocab/ch51_13.jpg"
+      },
+      {
+        "word": "합격하다",
+        "meaning": "ຜ່ານ",
+        "img": "/images/vocab/ch51_14.jpg"
+      },
+      {
+        "word": "불합격하다",
+        "meaning": "ບໍ່ຜ່ານ",
+        "img": "/images/vocab/ch51_15.jpg"
+      },
+      {
+        "word": "한국에 가서 일을 하고 싶은데요",
+        "meaning": "",
+        "img": "/images/vocab/ch51_16.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 52,
+    "title": "근로 조건 / ເງື່ອນໄຂການເຮັດວຽກ",
+    "words": [
+      {
+        "word": "근로 조건",
+        "meaning": "ເງື່ອນໄຂ ການເຮັດວຽກ",
+        "img": "/images/vocab/ch52_00.jpg"
+      },
+      {
+        "word": "휴식 시간",
+        "meaning": "ເວລາພັກຜ່ອນ",
+        "img": "/images/vocab/ch52_01.jpg"
+      },
+      {
+        "word": "계약 기간",
+        "meaning": "ໄລຍະເວລາ ຂອງສັນຍາ",
+        "img": "/images/vocab/ch52_02.jpg"
+      },
+      {
+        "word": "수습 기간",
+        "meaning": "ໄລຍະເວລາ ທົດລອງງານ",
+        "img": "/images/vocab/ch52_03.jpg"
+      },
+      {
+        "word": "근무 시간",
+        "meaning": "ຊົ່ວໂມງ ເຮັດວຽກ",
+        "img": "/images/vocab/ch52_04.jpg"
+      },
+      {
+        "word": "업무 내용",
+        "meaning": "ລາຍລະອຽດວຽກ",
+        "img": "/images/vocab/ch52_05.jpg"
+      },
+      {
+        "word": "임금",
+        "meaning": "ຄ່າຈ້າງ",
+        "img": "/images/vocab/ch52_06.jpg"
+      },
+      {
+        "word": "지급일",
+        "meaning": "ວັນເບີກຈ່າຍເງິນ",
+        "img": "/images/vocab/ch52_07.jpg"
+      },
+      {
+        "word": "지급 방법",
+        "meaning": "ວິທີການເບີກຈ່າຍເງິນ",
+        "img": "/images/vocab/ch52_08.jpg"
+      },
+      {
+        "word": "그림을 보고",
+        "meaning": "ຈົ່ງເບິ່ງຮູບພາບ ແລ້ວຕື່ມໃສ່ບົດສົນທະນາ ໃຫ້ຄົບຖ້ວນ ຄືດັ່ງຕົວຢ່າງ.",
+        "img": "/images/vocab/ch52_09.jpg"
+      },
+      {
+        "word": "제공하다",
+        "meaning": "ສະເໜີ ຈັດຫາ",
+        "img": "/images/vocab/ch52_10.jpg"
+      },
+      {
+        "word": "부담하다",
+        "meaning": "ພາລະ ຄວາມຮັບຜິດຊອບ",
+        "img": "/images/vocab/ch52_11.jpg"
+      },
+      {
+        "word": "숙식",
+        "meaning": "ທີ່ພັກເຊົາ",
+        "img": "/images/vocab/ch52_12.jpg"
+      },
+      {
+        "word": "숙식 제공 여부",
+        "meaning": "ເງື່ອນໄຂ ການເຮັດວຽກ ແມ່ນຂ້ອນຂ້າງດີ",
+        "img": "/images/vocab/ch52_14.jpg"
+      },
+      {
+        "word": "면접을 보다",
+        "meaning": "ສຳພາດເຂົ້າເຮັດວຽກ",
+        "img": "/images/vocab/ch52_15.jpg"
+      },
+      {
+        "word": "취업하다",
+        "meaning": "ຖືກຈ້າງງານ",
+        "img": "/images/vocab/ch52_16.jpg"
+      },
+      {
+        "word": "사업주",
+        "meaning": "ເຈົ້າຂອງທຸລະກິດ",
+        "img": "/images/vocab/ch52_17.jpg"
+      },
+      {
+        "word": "취업자",
+        "meaning": "ພະນັກງງານ ລູກຈ້າງ",
+        "img": "/images/vocab/ch52_18.jpg"
+      },
+      {
+        "word": "고용하다",
+        "meaning": "ຈ້າງງານ",
+        "img": "/images/vocab/ch52_19.jpg"
+      },
+      {
+        "word": "근무지",
+        "meaning": "ບ່ອນເຮັດວຽກ",
+        "img": "/images/vocab/ch52_20.jpg"
+      },
+      {
+        "word": "계약을 하다",
+        "meaning": "ເຮັດສັນຍາ",
+        "img": "/images/vocab/ch52_21.jpg"
+      },
+      {
+        "word": "사인하다/서명하다",
+        "meaning": "ເຊັນຊື່",
+        "img": "/images/vocab/ch52_22.jpg"
+      },
+      {
+        "word": "근무하다",
+        "meaning": "ເຮັດວຽກ",
+        "img": "/images/vocab/ch52_23.jpg"
+      },
+      {
+        "word": "업체명",
+        "meaning": "ຊື່ຂອງບໍລິສັດ",
+        "img": "/images/vocab/ch52_24.jpg"
+      },
+      {
+        "word": "퇴직하다",
+        "meaning": "ເຂົ້າບຳນານ",
+        "img": "/images/vocab/ch52_25.jpg"
+      },
+      {
+        "word": "해고하다",
+        "meaning": "ໄລ່ອອກຈາກວຽກ",
+        "img": "/images/vocab/ch52_26.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 53,
+    "title": "외국인 등록 / ການຂຶ້ນທະບຽນ",
+    "words": [
+      {
+        "word": "비자/사증",
+        "meaning": "ວີຊ່າ",
+        "img": "/images/vocab/ch53_00.jpg"
+      },
+      {
+        "word": "발급 받다",
+        "meaning": "ຮັບເອກະສານ",
+        "img": "/images/vocab/ch53_01.jpg"
+      },
+      {
+        "word": "여권",
+        "meaning": "ໜັງສືຜ່ານແດນ",
+        "img": "/images/vocab/ch53_02.jpg"
+      },
+      {
+        "word": "유효 기간",
+        "meaning": "ໄລຍະເວລາໝົດກຳນົດ",
+        "img": "/images/vocab/ch53_03.jpg"
+      },
+      {
+        "word": "발급을 신청하다",
+        "meaning": "ເອກະສານອອກ",
+        "img": "/images/vocab/ch53_04.jpg"
+      },
+      {
+        "word": "입국 심사를 받다",
+        "meaning": "ໄດ້ຮັບການອະນຸຍາດ ເຂົ້າປະເທດ",
+        "img": "/images/vocab/ch53_05.jpg"
+      },
+      {
+        "word": "통역",
+        "meaning": "ການແປ",
+        "img": "/images/vocab/ch53_06.jpg"
+      },
+      {
+        "word": "입국하다",
+        "meaning": "ເຂົ້າປະເທດ",
+        "img": "/images/vocab/ch53_07.jpg"
+      },
+      {
+        "word": "여권번호",
+        "meaning": "ເລກທີ ໜັງສືຜ່ານແດນ",
+        "img": "/images/vocab/ch53_08.jpg"
+      },
+      {
+        "word": "입국이 금지되다",
+        "meaning": "ຫ້າມເຂົ້າປະເທດ",
+        "img": "/images/vocab/ch53_09.jpg"
+      },
+      {
+        "word": "취업교육을 받다",
+        "meaning": "ໄດ້ຮັບການເຝິກອົບຮົມ ເພື່ອກຽມເຂົ້າເຮັດວຽກ",
+        "img": "/images/vocab/ch53_10.jpg"
+      },
+      {
+        "word": "작업장에 배치되다",
+        "meaning": "ຈັດເຂົ້າເຮັດວຽກ",
+        "img": "/images/vocab/ch53_11.jpg"
+      },
+      {
+        "word": "출입국 관리소",
+        "meaning": "ຫ້ອງການຄຸ້ມຄອງຄົນ ເຂົ້າ ອອກເມືອງ",
+        "img": "/images/vocab/ch53_12.jpg"
+      },
+      {
+        "word": "외국인 등록을 하다",
+        "meaning": "ຂຶ້ນທະບຽນຄົນຕ່າງດ້າວ",
+        "img": "/images/vocab/ch53_13.jpg"
+      },
+      {
+        "word": "사업자 등록증 사본",
+        "meaning": "ທະບຽນທຸລະກິດ ສະບັບສຳເນົາ",
+        "img": "/images/vocab/ch53_14.jpg"
+      },
+      {
+        "word": "수수료",
+        "meaning": "ຄ່າທຳນຽມ",
+        "img": "/images/vocab/ch53_15.jpg"
+      },
+      {
+        "word": "외국인 등록증",
+        "meaning": "ບັດປະຈຳຕົວ ຄົນຕ່າງດ້າວ",
+        "img": "/images/vocab/ch53_16.jpg"
+      },
+      {
+        "word": "번호표를 뽑다",
+        "meaning": "ກົດບັດລຳດັບ",
+        "img": "/images/vocab/ch53_17.jpg"
+      },
+      {
+        "word": "지문을 등록하다",
+        "meaning": "ປະທັບລາຍມື",
+        "img": "/images/vocab/ch53_18.jpg"
+      },
+      {
+        "word": "외국인 등록 신청서",
+        "meaning": "ໃບຄຳຮ້ອງຂຶ້ນທະບຽນຄົນຕ່າງດ້າວ",
+        "img": "/images/vocab/ch53_19.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 54,
+    "title": "보험 / ປະກັນໄພ",
+    "words": [
+      {
+        "word": "상해 보험",
+        "meaning": "ປະກັນໄພ ອຸປະຕິເຫດ",
+        "img": "/images/vocab/ch54_00.jpg"
+      },
+      {
+        "word": "질병",
+        "meaning": "ພະຍາດ",
+        "img": "/images/vocab/ch54_01.jpg"
+      },
+      {
+        "word": "산재 보험",
+        "meaning": "ປະກັນໄພ ອາຊີບ",
+        "img": "/images/vocab/ch54_02.jpg"
+      },
+      {
+        "word": "보험에 가입하다",
+        "meaning": "ການຂຶ້ນທະບຽນປະກັນໄພ",
+        "img": "/images/vocab/ch54_03.jpg"
+      },
+      {
+        "word": "보험료를 내다 /",
+        "meaning": "ຈ່າຍຄ່າທຳນຽມ ປະກັນໄພ",
+        "img": "/images/vocab/ch54_04.jpg"
+      },
+      {
+        "word": "보상을 받다",
+        "meaning": "ຮັບເງິນທົດແທນ",
+        "img": "/images/vocab/ch54_05.jpg"
+      },
+      {
+        "word": "상해",
+        "meaning": "ບາດເຈັບ",
+        "img": "/images/vocab/ch54_06.jpg"
+      },
+      {
+        "word": "장해",
+        "meaning": "ພິການ",
+        "img": "/images/vocab/ch54_07.jpg"
+      },
+      {
+        "word": "사망",
+        "meaning": "ເສຍຊິວິດ",
+        "img": "/images/vocab/ch54_08.jpg"
+      },
+      {
+        "word": "대 보험",
+        "meaning": "ການປະກັນສັງຄົມ ຂົງເຂດ",
+        "img": "/images/vocab/ch54_09.jpg"
+      },
+      {
+        "word": "보험금을 환급 받다",
+        "meaning": "ຮັບເງິນປະກັນໄພ ທົດແທນລາຍຈ່າຍ",
+        "img": "/images/vocab/ch54_10.jpg"
+      },
+      {
+        "word": "만기가 되다",
+        "meaning": "ໝົດກຳນົດ",
+        "img": "/images/vocab/ch54_11.jpg"
+      },
+      {
+        "word": "소멸되다",
+        "meaning": "ສີ້ນສຸດ",
+        "img": "/images/vocab/ch54_12.jpg"
+      },
+      {
+        "word": "보험을 청구하다",
+        "meaning": "ປະກອບເອກະສານ ທວງຄືນເງິນປະກັນໄພ",
+        "img": "/images/vocab/ch54_13.jpg"
+      },
+      {
+        "word": "청구서",
+        "meaning": "ໃບຄຳຮ້ອງ",
+        "img": "/images/vocab/ch54_14.jpg"
+      },
+      {
+        "word": "지급 심사를 받다",
+        "meaning": "ໄດ້ຮັບການກວດກາ",
+        "img": "/images/vocab/ch54_15.jpg"
+      },
+      {
+        "word": "보험금을 지급하다",
+        "meaning": "ຈ່າຍເງິນປະກັນໄພ",
+        "img": "/images/vocab/ch54_16.jpg"
+      },
+      {
+        "word": "보험금을 타다",
+        "meaning": "ຮັບເງິນປະກັນໄພ",
+        "img": "/images/vocab/ch54_17.jpg"
+      },
+      {
+        "word": "병원비",
+        "meaning": "ຄ່າປິ່ນປົ່ວ",
+        "img": "/images/vocab/ch54_18.jpg"
+      },
+      {
+        "word": "영수증",
+        "meaning": "ໃບຮັບເງິນ",
+        "img": "/images/vocab/ch54_19.jpg"
+      },
+      {
+        "word": "내역서",
+        "meaning": "ໃບປະເມີນຄ່າ ໃຊ້ຈ່າຍການປິ່ນປົ່ວ",
+        "img": "/images/vocab/ch54_20.jpg"
+      },
+      {
+        "word": "진단서",
+        "meaning": "ບົດລາຍງານການປິ່ນປົ່ວ",
+        "img": "/images/vocab/ch54_21.jpg"
+      },
+      {
+        "word": "산재를 신청하려면",
+        "meaning": "ຖ້າຫາກຢາກທວງຄືນເງິນ ຊົດເຊີຍອຸປະຕິເຫດ",
+        "img": "/images/vocab/ch54_22.jpg"
+      },
+      {
+        "word": "치료비/요양비",
+        "meaning": "ຄ່າໃຊ້ຈ່າຍ ການປິ່ນປົ່ວ",
+        "img": "/images/vocab/ch54_23.jpg"
+      },
+      {
+        "word": "휴업 급여",
+        "meaning": "ເງິນຊົດເຊີຍ ປ່ວຍການຊົ່ວຄາວ",
+        "img": "/images/vocab/ch54_24.jpg"
+      },
+      {
+        "word": "장해 보상금",
+        "meaning": "ເງິນຊົດເຊີຍ ການເສຍອົງຄະ",
+        "img": "/images/vocab/ch54_25.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 55,
+    "title": "급여·세금 / ເງິນເດືອນ·ພາສີ",
+    "words": [
+      {
+        "word": "급여 명세서",
+        "meaning": "ໃບຮັບເງິນເດືອນ",
+        "img": "/images/vocab/ch55_00.jpg"
+      },
+      {
+        "word": "실수령액",
+        "meaning": "ຈໍານວນເງິນສຸດທິ",
+        "img": "/images/vocab/ch55_01.jpg"
+      },
+      {
+        "word": "급여 내역",
+        "meaning": "ລາຍລະອຽດ ຂອງເງິນເດືອນ",
+        "img": "/images/vocab/ch55_02.jpg"
+      },
+      {
+        "word": "기본급",
+        "meaning": "ເງິນເດືອນພື້ນຖານ",
+        "img": "/images/vocab/ch55_03.jpg"
+      },
+      {
+        "word": "총액",
+        "meaning": "ຈໍານວນເງິນທັງໝົດ",
+        "img": "/images/vocab/ch55_04.jpg"
+      },
+      {
+        "word": "세금",
+        "meaning": "ພາສີ",
+        "img": "/images/vocab/ch55_05.jpg"
+      },
+      {
+        "word": "식대",
+        "meaning": "ຄ່າອາຫານ",
+        "img": "/images/vocab/ch55_06.jpg"
+      },
+      {
+        "word": "상여금",
+        "meaning": "ເງິນໂບນັດ",
+        "img": "/images/vocab/ch55_07.jpg"
+      },
+      {
+        "word": "공제하다",
+        "meaning": "ຫັກ (ຕັດ)",
+        "img": "/images/vocab/ch55_08.jpg"
+      },
+      {
+        "word": "연말정산",
+        "meaning": "ເງິນຫັກພາສີທ້າຍປີ",
+        "img": "/images/vocab/ch55_09.jpg"
+      },
+      {
+        "word": "퇴직금",
+        "meaning": "ເງິນບໍາເນັດ",
+        "img": "/images/vocab/ch55_10.jpg"
+      },
+      {
+        "word": "국민연금",
+        "meaning": "ເງິນບໍານານ",
+        "img": "/images/vocab/ch55_11.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 56,
+    "title": "휴가 / ວັນລາພັກ",
+    "words": [
+      {
+        "word": "휴가를 신청하다",
+        "meaning": "ຂຽນໃບລາພັກ",
+        "img": "/images/vocab/ch56_00.jpg"
+      },
+      {
+        "word": "유급 휴일",
+        "meaning": "ວັນພັກທີ່ຍັງໄດ້ເງິນ",
+        "img": "/images/vocab/ch56_01.jpg"
+      },
+      {
+        "word": "휴가를 내다",
+        "meaning": "ການຍື່ນໃບຂໍລາພັກ",
+        "img": "/images/vocab/ch56_02.jpg"
+      },
+      {
+        "word": "휴가를 받다",
+        "meaning": "ໄດ້ຮັບອະນຸຍາດໃຫ້ລາພັກ",
+        "img": "/images/vocab/ch56_03.jpg"
+      },
+      {
+        "word": "휴가를 쓰다",
+        "meaning": "ໃຊ້ເວລາລາພັກ",
+        "img": "/images/vocab/ch56_04.jpg"
+      },
+      {
+        "word": "연차 휴가",
+        "meaning": "ລາພັກປະຈຳປີ",
+        "img": "/images/vocab/ch56_05.jpg"
+      },
+      {
+        "word": "무급 휴일",
+        "meaning": "ວັນພັກທີ່ຖືກຕັດເງິນ",
+        "img": "/images/vocab/ch56_06.jpg"
+      },
+      {
+        "word": "법정 휴일",
+        "meaning": "ວັນພັກທີ່ກຳນົດໃນກົດໝາຍ",
+        "img": "/images/vocab/ch56_07.jpg"
+      },
+      {
+        "word": "약정 휴일",
+        "meaning": "ລາພັກ ຕາມສັນຍາ",
+        "img": "/images/vocab/ch56_08.jpg"
+      },
+      {
+        "word": "휴가와 휴일",
+        "meaning": "ການລາພັກ ກັບ ວັນພັກ",
+        "img": "/images/vocab/ch56_09.jpg"
+      },
+      {
+        "word": "출산 휴가",
+        "meaning": "ການລາພັກເກີດລູກ",
+        "img": "/images/vocab/ch56_10.jpg"
+      },
+      {
+        "word": "병가",
+        "meaning": "ລາພັກປິ່ນປົວ",
+        "img": "/images/vocab/ch56_11.jpg"
+      },
+      {
+        "word": "직위",
+        "meaning": "ຕຳແໜ່ງ",
+        "img": "/images/vocab/ch56_12.jpg"
+      },
+      {
+        "word": "병가 사유",
+        "meaning": "ສາເຫດ ການລາພັກປິ່ນປົວ",
+        "img": "/images/vocab/ch56_13.jpg"
+      },
+      {
+        "word": "병가 기간",
+        "meaning": "ໄລຍະເວລາລາ ພັກປິ່ນປົວ",
+        "img": "/images/vocab/ch56_14.jpg"
+      },
+      {
+        "word": "소속",
+        "meaning": "ບ່ອນປະຈຳການ",
+        "img": "/images/vocab/ch56_15.jpg"
+      },
+      {
+        "word": "조퇴하다",
+        "meaning": "ອອກໂຮງໝໍ",
+        "img": "/images/vocab/ch56_16.jpg"
+      },
+      {
+        "word": "비상 연락처",
+        "meaning": "ເບີຕິດຕໍ່ສຸກເສີນ",
+        "img": "/images/vocab/ch56_17.jpg"
+      },
+      {
+        "word": "통원 치료를 하다",
+        "meaning": "ທ່ຽວໄປຮັບການປິ່ນປົວ",
+        "img": "/images/vocab/ch56_18.jpg"
+      },
+      {
+        "word": "입원을 하다",
+        "meaning": "ເຂົ້າໂຮງໝໍ",
+        "img": "/images/vocab/ch56_19.jpg"
+      },
+      {
+        "word": "결근하다",
+        "meaning": "ຂາດວຽກ",
+        "img": "/images/vocab/ch56_20.jpg"
+      },
+      {
+        "word": "무단결근하다",
+        "meaning": "ຂາດວຽກ ໂດຍບໍ່ລາພັກ",
+        "img": "/images/vocab/ch56_21.jpg"
+      },
+      {
+        "word": "이번 여름 휴가 계획은 세웠어",
+        "meaning": "",
+        "img": "/images/vocab/ch56_22.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 57,
+    "title": "사업장 변경 / ປ່ຽນບ່ອນເຮັດວຽກ",
+    "words": [
+      {
+        "word": "근로계약이",
+        "meaning": "ສັນຍາ ການຈ້າງງານ",
+        "img": "/images/vocab/ch57_00.jpg"
+      },
+      {
+        "word": "만료되다",
+        "meaning": "ໝົດກຳນົດ",
+        "img": "/images/vocab/ch57_01.jpg"
+      },
+      {
+        "word": "계약을 갱신하다",
+        "meaning": "ຕໍ່ສັນຍາການຈ້າງງານ",
+        "img": "/images/vocab/ch57_03.jpg"
+      },
+      {
+        "word": "갱신을 거절하다",
+        "meaning": "ປະຕິເສດ ການຕໍ່ສັນຍາ",
+        "img": "/images/vocab/ch57_04.jpg"
+      },
+      {
+        "word": "사업장 변경 이유",
+        "meaning": "ເຫດຜົນ ທີ່ປ່ຽນບ່ອນເຮັດວຽກ",
+        "img": "/images/vocab/ch57_05.jpg"
+      },
+      {
+        "word": "임금을 체불하다",
+        "meaning": "ເລື່ອນການຈ່າຍເງິນ",
+        "img": "/images/vocab/ch57_06.jpg"
+      },
+      {
+        "word": "휴업하다",
+        "meaning": "ປິດກິດຈະການ ຊົ່ວຄາວ",
+        "img": "/images/vocab/ch57_07.jpg"
+      },
+      {
+        "word": "폐업하다",
+        "meaning": "ປິດກິດຈະການ",
+        "img": "/images/vocab/ch57_08.jpg"
+      },
+      {
+        "word": "폭언을 하다",
+        "meaning": "ຮ້ອງສຽງດັງໃສ່ (ແຂກໃສ່)",
+        "img": "/images/vocab/ch57_09.jpg"
+      },
+      {
+        "word": "폭행을 하다",
+        "meaning": "ຕີ ທຳຮາຍຮ່າງກາຍ",
+        "img": "/images/vocab/ch57_10.jpg"
+      },
+      {
+        "word": "사업장 변경 신청서",
+        "meaning": "ແບບຟອມສະໝັກ ປ່ຽນບ່ອນເຮັດວຽກ",
+        "img": "/images/vocab/ch57_11.jpg"
+      },
+      {
+        "word": "사업장 추가",
+        "meaning": "ເພີ່ມບ່ອນເຮັດວຽກ",
+        "img": "/images/vocab/ch57_12.jpg"
+      },
+      {
+        "word": "조기 귀국하다",
+        "meaning": "ກັບຄືນປະເທດ ກ່ອນກຳນົດ",
+        "img": "/images/vocab/ch57_13.jpg"
+      },
+      {
+        "word": "개인 사정",
+        "meaning": "ກໍລະນີ ສ່ວນຕົວ",
+        "img": "/images/vocab/ch57_14.jpg"
+      },
+      {
+        "word": "일시 출국하다",
+        "meaning": "ອອກຈາກປະເທດ ຊົ່ວຄາວ",
+        "img": "/images/vocab/ch57_15.jpg"
+      },
+      {
+        "word": "재입국하다",
+        "meaning": "ເຂົ້າປະເທດ ຄືນໃໝ່",
+        "img": "/images/vocab/ch57_16.jpg"
+      },
+      {
+        "word": "면제되다",
+        "meaning": "ຍົກເວັ້ນ",
+        "img": "/images/vocab/ch57_17.jpg"
+      },
+      {
+        "word": "재입국 허가 신청서",
+        "meaning": "ຟອມສະໝັກ ເຂົ້າປະເທດຄືນໃໝ່",
+        "img": "/images/vocab/ch57_18.jpg"
+      },
+      {
+        "word": "집안 사정",
+        "meaning": "ກໍລະນີ ຂອງຄອບຄົວ",
+        "img": "/images/vocab/ch57_19.jpg"
+      },
+      {
+        "word": "병환",
+        "meaning": "ການເຈັບເປັນ",
+        "img": "/images/vocab/ch57_20.jpg"
+      },
+      {
+        "word": "편찮으시다",
+        "meaning": "ບໍ່ສະບາຍ",
+        "img": "/images/vocab/ch57_21.jpg"
+      },
+      {
+        "word": "일시 출국",
+        "meaning": "ອອກຈາກ ປະເທດຊົ່ວຄາວ",
+        "img": "/images/vocab/ch57_22.jpg"
+      },
+      {
+        "word": "동의서(허가서)",
+        "meaning": "ຟອມອະນຸຍາດ",
+        "img": "/images/vocab/ch57_23.jpg"
+      },
+      {
+        "word": "출국 예정 신고서",
+        "meaning": "ຟອມລາຍງານ ການອອກຈາກປະເທດ",
+        "img": "/images/vocab/ch57_24.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 58,
+    "title": "체류 기간 / ໄລຍະ​ເວ​ລາ​ຢູ່​ອາ​ໄສ",
+    "words": [
+      {
+        "word": "체류하다",
+        "meaning": "ພັກເຊົາ",
+        "img": "/images/vocab/ch58_00.jpg"
+      },
+      {
+        "word": "연장하다",
+        "meaning": "ຕໍ່ ຂະຫຍາຍ",
+        "img": "/images/vocab/ch58_01.jpg"
+      },
+      {
+        "word": "체류 기간",
+        "meaning": "ໄລຍະເວລາພັກເຊົາ",
+        "img": "/images/vocab/ch58_02.jpg"
+      },
+      {
+        "word": "체류 가능 기간",
+        "meaning": "ໄລຍະເວລາ ທີ່ສາມາດພັກເຊົາໄດ້",
+        "img": "/images/vocab/ch58_03.jpg"
+      },
+      {
+        "word": "변경 가능 횟수",
+        "meaning": "ຈໍານວນຄັ້ງ ທີ່ສາມາດປ່ຽນໄດ້",
+        "img": "/images/vocab/ch58_04.jpg"
+      },
+      {
+        "word": "임대차 계약서",
+        "meaning": "ສັນຍາເຊົ່າ",
+        "img": "/images/vocab/ch58_05.jpg"
+      },
+      {
+        "word": "체류지 입증 서류",
+        "meaning": "ເອກະສານ ຢັ້ງຢືນການພັກເຊົາ",
+        "img": "/images/vocab/ch58_06.jpg"
+      },
+      {
+        "word": "자진 출국 각서",
+        "meaning": "ແບບຟອມ ອອກປະເທດ",
+        "img": "/images/vocab/ch58_07.jpg"
+      },
+      {
+        "word": "취업 활동 기간 연장 신청서",
+        "meaning": "ແບບຟອມສະໝັກ ສໍາລັບການຕໍ່ໄລຍະ",
+        "img": "/images/vocab/ch58_08.jpg"
+      },
+      {
+        "word": "신원 보증서",
+        "meaning": "ໃບຮັບປະກັນ",
+        "img": "/images/vocab/ch58_09.jpg"
+      },
+      {
+        "word": "구직등록필증",
+        "meaning": "ໃບຢັ້ງຢືນ ການລົງທະບຽນ ຊອກຫາວຽກ",
+        "img": "/images/vocab/ch58_10.jpg"
+      },
+      {
+        "word": "체류 자격",
+        "meaning": "ສະຖານະ ການພັກເຊົາ",
+        "img": "/images/vocab/ch58_11.jpg"
+      },
+      {
+        "word": "자격을 부여하다",
+        "meaning": "ໃຫ້ສະຖານະ ການພັກເຊົາ",
+        "img": "/images/vocab/ch58_12.jpg"
+      },
+      {
+        "word": "합법 체류",
+        "meaning": "ການຢູ່ອາໄສ ແບບຖືກກົດໝາຍ",
+        "img": "/images/vocab/ch58_13.jpg"
+      },
+      {
+        "word": "불법 체류",
+        "meaning": "ການ ຢູ່ອາໄສ ແບບຜິດກົດໝາຍ",
+        "img": "/images/vocab/ch58_14.jpg"
+      },
+      {
+        "word": "체류 자격 외 활동",
+        "meaning": "ກິດຈະກຳ ທີ່ນອກເໜືອຈາກ",
+        "img": "/images/vocab/ch58_15.jpg"
+      },
+      {
+        "word": "추방되다",
+        "meaning": "ຖືກເນລະເທດ ອອກຈາກປະເທດ",
+        "img": "/images/vocab/ch58_16.jpg"
+      },
+      {
+        "word": "자격을 획득하다",
+        "meaning": "ໄດ້ສະຖານະ ການພັກເຊົາ ໄດ້ມາເຊິ່ງສະຖານະ ການພັກເຊົາ",
+        "img": "/images/vocab/ch58_17.jpg"
+      },
+      {
+        "word": "자격을 변경하다",
+        "meaning": "ປ່ຽນສະຖານະ",
+        "img": "/images/vocab/ch58_18.jpg"
+      },
+      {
+        "word": "체류 기간 연장",
+        "meaning": "ການຕໍ່ໄລຍະເວລາ ການພັກເຊົາ",
+        "img": "/images/vocab/ch58_19.jpg"
+      },
+      {
+        "word": "벌금을 내다",
+        "meaning": "ເສຍຄ່າປັບໃໝ",
+        "img": "/images/vocab/ch58_20.jpg"
+      },
+      {
+        "word": "강제 출국을 당하다",
+        "meaning": "ຖືກບັງຄັບ ໃຫ້ອອກຈາກປະເທດ",
+        "img": "/images/vocab/ch58_21.jpg"
+      },
+      {
+        "word": "자진 출국하다",
+        "meaning": "ອອກຈາກປະເທດ ໂດຍສະໝັກໃຈ",
+        "img": "/images/vocab/ch58_22.jpg"
+      }
+    ]
+  },
+  {
+    "chapter": 59,
+    "title": "산업 안전 / ຄວາມປອດໄພໃນອຸດສາຫະກຳ",
+    "words": [
+      {
+        "word": "출입금지",
+        "meaning": "ຫ້າມເຂົ້າອອກ",
+        "img": "/images/vocab/ch59_00.jpg"
+      },
+      {
+        "word": "보행금지",
+        "meaning": "ຫ້າມຍ່າງໄປ",
+        "img": "/images/vocab/ch59_01.jpg"
+      },
+      {
+        "word": "금연",
+        "meaning": "ຫ້າມສູບຢາ",
+        "img": "/images/vocab/ch59_02.jpg"
+      },
+      {
+        "word": "방사성 물질 경고",
+        "meaning": "ເຕືອນວັດຖຸມີລັງ ສີ",
+        "img": "/images/vocab/ch59_03.jpg"
+      },
+      {
+        "word": "매달린 물체 경고",
+        "meaning": "ເຕືອນມີວັດຖຸ ແຂວນ ຢູ່ ເທິງ",
+        "img": "/images/vocab/ch59_04.jpg"
+      },
+      {
+        "word": "고온 경고",
+        "meaning": "ເຕືອນອຸນນະພຸມສູງ",
+        "img": "/images/vocab/ch59_05.jpg"
+      },
+      {
+        "word": "저온 경고",
+        "meaning": "ເຕືອນອຸນຫະ ພູມ ຕ່ຳ",
+        "img": "/images/vocab/ch59_06.jpg"
+      },
+      {
+        "word": "몸균형 상실 경고",
+        "meaning": "ເຕືອນ ການ ສູນ ເສຍ ຄວາມ ຊົງ ຕົວ (ລະ ວັງ ລົ້ມ)",
+        "img": "/images/vocab/ch59_07.jpg"
+      },
+      {
+        "word": "끼임 재해",
+        "meaning": "ອຸ ປະ ຕິ ເຫດ ທີ່ເກີດ ຈາກ ການ ໜີບ",
+        "img": "/images/vocab/ch59_08.jpg"
+      },
+      {
+        "word": "회전부와 고정물체 사이에 끼임",
+        "meaning": "ລະ ວັງ ອຸ ປະ ຕິ ເຫດ ຖືກ ໜີບ ລະ ຫວ່າງ ສ່ວນ ທີ່ ໝູນ ແລະ ວັດ ຖຸ ຄົງ ທີ່",
+        "img": "/images/vocab/ch59_09.jpg"
+      },
+      {
+        "word": "두 회전체의 물림점에 끼임",
+        "meaning": "ລະ ວັງ ອຸ ປະ ຕິ ເຫດ ຖືກ ໜີບ ຈາກ ແຂ້ວ ເຟືອງ ທີ່ ມີສອງ ເບື້ອງ ໝູນ ເຂົ້າ ຫາ ກັນ",
+        "img": "/images/vocab/ch59_10.jpg"
+      },
+      {
+        "word": "회전체 및 돌기부에 감김",
+        "meaning": "ລະ ວັງ ອຸ ປະ ຕິ ເຫດ ຖືກ ປາດ ຫຼື ບາດໃນ ຂະ ນະ ທີ່ ເຄື່ອງ ຈັກ ກຳ ລັງ ເປີດ ໃຊ້ ງານ ຢູ່",
+        "img": "/images/vocab/ch59_11.jpg"
+      },
+      {
+        "word": "인력 운반",
+        "meaning": "ລະ ວັງ ອຸ ປະ ຕິ ເຫດ ເກີດ ຈາກ ການ ຍົກ ຂອງ ໜັກ ຫຼື ວັດ ຖຸ ອຸ ປະ ກອນ ທີ່ ມີການເຄື່ອນທີ່",
+        "img": "/images/vocab/ch59_12.jpg"
+      }
+    ]
+  }
+]

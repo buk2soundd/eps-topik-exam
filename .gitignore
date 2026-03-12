@@ -33,3 +33,5 @@ npm-debug.log*
 
 # APK extract (not needed for web deploy)
 apk_extract/
+.vercel
+.env*.local

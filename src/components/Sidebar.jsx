@@ -1,10 +1,12 @@
 import React from 'react';
 import { EXAM_SECTIONS } from '../data/examData';
 
-/**
- * Right-side sidebar: section label, countdown timer, question grid navigation,
- * and Prev/Next navigation buttons.
- */
+// Reading gets first half of exam time, listening gets second half
+const HALF_SEC = 1200; // 20 min each
+
+const fmtTime = (s) =>
+  `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+
 const Sidebar = ({
   currentSection,
   currentQuestionId,
@@ -14,177 +16,189 @@ const Sidebar = ({
   onNavigate,
   onPrev,
   onNext,
+  onClose,
 }) => {
-  const minutes = String(Math.floor(remainingSeconds / 60)).padStart(2, '0');
-  const seconds = String(remainingSeconds % 60).padStart(2, '0');
-
-  // Reading: IDs 1-20, Listening: IDs 21-40
-  const readingIds = Array.from({ length: 20 }, (_, i) => i + 1);
-  const listeningIds = Array.from({ length: 20 }, (_, i) => i + 21);
+  // Dual timer: reading uses first 20 min, listening uses last 20 min
+  const readDispSec   = Math.max(0, remainingSeconds - HALF_SEC);
+  const listenDispSec = Math.min(remainingSeconds, HALF_SEC);
+  const isListeningTime = remainingSeconds <= HALF_SEC;
 
   const isReading = currentSection === EXAM_SECTIONS.READING;
-  const sectionIds = isReading ? readingIds : listeningIds;
+  const sectionIds = isReading
+    ? Array.from({ length: 20 }, (_, i) => i + 1)
+    : Array.from({ length: 20 }, (_, i) => i + 21);
 
-  // Split into two columns: left = first 10, right = last 10
-  const leftCol = sectionIds.slice(0, 10);
+  const leftCol  = sectionIds.slice(0, 10);
   const rightCol = sectionIds.slice(10, 20);
 
   return (
-    <aside className="flex flex-col h-full bg-white border-l border-gray-300">
-      {/* Section Label + Set Number */}
-      <div className="bg-gray-200 text-center py-2 border-b border-gray-300">
-        <div className="font-bold text-sm tracking-widest text-gray-700 uppercase">
-          {currentSection}
-        </div>
-        <div className="text-xs text-gray-500 mt-0.5">
-          ຊຸດທີ <span className="font-bold text-[#1a3a6b]">{setNumber}</span>
-        </div>
-      </div>
+    <aside className="flex flex-col h-full" style={{ background: '#d7e4f2' }}>
 
-      {/* Timer */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-300 bg-gray-50">
-        <span className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
-          ເວລາທີ່ເຫຼືອ
-        </span>
-        <span
-          className={`timer-display text-xl font-bold ${
-            remainingSeconds <= 60
-              ? 'text-red-600 animate-pulse'
-              : remainingSeconds <= 300
-              ? 'text-orange-500'
-              : 'text-gray-800'
-          }`}
+      {/* Mobile close button (only shown in overlay mode) */}
+      {onClose && (
+        <div
+          className="flex items-center justify-between px-3 py-2 shrink-0"
+          style={{ background: '#1a3a6b' }}
         >
-          {minutes}:{seconds}
-        </span>
+          <span className="text-white text-xs font-bold tracking-wide">ກະດານຄຳຖາມ</span>
+          <button
+            onClick={onClose}
+            className="text-white/80 hover:text-white text-xl leading-none px-1 active:opacity-60"
+            aria-label="close"
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
+      {/* ── Dual Timer ─────────────────────────────────────────────── */}
+      <div
+        className="flex shrink-0 border-b-2"
+        style={{ background: '#b8cfe6', borderColor: '#9ab8d4' }}
+      >
+        {/* Reading */}
+        <div
+          className="flex-1 py-2 text-center border-r"
+          style={{
+            borderColor: '#9ab8d4',
+            opacity: isListeningTime ? 0.45 : 1,
+          }}
+        >
+          <div className="text-[9px] font-bold uppercase tracking-wide" style={{ color: '#1a3a6b' }}>
+            ການອ່ານ
+          </div>
+          <div
+            className="timer-display font-bold text-base"
+            style={{ color: readDispSec <= 60 ? '#c00' : '#1a3a6b' }}
+          >
+            {fmtTime(readDispSec)}
+          </div>
+        </div>
+
+        {/* Listening */}
+        <div
+          className="flex-1 py-2 text-center"
+          style={{ opacity: isListeningTime ? 1 : 0.45 }}
+        >
+          <div className="text-[9px] font-bold uppercase tracking-wide" style={{ color: '#1a3a6b' }}>
+            ການຟັງ
+          </div>
+          <div
+            className="timer-display font-bold text-base"
+            style={{ color: isListeningTime && listenDispSec <= 60 ? '#c00' : '#1a3a6b' }}
+          >
+            {fmtTime(listenDispSec)}
+          </div>
+        </div>
       </div>
 
-      {/* Section Tabs */}
-      <div className="flex border-b border-gray-300">
+      {/* ── Section Tabs ───────────────────────────────────────────── */}
+      <div className="flex shrink-0 border-b" style={{ borderColor: '#9ab8d4' }}>
         <button
-          className={`flex-1 py-2 text-xs font-semibold transition-colors ${
-            isReading
-              ? 'bg-[#1a3a6b] text-white'
-              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-          }`}
-          onClick={() => onNavigate(1)}
+          onClick={() => { onNavigate(1); onClose?.(); }}
+          className="flex-1 py-1.5 text-xs font-bold transition-colors"
+          style={{
+            background: isReading ? '#1a3a6b' : 'transparent',
+            color: isReading ? '#fff' : '#1a3a6b',
+          }}
         >
           ການອ່ານ
         </button>
         <button
-          className={`flex-1 py-2 text-xs font-semibold transition-colors ${
-            !isReading
-              ? 'bg-[#1a3a6b] text-white'
-              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-          }`}
-          onClick={() => onNavigate(21)}
+          onClick={() => { onNavigate(21); onClose?.(); }}
+          className="flex-1 py-1.5 text-xs font-bold transition-colors"
+          style={{
+            background: !isReading ? '#1a3a6b' : 'transparent',
+            color: !isReading ? '#fff' : '#1a3a6b',
+          }}
         >
           ການຟັງ
         </button>
       </div>
 
-      {/* Question Grid Navigation */}
+      {/* ── Answer Status Grid ─────────────────────────────────────── */}
       <div className="flex-1 overflow-y-auto p-2">
-        <div className="flex gap-1">
-          {/* Left Column */}
-          <div className="flex-1 flex flex-col gap-1">
-            {leftCol.map((qId) => {
-              const answered = answers[qId] !== undefined && answers[qId] !== null;
-              const isCurrent = currentQuestionId === qId;
-              return (
-                <button
-                  key={qId}
-                  onClick={() => onNavigate(qId)}
-                  className={`flex items-center gap-2 px-2 py-1.5 rounded text-xs transition-colors w-full text-left
-                    ${isCurrent ? 'bg-blue-100 border border-[#1a3a6b]' : 'hover:bg-gray-100'}
-                  `}
-                >
-                  {/* Circle indicator */}
-                  <span
-                    className={`inline-flex items-center justify-center w-4 h-4 rounded-full border-2 flex-shrink-0 transition-colors ${
-                      answered
-                        ? 'bg-[#1a3a6b] border-[#1a3a6b]'
-                        : isCurrent
-                        ? 'border-[#1a3a6b] bg-white'
-                        : 'border-gray-400 bg-white'
-                    }`}
-                  >
-                    {answered && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-white inline-block" />
-                    )}
-                  </span>
-                  <span
-                    className={`font-medium ${
-                      isCurrent ? 'text-[#1a3a6b] font-bold' : 'text-gray-700'
-                    }`}
-                  >
-                    {qId}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+        <table className="w-full border-collapse">
+          <tbody>
+            {Array.from({ length: 10 }, (_, row) => (
+              <tr key={row}>
+                {[leftCol[row], rightCol[row]].map((qId) => {
+                  if (qId === undefined) return <td key={`empty-${row}`} />;
+                  const answered  = answers[qId] !== undefined && answers[qId] !== null;
+                  const isCurrent = currentQuestionId === qId;
+                  return (
+                    <td
+                      key={qId}
+                      onClick={() => { onNavigate(qId); onClose?.(); }}
+                      className="cursor-pointer select-none text-center"
+                      style={{
+                        height: '26px',
+                        border: '1px solid #9ab8d4',
+                        background: isCurrent ? '#1a3a6b' : '#fff',
+                        color: isCurrent ? '#fff' : '#333',
+                        fontWeight: isCurrent ? 'bold' : 'normal',
+                        fontSize: '11px',
+                        padding: '1px 3px',
+                        userSelect: 'none',
+                      }}
+                    >
+                      {qId}
+                      {answered && (
+                        <span
+                          style={{
+                            color: isCurrent ? '#fde047' : '#1a3a6b',
+                            marginLeft: '2px',
+                            fontSize: '13px',
+                            lineHeight: 1,
+                          }}
+                        >
+                          •
+                        </span>
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-          {/* Vertical divider */}
-          <div className="w-px bg-gray-200 my-1" />
-
-          {/* Right Column */}
-          <div className="flex-1 flex flex-col gap-1">
-            {rightCol.map((qId) => {
-              const answered = answers[qId] !== undefined && answers[qId] !== null;
-              const isCurrent = currentQuestionId === qId;
-              return (
-                <button
-                  key={qId}
-                  onClick={() => onNavigate(qId)}
-                  className={`flex items-center gap-2 px-2 py-1.5 rounded text-xs transition-colors w-full text-left
-                    ${isCurrent ? 'bg-blue-100 border border-[#1a3a6b]' : 'hover:bg-gray-100'}
-                  `}
-                >
-                  <span
-                    className={`inline-flex items-center justify-center w-4 h-4 rounded-full border-2 flex-shrink-0 transition-colors ${
-                      answered
-                        ? 'bg-[#1a3a6b] border-[#1a3a6b]'
-                        : isCurrent
-                        ? 'border-[#1a3a6b] bg-white'
-                        : 'border-gray-400 bg-white'
-                    }`}
-                  >
-                    {answered && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-white inline-block" />
-                    )}
-                  </span>
-                  <span
-                    className={`font-medium ${
-                      isCurrent ? 'text-[#1a3a6b] font-bold' : 'text-gray-700'
-                    }`}
-                  >
-                    {qId}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+        {/* Answer count summary */}
+        <div
+          className="mt-2 text-center text-[10px]"
+          style={{ color: '#1a3a6b' }}
+        >
+          ຕອບແລ້ວ{' '}
+          <span className="font-bold">
+            {sectionIds.filter((id) => answers[id] !== undefined && answers[id] !== null).length}
+          </span>{' '}
+          / 20
         </div>
       </div>
 
-      {/* Bottom Nav Buttons */}
-      <div className="flex gap-2 p-3 border-t border-gray-300 bg-gray-50">
+      {/* ── Prev / Next ────────────────────────────────────────────── */}
+      <div
+        className="flex gap-1 p-2 shrink-0 border-t"
+        style={{ borderColor: '#9ab8d4' }}
+      >
         <button
           onClick={onPrev}
-          className="flex-1 bg-[#1a3a6b] hover:bg-[#122d56] active:bg-[#0d2245] text-white font-bold py-2 rounded text-sm tracking-widest uppercase transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           disabled={currentQuestionId <= 1}
+          className="flex-1 text-white font-bold py-2 text-xs rounded transition-colors disabled:opacity-40"
+          style={{ background: '#1a3a6b' }}
         >
-          ກ່ອນໜ້າ
+          ◄ ກ່ອນ
         </button>
         <button
           onClick={onNext}
-          className="flex-1 bg-[#1a3a6b] hover:bg-[#122d56] active:bg-[#0d2245] text-white font-bold py-2 rounded text-sm tracking-widest uppercase transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           disabled={currentQuestionId >= 40}
+          className="flex-1 text-white font-bold py-2 text-xs rounded transition-colors disabled:opacity-40"
+          style={{ background: '#1a3a6b' }}
         >
-          ຖັດໄປ
+          ຖັດ ►
         </button>
       </div>
+
     </aside>
   );
 };

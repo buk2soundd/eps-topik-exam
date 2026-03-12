@@ -7,7 +7,10 @@
   body {
     margin: 0;
     font-family: 'Noto Sans Lao', 'Malgun Gothic', 'AppleGothic', Arial, sans-serif;
-    background-color: #f0f2f5;
+    background-color: #ababab;
+  }
+  button, a {
+    touch-action: manipulation;
   }
 }
 
@@ -27,4 +30,13 @@
 @keyframes soundBar {
   from { transform: scaleY(0.4); }
   to   { transform: scaleY(1);   }
+}
+
+/* Hide scrollbar (used in VocabPage horizontal scroll rows) */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

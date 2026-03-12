@@ -4,6 +4,10 @@ import Sidebar from './components/Sidebar';
 import QuestionArea from './components/QuestionArea';
 import ResultModal from './components/ResultModal';
 import StartScreen from './components/StartScreen';
+import VocabPage from './pages/VocabPage';
+import IndustryPage from './pages/IndustryPage';
+import GrammarPage from './pages/GrammarPage';
+import StandardVocabPage from './pages/StandardVocabPage';
 import {
   EXAM_SECTIONS,
   EXAM_CATEGORIES,
@@ -16,11 +20,15 @@ import {
   POINTS_PER_QUESTION,
 } from './data/examData';
 import { saveExamResult, checkNameSubmitted } from './lib/db';
+import { getSettings } from './lib/settings';
 import { parseConversationScript, getKoreanVoices, loadKoreanVoices, speakConversation } from './lib/tts';
 
 const MIN_FONT = 12;
 const MAX_FONT = 22;
 const DEFAULT_FONT = 15;
+
+const fmtTime = (s) =>
+  `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
 // Auto-play total seconds for one question:
 //   (N plays × duration) + answer window
@@ -41,7 +49,7 @@ function App() {
   // ── Exam state ────────────────────────────────────────────────────────────
   const [currentQuestionId, setCurrentQuestionId] = useState(1);
   const [answers, setAnswers] = useState({});
-  const [remainingSeconds, setRemainingSeconds] = useState(EXAM_DURATION_SECONDS);
+  const [remainingSeconds, setRemainingSeconds] = useState(() => getSettings().durationSec);
   const [showResult, setShowResult] = useState(false);
   const [fontSize, setFontSize] = useState(DEFAULT_FONT);
   const [timerActive, setTimerActive] = useState(false);
@@ -81,22 +89,25 @@ function App() {
     }
 
     // Check if this name has already submitted (async DB lookup)
-    setNameCheckLoading(true);
-    try {
-      const alreadySubmitted = await checkNameSubmitted(examinerName.trim());
-      if (alreadySubmitted) {
-        setIsNameBlocked(true);
-        setNameCheckLoading(false);
-        if (typeof window !== 'undefined' && window.speechSynthesis) {
-          window.speechSynthesis.cancel();
+    // Only block if blockDuplicates setting is enabled
+    if (getSettings().blockDuplicates) {
+      setNameCheckLoading(true);
+      try {
+        const alreadySubmitted = await checkNameSubmitted(examinerName.trim());
+        if (alreadySubmitted) {
+          setIsNameBlocked(true);
+          setNameCheckLoading(false);
+          if (typeof window !== 'undefined' && window.speechSynthesis) {
+            window.speechSynthesis.cancel();
+          }
+          return;
         }
-        return;
+      } catch (e) {
+        console.warn('[DB] checkNameSubmitted failed:', e.message);
+        // fail-open: allow exam if DB check errors
+      } finally {
+        setNameCheckLoading(false);
       }
-    } catch (e) {
-      console.warn('[DB] checkNameSubmitted failed:', e.message);
-      // fail-open: allow exam if DB check errors
-    } finally {
-      setNameCheckLoading(false);
     }
 
     setIsNameBlocked(false);
@@ -106,7 +117,7 @@ function App() {
     setTimerActive(true);
     setCurrentQuestionId(1);
     setAnswers({});
-    setRemainingSeconds(EXAM_DURATION_SECONDS);
+    setRemainingSeconds(getSettings().durationSec);
     examStartTimeRef.current = Date.now();
   }, [assignedSet, selectedCategory, examinerName]);
 
@@ -121,7 +132,7 @@ function App() {
   // ── Listening auto-play engine ────────────────────────────────────────────
   const clearListeningTimer = () => {
     if (listeningTimerRef.current) {
-      clearInterval(listeningTimerRef.current);
+      clearTimeout(listeningTimerRef.current);
       listeningTimerRef.current = null;
     }
   };
@@ -178,18 +189,12 @@ function App() {
     const startAnswerTimer = () => {
       setCurrentSpeaker(null);
       setActiveSegIdx(-1);
-      setListeningPhase('answering');
-      let secs = LISTENING_ANSWER_TIME_SEC;
-      setListeningSecondsLeft(secs);
-      listeningTimerRef.current = setInterval(() => {
-        secs -= 1;
-        setListeningSecondsLeft(secs);
-        if (secs <= 0) {
-          clearListeningTimer();
-          setListeningPhase('done');
-          setCurrentQuestionId((prev) => Math.min(prev + 1, 40));
-        }
-      }, 1000);
+      setListeningPhase('done');
+      // Auto-advance after 3 seconds
+      listeningTimerRef.current = setTimeout(() => {
+        listeningTimerRef.current = null;
+        setCurrentQuestionId((prev) => Math.min(prev + 1, 40));
+      }, 3000);
     };
 
     // ── HTML5 Audio path (uses pre-generated MP3 files) ─────────────────────
@@ -375,7 +380,7 @@ function App() {
 
     const totalCorrect = readingCorrect + listeningCorrect;
     const totalScore = totalCorrect * POINTS_PER_QUESTION;
-    const passed = totalScore >= 120;
+    const passed = totalScore >= getSettings().passScore;
 
     saveExamResult({
       examinerName: examinerName.trim() || 'ຜູ້ສອບ',
@@ -400,7 +405,7 @@ function App() {
     setExaminerName('');
     setAnswers({});
     setCurrentQuestionId(1);
-    setRemainingSeconds(EXAM_DURATION_SECONDS);
+    setRemainingSeconds(getSettings().durationSec);
     setTimerActive(false);
     setShowResult(false);
     setExamStarted(false);
@@ -412,7 +417,29 @@ function App() {
   const handleFontDecrease = useCallback(() => setFontSize((f) => Math.max(MIN_FONT, f - 1)), []);
   const handleFontIncrease = useCallback(() => setFontSize((f) => Math.min(MAX_FONT, f + 1)), []);
 
-  // ── Not started: show start screen ───────────────────────────────────────
+  // ── Not started: show start screen or vocab/industry page ─────────────
+  const [showVocab, setShowVocab] = useState(false);
+  const [showIndustry, setShowIndustry] = useState(false);
+  const [showGrammar, setShowGrammar] = useState(false);
+  const [showStandardVocab, setShowStandardVocab] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  if (showVocab) {
+    return <VocabPage onBack={() => setShowVocab(false)} />;
+  }
+
+  if (showIndustry) {
+    return <IndustryPage onBack={() => setShowIndustry(false)} />;
+  }
+
+  if (showGrammar) {
+    return <GrammarPage onBack={() => setShowGrammar(false)} />;
+  }
+
+  if (showStandardVocab) {
+    return <StandardVocabPage onBack={() => setShowStandardVocab(false)} />;
+  }
+
   if (!examStarted) {
     return (
       <StartScreen
@@ -425,13 +452,17 @@ function App() {
         isBlocked={isNameBlocked}
         blockLoading={nameCheckLoading}
         onReshuffle={() => setAssignedSet(pickRandomSetNumber())}
+        onOpenVocab={() => setShowVocab(true)}
+        onOpenIndustry={() => setShowIndustry(true)}
+        onOpenGrammar={() => setShowGrammar(true)}
+        onOpenStandardVocab={() => setShowStandardVocab(true)}
       />
     );
   }
 
   // ── Exam in progress ──────────────────────────────────────────────────────
   return (
-    <div className="flex flex-col h-screen bg-gray-100 overflow-hidden">
+    <div className="flex flex-col h-screen bg-[#ababab] overflow-hidden">
       <Header
         fontSize={fontSize}
         setNumber={assignedSet}
@@ -440,9 +471,9 @@ function App() {
         onSubmit={handleSubmit}
       />
 
-      <main className="flex flex-1 overflow-hidden">
-        {/* Left: Question Area (~75%) */}
-        <section className="flex-1 overflow-hidden bg-white shadow-inner">
+      <main className="flex flex-1 overflow-hidden relative">
+        {/* Question Area */}
+        <section className="flex-1 overflow-hidden bg-white">
           <QuestionArea
             question={currentQuestion}
             selectedAnswer={answers[currentQuestionId]}
@@ -458,8 +489,8 @@ function App() {
           />
         </section>
 
-        {/* Right: Sidebar (~25%) */}
-        <div className="w-64 shrink-0 overflow-hidden">
+        {/* Desktop sidebar: always visible md+ */}
+        <div className="hidden md:block w-64 shrink-0 overflow-hidden">
           <Sidebar
             currentSection={currentSection}
             currentQuestionId={currentQuestionId}
@@ -471,12 +502,70 @@ function App() {
             onNext={handleNext}
           />
         </div>
+
+        {/* Mobile sidebar overlay (slide in from right) */}
+        {sidebarOpen && (
+          <div className="md:hidden absolute inset-0 z-50 flex justify-end">
+            <div
+              className="absolute inset-0 bg-black/50"
+              onClick={() => setSidebarOpen(false)}
+            />
+            <div className="relative w-72 h-full overflow-hidden shadow-2xl">
+              <Sidebar
+                currentSection={currentSection}
+                currentQuestionId={currentQuestionId}
+                answers={answers}
+                remainingSeconds={remainingSeconds}
+                setNumber={assignedSet}
+                onNavigate={handleNavigate}
+                onPrev={handlePrev}
+                onNext={handleNext}
+                onClose={() => setSidebarOpen(false)}
+              />
+            </div>
+          </div>
+        )}
       </main>
 
+      {/* Mobile bottom nav bar */}
+      <div
+        className="md:hidden flex items-stretch shrink-0 select-none"
+        style={{ background: '#1a3a6b', height: '52px' }}
+      >
+        <button
+          onClick={handlePrev}
+          disabled={currentQuestionId <= 1}
+          className="flex items-center justify-center w-14 text-white font-bold text-base disabled:opacity-30 active:bg-white/10"
+        >
+          ◄
+        </button>
+        <button
+          onClick={() => setSidebarOpen(true)}
+          className="flex-1 flex flex-col items-center justify-center gap-0.5 active:bg-white/10"
+        >
+          <span className="text-white text-xs font-semibold">
+            ຂໍ້ {currentQuestionId}/40 · ✓{Object.keys(answers).length}
+          </span>
+          <span
+            className="timer-display font-bold text-sm"
+            style={{ color: remainingSeconds <= 60 ? '#fca5a5' : '#fde047' }}
+          >
+            ⏱ {fmtTime(remainingSeconds)}
+          </span>
+        </button>
+        <button
+          onClick={handleNext}
+          disabled={currentQuestionId >= 40}
+          className="flex items-center justify-center w-14 text-white font-bold text-base disabled:opacity-30 active:bg-white/10"
+        >
+          ►
+        </button>
+      </div>
+
       {/* Progress bar */}
-      <div className="h-1.5 bg-gray-200">
+      <div className="h-1 bg-[#8a9aab]">
         <div
-          className="h-full bg-[#1a3a6b] transition-all duration-300"
+          className="h-full bg-yellow-400 transition-all duration-300"
           style={{ width: `${(Object.keys(answers).length / 40) * 100}%` }}
         />
       </div>

@@ -4,13 +4,15 @@ import {
   Award, Clock, RefreshCw, Lock, ChevronLeft, Search,
   CheckCircle, XCircle, BookOpen, Headphones,
   Plus, Edit3, X, ChevronDown, ChevronUp, Database,
+  Settings, Wifi, WifiOff, Copy, RotateCcw, Save,
 } from 'lucide-react';
-import { getExamResults, deleteExamResult } from '../lib/db';
+import { getExamResults, deleteExamResult, testApiConnection } from '../lib/db';
 import { readingBank, listeningBank, EXAM_SECTIONS } from '../data/examData';
 import {
   getOverrides, saveOverride, clearOverride,
   getCustomQuestions, addCustomQuestion, updateCustomQuestion, deleteCustomQuestion,
 } from '../lib/questionStore';
+import { getSettings, saveSettings, resetSettings, SETTING_DEFAULTS } from '../lib/settings';
 
 const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'admin1234';
 const STORAGE_KEY = 'epsAdminLogged';
@@ -513,6 +515,280 @@ const QuestionsTab = () => {
   );
 };
 
+// ─── Database Tab ──────────────────────────────────────────────────────────
+const DatabaseTab = () => {
+  const [status, setStatus] = useState(null); // null | {ok, message}
+  const [testing, setTesting] = useState(false);
+  const settings = getSettings();
+  const schema = `CREATE TABLE IF NOT EXISTS \`exam_results\` (
+  \`id\`              INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  \`created_at\`      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  \`examiner_name\`   VARCHAR(100) NOT NULL DEFAULT 'ຜູ້ສອບ',
+  \`total_score\`     SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  \`reading_score\`   TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  \`listening_score\` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  \`passed\`          TINYINT(1) NOT NULL DEFAULT 0,
+  \`time_taken_sec\`  SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  \`exam_set\`        VARCHAR(50) DEFAULT NULL,
+  \`category\`        VARCHAR(50) NOT NULL DEFAULT 'ALL',
+  INDEX \`idx_name\` (\`examiner_name\`),
+  INDEX \`idx_date\` (\`created_at\`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;`;
+
+  const handleTest = async () => {
+    setTesting(true);
+    const result = await testApiConnection();
+    setStatus(result);
+    setTesting(false);
+  };
+
+  const copyText = (text) => {
+    navigator.clipboard.writeText(text).then(() => alert('คัดลอกแล้ว ✓'));
+  };
+
+  return (
+    <div className="p-6 max-w-3xl mx-auto space-y-6">
+      {/* Connection Test */}
+      <div className="bg-white rounded-2xl shadow border border-gray-100 p-6">
+        <h2 className="font-bold text-gray-700 mb-4 flex items-center gap-2">
+          <Wifi size={18} className="text-[#1a3a6b]" /> ทดสอบการเชื่อมต่อ PHP API
+        </h2>
+        <div className="flex items-center gap-3 mb-3">
+          <code className="flex-1 bg-gray-100 text-sm px-3 py-2 rounded-lg text-gray-700 font-mono truncate">
+            {settings.apiBase}/get_results.php
+          </code>
+          <button
+            onClick={handleTest}
+            disabled={testing}
+            className="flex items-center gap-2 bg-[#1a3a6b] hover:bg-blue-900 disabled:opacity-50 text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors"
+          >
+            {testing ? <RefreshCw size={15} className="animate-spin" /> : <Wifi size={15} />}
+            ทดสอบ
+          </button>
+        </div>
+        {status && (
+          <div className={`flex items-center gap-2 text-sm font-semibold px-4 py-3 rounded-xl ${
+            status.ok ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'
+          }`}>
+            {status.ok ? <CheckCircle size={16} /> : <WifiOff size={16} />}
+            {status.message}
+          </div>
+        )}
+      </div>
+
+      {/* Setup Guide */}
+      <div className="bg-white rounded-2xl shadow border border-gray-100 p-6">
+        <h2 className="font-bold text-gray-700 mb-4 flex items-center gap-2">
+          <Database size={18} className="text-[#1a3a6b]" /> วิธีตั้งค่า MySQL บน cPanel (hostatom)
+        </h2>
+        <ol className="space-y-3 text-sm text-gray-600">
+          {[
+            'เข้า cPanel → MySQL Databases → สร้าง Database ใหม่ และ User',
+            'กำหนดสิทธิ์ ALL PRIVILEGES ให้ User กับ Database นั้น',
+            'เปิด phpMyAdmin → เลือก Database → แท็บ SQL → วาง SQL ด้านล่าง → กด Go',
+            'แก้ไข api/config.php → ใส่ DB_NAME, DB_USER, DB_PASS, API_SECRET',
+            'อัปโหลดโฟลเดอร์ dist/ และ api/ ขึ้น public_html/ ของ hostatom',
+            'ใส่ API Secret ใน Admin → การตั้งค่า → API Secret (ต้องตรงกับ config.php)',
+          ].map((step, i) => (
+            <li key={i} className="flex items-start gap-3">
+              <span className="shrink-0 w-6 h-6 bg-[#1a3a6b] text-white rounded-full text-xs flex items-center justify-center font-bold">
+                {i + 1}
+              </span>
+              <span>{step}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      {/* MySQL Schema */}
+      <div className="bg-white rounded-2xl shadow border border-gray-100 p-6">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="font-bold text-gray-700 flex items-center gap-2">
+            <Database size={18} className="text-purple-600" /> MySQL Schema (วาง phpMyAdmin)
+          </h2>
+          <button
+            onClick={() => copyText(schema)}
+            className="flex items-center gap-1.5 text-xs bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 px-3 py-1.5 rounded-lg font-semibold transition-colors"
+          >
+            <Copy size={13} /> คัดลอก SQL
+          </button>
+        </div>
+        <pre className="bg-gray-900 text-green-400 text-xs p-4 rounded-xl overflow-x-auto leading-relaxed font-mono">
+          {schema}
+        </pre>
+      </div>
+
+      {/* Upload guide */}
+      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-sm text-amber-800">
+        <p className="font-bold mb-2">📁 โครงสร้างไฟล์ที่ต้องอัปโหลดขึ้น public_html/</p>
+        <pre className="font-mono text-xs leading-relaxed">
+{`public_html/
+  index.html          ← จากโฟลเดอร์ dist/
+  assets/             ← จากโฟลเดอร์ dist/assets/
+  api/
+    config.php        ← แก้ไข DB credentials ก่อน
+    save_result.php
+    get_results.php
+    check_name.php
+    delete_result.php
+    .htaccess`}
+        </pre>
+      </div>
+    </div>
+  );
+};
+
+// ─── Settings Tab ──────────────────────────────────────────────────────────
+const SettingsTab = () => {
+  const [form, setForm] = useState(() => getSettings());
+  const [saved, setSaved] = useState(false);
+
+  const durationOptions = [
+    { label: '20 ນາທີ (ຝຶກ)', value: 1200 },
+    { label: '30 ນາທີ', value: 1800 },
+    { label: '40 ນາທີ (ມາດຕະຖານ)', value: 2400 },
+    { label: '50 ນາທີ', value: 3000 },
+    { label: '60 ນາທີ', value: 3600 },
+  ];
+
+  const handleSave = () => {
+    saveSettings(form);
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2000);
+  };
+
+  const handleReset = () => {
+    if (!window.confirm('รีเซ็ตการตั้งค่าทั้งหมดเป็นค่าเริ่มต้น?')) return;
+    resetSettings();
+    setForm(getSettings());
+  };
+
+  return (
+    <div className="p-6 max-w-2xl mx-auto space-y-5">
+      {/* Exam Duration */}
+      <div className="bg-white rounded-2xl shadow border border-gray-100 p-6">
+        <h2 className="font-bold text-gray-700 mb-4 flex items-center gap-2">
+          <Clock size={18} className="text-[#1a3a6b]" /> ເວລາສອບ (Timer)
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          {durationOptions.map((opt) => (
+            <button
+              key={opt.value}
+              onClick={() => setForm((f) => ({ ...f, durationSec: opt.value }))}
+              className={`px-4 py-2 rounded-xl text-sm font-semibold border-2 transition-all ${
+                form.durationSec === opt.value
+                  ? 'border-[#1a3a6b] bg-blue-50 text-[#1a3a6b]'
+                  : 'border-gray-200 text-gray-500 hover:border-gray-300'
+              }`}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+        <p className="text-xs text-gray-400 mt-3">
+          ປັດຈຸບັນ: <b className="text-gray-700">{Math.floor(form.durationSec / 60)} ນາທີ</b> ({form.durationSec} ວິນາທີ)
+        </p>
+      </div>
+
+      {/* Pass Score */}
+      <div className="bg-white rounded-2xl shadow border border-gray-100 p-6">
+        <h2 className="font-bold text-gray-700 mb-4 flex items-center gap-2">
+          <Award size={18} className="text-green-600" /> ເກນຄະແນນຜ່ານ
+        </h2>
+        <div className="flex items-center gap-4">
+          <input
+            type="range"
+            min={60} max={160} step={5}
+            value={form.passScore}
+            onChange={(e) => setForm((f) => ({ ...f, passScore: +e.target.value }))}
+            className="flex-1 accent-[#1a3a6b]"
+          />
+          <div className="text-2xl font-black text-[#1a3a6b] w-16 text-center">
+            {form.passScore}
+          </div>
+        </div>
+        <p className="text-xs text-gray-400 mt-1">ຄະແນນ / 200 &nbsp;·&nbsp; ຄ່າເລີ່ມຕົ້ນ: 120</p>
+      </div>
+
+      {/* Block Duplicates */}
+      <div className="bg-white rounded-2xl shadow border border-gray-100 p-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="font-bold text-gray-700 flex items-center gap-2">
+              <Lock size={18} className="text-red-500" /> ລັອກຊື່ຊ້ຳ
+            </h2>
+            <p className="text-xs text-gray-400 mt-0.5">ກັນຜູ້ສອບຊື່ດຽວກັນສົ່ງຊ້ຳ</p>
+          </div>
+          <button
+            onClick={() => setForm((f) => ({ ...f, blockDuplicates: !f.blockDuplicates }))}
+            className={`relative w-12 h-6 rounded-full transition-colors ${
+              form.blockDuplicates ? 'bg-green-500' : 'bg-gray-300'
+            }`}
+          >
+            <span className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${
+              form.blockDuplicates ? 'translate-x-6' : 'translate-x-0.5'
+            }`} />
+          </button>
+        </div>
+      </div>
+
+      {/* API Settings */}
+      <div className="bg-white rounded-2xl shadow border border-gray-100 p-6">
+        <h2 className="font-bold text-gray-700 mb-4 flex items-center gap-2">
+          <Database size={18} className="text-purple-600" /> ຕັ້ງຄ່າ PHP API
+        </h2>
+        <div className="space-y-3">
+          <div>
+            <label className="text-xs font-bold text-gray-500 block mb-1">API Base URL</label>
+            <input
+              value={form.apiBase}
+              onChange={(e) => setForm((f) => ({ ...f, apiBase: e.target.value.trim() }))}
+              placeholder="/api"
+              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm font-mono outline-none focus:border-[#1a3a6b]"
+            />
+            <p className="text-xs text-gray-400 mt-1">ຄ່າເລີ່ມຕົ້ນ /api — ປ່ຽນຖ້ານຳ PHP ໄວ້ທີ່ path ອື່ນ</p>
+          </div>
+          <div>
+            <label className="text-xs font-bold text-gray-500 block mb-1">API Secret (ສຳລັບລຶບຂໍ້ມູນ)</label>
+            <input
+              type="password"
+              value={form.apiSecret}
+              onChange={(e) => setForm((f) => ({ ...f, apiSecret: e.target.value }))}
+              placeholder="ຕ້ອງຕົງກັນກັບ API_SECRET ໃນ api/config.php"
+              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-[#1a3a6b]"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="flex gap-3">
+        <button
+          onClick={handleSave}
+          className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all ${
+            saved
+              ? 'bg-green-500 text-white'
+              : 'bg-[#1a3a6b] hover:bg-blue-900 text-white'
+          }`}
+        >
+          {saved ? <CheckCircle size={16} /> : <Save size={16} />}
+          {saved ? 'ບັນທຶກສຳເລັດ ✓' : 'ບັນທຶກການຕັ້ງຄ່າ'}
+        </button>
+        <button
+          onClick={handleReset}
+          className="flex items-center gap-2 px-5 py-3 border-2 border-gray-200 rounded-xl text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
+        >
+          <RotateCcw size={15} /> ຣີເຊັດ
+        </button>
+      </div>
+
+      <p className="text-xs text-gray-400 text-center">
+        ການຕັ້ງຄ່ານີ້ຈະໃຊ້ທັນທີໃນຄັ້ງຕໍ່ໄປທີ່ເລີ່ມການສອບ
+      </p>
+    </div>
+  );
+};
+
 // ─── Main Admin Page ─────────────────────────────────────────────────────────
 const AdminPage = () => {
   const [loggedIn, setLoggedIn] = useState(() => sessionStorage.getItem(STORAGE_KEY) === '1');
@@ -643,11 +919,13 @@ const AdminPage = () => {
 
       {/* Tabs */}
       <div className="bg-white border-b border-gray-200 px-6">
-        <div className="flex gap-1">
+        <div className="flex gap-1 overflow-x-auto">
           {[
-            { key: 'dashboard', label: 'ພາບລວມ', icon: <BarChart3 size={16} /> },
-            { key: 'results',   label: 'ຜູ້ສອບ',  icon: <Users size={16} /> },
+            { key: 'dashboard', label: 'ພາບລວມ',   icon: <BarChart3 size={16} /> },
+            { key: 'results',   label: 'ຜູ້ສອບ',    icon: <Users size={16} /> },
             { key: 'questions', label: 'ຄັງຂໍ້ສອບ', icon: <Database size={16} /> },
+            { key: 'database',  label: 'ຖານຂໍ້ມູນ', icon: <Wifi size={16} /> },
+            { key: 'settings',  label: 'ການຕັ້ງຄ່າ', icon: <Settings size={16} /> },
           ].map((t) => (
             <button
               key={t.key}
@@ -892,6 +1170,8 @@ const AdminPage = () => {
         </div>
       )}
       {tab === 'questions' && <QuestionsTab />}
+      {tab === 'database'  && <DatabaseTab />}
+      {tab === 'settings'  && <SettingsTab />}
     </div>
   );
 };

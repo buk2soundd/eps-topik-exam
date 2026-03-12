@@ -1,5 +1,5 @@
 ﻿// EPS-TOPIK Mock Exam — Question Bank (2026 Edition)
-// Reading bank: 136 questions  |  Listening bank: 108 questions
+// Reading bank: 151 questions  |  Listening bank: 120 questions
 // generateExamSet(setNumber) picks 20R + 20L based on set seed
 
 export const EXAM_SECTIONS = {
@@ -22,10 +22,10 @@ export const EXAM_CATEGORIES = {
 
 // BankIds belonging to each topic category
 // Agriculture: R01-R08+R41-R52, L01-L08+L41-L48  |  Industry: R09-R16+R53-R72, L09-L16+L49-L60
-const AGRI_R_IDS = new Set(['R01','R02','R03','R04','R05','R06','R07','R08','R41','R42','R43','R44','R45','R46','R47','R48','R49','R50','R51','R52','R96','R97','R98','R99','R100','R132','R133']);
-const AGRI_L_IDS = new Set(['L01','L02','L03','L04','L05','L06','L07','L08','L41','L42','L43','L44','L45','L46','L47','L48','L84','L85','L89','L90','L91','L92']);
-const IND_R_IDS  = new Set(['R09','R10','R11','R12','R13','R14','R15','R16','R53','R54','R55','R56','R57','R58','R59','R60','R61','R62','R63','R64','R65','R66','R67','R68','R69','R70','R71','R72','R81','R82','R83','R84','R85','R86','R87','R88','R89','R90','R91','R92','R93','R94','R95','R101','R102','R103','R104','R105','R106','R107','R108','R109','R110','R111','R112','R113','R114','R115','R116','R117','R118','R119','R120','R121','R122','R123','R124','R125','R126','R127','R128','R129','R130','R131','R134','R135','R136']);
-const IND_L_IDS  = new Set(['L09','L10','L11','L12','L13','L14','L15','L16','L49','L50','L51','L52','L53','L54','L55','L56','L57','L58','L59','L60','L81','L82','L83','L86','L87','L88','L93','L94','L95','L96']);
+const AGRI_R_IDS = new Set(['R01','R02','R03','R04','R05','R06','R07','R08','R41','R42','R43','R44','R45','R46','R47','R48','R49','R50','R51','R52','R96','R97','R98','R99','R100','R132','R133','R137','R138','R139','R140']);
+const AGRI_L_IDS = new Set(['L01','L02','L03','L04','L05','L06','L07','L08','L41','L42','L43','L44','L45','L46','L47','L48','L84','L85','L89','L90','L91','L92','L109','L110','L111']);
+const IND_R_IDS  = new Set(['R09','R10','R11','R12','R13','R14','R15','R16','R53','R54','R55','R56','R57','R58','R59','R60','R61','R62','R63','R64','R65','R66','R67','R68','R69','R70','R71','R72','R81','R82','R83','R84','R85','R86','R87','R88','R89','R90','R91','R92','R93','R94','R95','R101','R102','R103','R104','R105','R106','R107','R108','R109','R110','R111','R112','R113','R114','R115','R116','R117','R118','R119','R120','R121','R122','R123','R124','R125','R126','R127','R128','R129','R130','R131','R134','R135','R136','R141','R142','R143','R144','R145','R146','R151']);
+const IND_L_IDS  = new Set(['L09','L10','L11','L12','L13','L14','L15','L16','L49','L50','L51','L52','L53','L54','L55','L56','L57','L58','L59','L60','L81','L82','L83','L86','L87','L88','L93','L94','L95','L96','L112','L113','L114','L119','L120']);
 
 // Listening auto-play config (simulated — replace with real audio durations)
 export const LISTENING_PLAY_TIMES = 2;          // plays per question
@@ -1408,6 +1408,172 @@ const readingBank = [
     correctIndex: 2,
     explanation: '안전화·보호구 — 청력 보호구'
   },
+  // ─── NEW PICTURE-MATCH READING (2026 — ภาพประกอบเพิ่มเติม) ────────────────────
+  {
+    bankId: 'R137',
+    chapter: 45,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '트랙터로 밭을 갈고 있습니다.',
+    imageOptionUrls: ['/images/eps/r137_01.svg','/images/eps/r137_02.svg','/images/eps/r137_03.svg','/images/eps/r137_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '트랙터로 밭을 갈다 = to plow a field with a tractor (경운 작업)'
+  },
+  {
+    bankId: 'R138',
+    chapter: 45,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '분무기로 과수원에 농약을 살포하고 있습니다.',
+    imageOptionUrls: ['/images/eps/r138_01.svg','/images/eps/r138_02.svg','/images/eps/r138_03.svg','/images/eps/r138_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '농약을 살포하다 = 분무기로 농약을 뿌리다 (to spray pesticide with sprayer)'
+  },
+  {
+    bankId: 'R139',
+    chapter: 46,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '소에게 사료를 주고 있습니다.',
+    imageOptionUrls: ['/images/eps/r139_01.svg','/images/eps/r139_02.svg','/images/eps/r139_03.svg','/images/eps/r139_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '사료를 주다 = to feed livestock (축산 급이 작업)'
+  },
+  {
+    bankId: 'R140',
+    chapter: 46,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '그물로 바다에서 물고기를 잡고 있습니다.',
+    imageOptionUrls: ['/images/eps/r140_01.svg','/images/eps/r140_02.svg','/images/eps/r140_03.svg','/images/eps/r140_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '그물로 물고기를 잡다 = to catch fish with a net (어업 작업)'
+  },
+  {
+    bankId: 'R141',
+    chapter: 39,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '용접 마스크를 쓰고 용접 작업을 하고 있습니다.',
+    imageOptionUrls: ['/images/eps/r141_01.svg','/images/eps/r141_02.svg','/images/eps/r141_03.svg','/images/eps/r141_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '용접 마스크를 쓰고 용접 작업을 하다 = welding work wearing a welding mask'
+  },
+  {
+    bankId: 'R142',
+    chapter: 47,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '지게차로 팔레트 위의 상자를 이동하고 있습니다.',
+    imageOptionUrls: ['/images/eps/r142_01.svg','/images/eps/r142_02.svg','/images/eps/r142_03.svg','/images/eps/r142_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '지게차로 팔레트를 이동하다 = to move a pallet with a forklift'
+  },
+  {
+    bankId: 'R143',
+    chapter: 48,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '컨베이어 벨트에서 제품 불량 검사를 하고 있습니다.',
+    imageOptionUrls: ['/images/eps/r143_01.svg','/images/eps/r143_02.svg','/images/eps/r143_03.svg','/images/eps/r143_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '컨베이어 벨트에서 불량 검사 = quality inspection on a conveyor belt'
+  },
+  {
+    bankId: 'R144',
+    chapter: 53,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '소화기를 들고 불이 난 곳에 분사하고 있습니다.',
+    imageOptionUrls: ['/images/eps/r144_01.svg','/images/eps/r144_02.svg','/images/eps/r144_03.svg','/images/eps/r144_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 3,
+    explanation: '소화기를 분사하다 = to discharge a fire extinguisher (화재 초기 진압)'
+  },
+  {
+    bankId: 'R145',
+    chapter: 49,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '안전대를 매고 높은 곳에서 작업을 하고 있습니다.',
+    imageOptionUrls: ['/images/eps/r145_01.svg','/images/eps/r145_02.svg','/images/eps/r145_03.svg','/images/eps/r145_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '안전대를 매고 고소 작업 = working at height with a safety harness (추락 방지)'
+  },
+  {
+    bankId: 'R146',
+    chapter: 43,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '철근을 서로 묶어서 고정하고 있습니다.',
+    imageOptionUrls: ['/images/eps/r146_01.svg','/images/eps/r146_02.svg','/images/eps/r146_03.svg','/images/eps/r146_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '철근을 묶다 = to tie rebar (건설 현장 철근 결속 작업)'
+  },
+  {
+    bankId: 'R147',
+    chapter: 20,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '은행 ATM기에서 돈을 인출하고 있습니다.',
+    imageOptionUrls: ['/images/eps/r147_01.svg','/images/eps/r147_02.svg','/images/eps/r147_03.svg','/images/eps/r147_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: 'ATM기에서 돈을 인출하다 = to withdraw money from an ATM machine'
+  },
+  {
+    bankId: 'R148',
+    chapter: 20,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '분리수거함에 종이와 플라스틱을 분리해서 버리고 있습니다.',
+    imageOptionUrls: ['/images/eps/r148_01.svg','/images/eps/r148_02.svg','/images/eps/r148_03.svg','/images/eps/r148_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '분리수거 = separate waste disposal (재활용 분리)'
+  },
+  {
+    bankId: 'R149',
+    chapter: 25,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '병원에서 의사에게 증상을 설명하고 진찰을 받고 있습니다.',
+    imageOptionUrls: ['/images/eps/r149_01.svg','/images/eps/r149_02.svg','/images/eps/r149_03.svg','/images/eps/r149_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '의사에게 진찰을 받다 = to receive a medical examination from a doctor'
+  },
+  {
+    bankId: 'R150',
+    chapter: 22,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '고용센터에서 사업장 변경 신청서를 제출하고 있습니다.',
+    imageOptionUrls: ['/images/eps/r150_01.svg','/images/eps/r150_02.svg','/images/eps/r150_03.svg','/images/eps/r150_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '고용센터에서 사업장 변경 신청서 제출 = applying for workplace change at employment center'
+  },
+  {
+    bankId: 'R151',
+    chapter: 37,
+    type: 'picture-match',
+    question: '다음 내용과 관계있는 그림을 고르십시오.',
+    questionText: '드릴을 이용해서 벽에 구멍을 뚫고 있습니다.',
+    imageOptionUrls: ['/images/eps/r151_01.svg','/images/eps/r151_02.svg','/images/eps/r151_03.svg','/images/eps/r151_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '드릴로 구멍을 뚫다 = to drill a hole with a power drill'
+  },
 ];
 
 //  LISTENING QUESTION BANK 
@@ -2511,6 +2677,139 @@ const listeningBank = [
     options: ['① 점검 결과를 기다립니다.', '② 기숙사 담당자에게 연락합니다.', '③ 방 청소를 하고 소화기 위치를 확인합니다.', '④ 소화기를 새로 구입합니다.'],
     correctIndex: 2,
     explanation: '청소하고 소화기도 확인하겠다고 했습니다.'
+  },
+  // ─── NEW PICTURE-MATCH LISTENING (2026 — ภาพประกอบเพิ่มเติม) ──────────────────
+  {
+    bankId: 'L109',
+    chapter: 45,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 그림을 고르십시오.',
+    audioScript: '남: 지금 뭐 해요?\n여: 트랙터로 밭을 갈고 있어요.',
+    imageOptionUrls: ['/images/eps/l109_01.svg','/images/eps/l109_02.svg','/images/eps/l109_03.svg','/images/eps/l109_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '트랙터로 밭을 갈다 = 경운 작업 그림 (plowing with tractor)'
+  },
+  {
+    bankId: 'L110',
+    chapter: 46,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 그림을 고르십시오.',
+    audioScript: '남: 오전에 무슨 작업을 해요?\n여: 닭장 청소하고 소독해야 해요.',
+    imageOptionUrls: ['/images/eps/l110_01.svg','/images/eps/l110_02.svg','/images/eps/l110_03.svg','/images/eps/l110_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '닭장 청소하다 = to clean a chicken coop (양계 위생 관리)'
+  },
+  {
+    bankId: 'L111',
+    chapter: 46,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 그림을 고르십시오.',
+    audioScript: '여: 저건 뭐예요?\n남: 갈퀴예요. 밭에서 잡초나 낙엽을 긁어모을 때 써요.',
+    imageOptionUrls: ['/images/eps/l111_01.svg','/images/eps/l111_02.svg','/images/eps/l111_03.svg','/images/eps/l111_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '갈퀴 = rake (밭에서 긁어모으는 농기구)'
+  },
+  {
+    bankId: 'L112',
+    chapter: 38,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 그림을 고르십시오.',
+    audioScript: '남: 지금 무슨 작업을 해요?\n여: 컨베이어 벨트에서 제품을 포장하고 있어요.',
+    imageOptionUrls: ['/images/eps/l112_01.svg','/images/eps/l112_02.svg','/images/eps/l112_03.svg','/images/eps/l112_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '컨베이어 벨트에서 포장하다 = packaging products on a conveyor belt'
+  },
+  {
+    bankId: 'L113',
+    chapter: 47,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 그림을 고르십시오.',
+    audioScript: '여: 저 사람들이 뭘 하고 있어요?\n남: 제품을 팔레트에 쌓고 있어요.',
+    imageOptionUrls: ['/images/eps/l113_01.svg','/images/eps/l113_02.svg','/images/eps/l113_03.svg','/images/eps/l113_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '팔레트에 쌓다 = to stack products on a pallet (물류 창고 작업)'
+  },
+  {
+    bankId: 'L114',
+    chapter: 39,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 그림을 고르십시오.',
+    audioScript: '남: 오늘 용접 작업이 있는데 뭘 착용해야 해요?\n여: 용접 마스크랑 장갑을 꼭 착용하세요.',
+    imageOptionUrls: ['/images/eps/l114_01.svg','/images/eps/l114_02.svg','/images/eps/l114_03.svg','/images/eps/l114_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '용접 마스크와 장갑 착용 = wearing welding mask and gloves for welding work'
+  },
+  {
+    bankId: 'L115',
+    chapter: 22,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 그림을 고르십시오.',
+    audioScript: '여: 어디 가요?\n남: 은행에 해외 송금하러 가요.',
+    imageOptionUrls: ['/images/eps/l115_01.svg','/images/eps/l115_02.svg','/images/eps/l115_03.svg','/images/eps/l115_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '해외 송금하러 은행에 가다 = going to a bank for international money transfer'
+  },
+  {
+    bankId: 'L116',
+    chapter: 99,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 것을 고르십시오.',
+    audioScript: '남: 이 안전장갑은 한 짝에 얼마예요?\n여: 만 이천 원이에요.',
+    imageOptionUrls: ['/images/eps/l116_01.svg','/images/eps/l116_02.svg','/images/eps/l116_03.svg','/images/eps/l116_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '만 이천 원 = 12,000원 (숫자 청취 문제)'
+  },
+  {
+    bankId: 'L117',
+    chapter: 99,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 것을 고르십시오.',
+    audioScript: '남: 이 보안경은 한 개에 얼마예요?\n여: 팔천오백 원이에요.',
+    imageOptionUrls: ['/images/eps/l117_01.svg','/images/eps/l117_02.svg','/images/eps/l117_03.svg','/images/eps/l117_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '팔천오백 원 = 8,500원 (숫자 청취 문제)'
+  },
+  {
+    bankId: 'L118',
+    chapter: 24,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 그림을 고르십시오.',
+    audioScript: '남: 오늘 점심으로 뭘 먹었어요?\n여: 삼겹살을 구워 먹었어요.',
+    imageOptionUrls: ['/images/eps/l118_01.svg','/images/eps/l118_02.svg','/images/eps/l118_03.svg','/images/eps/l118_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '삼겹살을 구워 먹다 = grilling and eating pork belly (삼겹살)'
+  },
+  {
+    bankId: 'L119',
+    chapter: 38,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 그림을 고르십시오.',
+    audioScript: '여: 지금 뭐 해요?\n남: 작업 일지를 작성하고 있어요.',
+    imageOptionUrls: ['/images/eps/l119_01.svg','/images/eps/l119_02.svg','/images/eps/l119_03.svg','/images/eps/l119_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 1,
+    explanation: '작업 일지를 작성하다 = to fill in a work log (직장 기록 업무)'
+  },
+  {
+    bankId: 'L120',
+    chapter: 53,
+    type: 'picture-match',
+    question: '다음을 듣고 들은 내용과 관계있는 그림을 고르십시오.',
+    audioScript: '남: 저 표지는 뭐예요?\n여: 안전 표지예요. 이 구역에서는 안전화를 반드시 착용해야 한다는 뜻이에요.',
+    imageOptionUrls: ['/images/eps/l120_01.svg','/images/eps/l120_02.svg','/images/eps/l120_03.svg','/images/eps/l120_04.svg'],
+    options: ['①', '②', '③', '④'],
+    correctIndex: 2,
+    explanation: '안전화 착용 표지 = mandatory safety shoes sign (PPE 의무 착용 구역)'
   },
 ];
 

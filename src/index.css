@@ -22,8 +22,7 @@
 
 /* Blur Korean text inside exam SVG images only */
 .ko-blur {
-  filter: blur(5px);
-  user-select: none;
+  /* filter: blur(5px); */
 }
 
 /* Animated sound-wave bars used in ListeningPlayer */

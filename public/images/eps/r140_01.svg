@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <rect width="200" height="200" fill="#d0e8f8" rx="10"/>
-  <rect x="4" y="4" width="192" height="192" fill="none" stroke="#aaa" stroke-width="1.5" rx="8"/>
-  <text x="100" y="100" font-size="20" fill="#333" dominant-baseline="middle" text-anchor="middle">부표 설치</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 250" width="300" height="250">
+<rect width="300" height="250" fill="#f0f4f8" rx="8"/>
+<rect x="0" y="0" width="300" height="100" fill="#87CEEB"/><rect x="0" y="100" width="300" height="150" fill="#1E90FF"/><path d="M0,110 Q15,105 30,110 Q45,115 60,110" stroke="white" stroke-width="1" fill="none" opacity="0.5"/><path d="M60,110 Q75,105 90,110 Q105,115 120,110" stroke="white" stroke-width="1" fill="none" opacity="0.5"/><path d="M120,110 Q135,105 150,110 Q165,115 180,110" stroke="white" stroke-width="1" fill="none" opacity="0.5"/><path d="M180,110 Q195,105 210,110 Q225,115 240,110" stroke="white" stroke-width="1" fill="none" opacity="0.5"/><path d="M240,110 Q255,105 270,110 Q285,115 300,110" stroke="white" stroke-width="1" fill="none" opacity="0.5"/><rect x="120" y="70" width="60" height="30" rx="5" fill="#8B4513"/>
+<rect x="130" y="50" width="5" height="20" fill="#8B4513"/>
+<rect x="155" y="55" width="5" height="15" fill="#8B4513"/>
+<circle cx="150" cy="45" r="10" fill="#FF6600"/>
+<text x="150" y="240" text-anchor="middle" font-size="11" fill="white" font-family="Arial">부표 설치</text>
 </svg>

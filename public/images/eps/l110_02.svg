@@ -1,5 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <rect width="200" height="200" fill="#d8f0d8" rx="10"/>
-  <rect x="4" y="4" width="192" height="192" fill="none" stroke="#aaa" stroke-width="1.5" rx="8"/>
-  <text x="100" y="100" font-size="20" fill="#333" dominant-baseline="middle" text-anchor="middle">닭장 청소</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 250" width="300" height="250">
+<rect width="300" height="250" fill="#f0f4f8" rx="8"/>
+<rect x="0" y="0" width="300" height="160" fill="#87CEEB"/><circle cx="260" cy="40" r="25" fill="#FFD700"/><rect x="0" y="180" width="300" height="70" fill="#6B8E23"/><rect x="0" y="210" width="300" height="40" fill="#8B6914"/><rect x="80" y="100" width="140" height="70" rx="3" fill="#D2B48C" stroke="#8B6914" stroke-width="2"/>
+<rect x="130" y="100" width="40" height="50" fill="#8B6914"/><ellipse cx="110" cy="140" rx="15" ry="12" fill="white" stroke="#333"/>
+<circle cx="122" cy="132" r="7" fill="white" stroke="#333"/>
+<polygon points="128,132 134,130 128,134" fill="#FF6600"/>
+<circle cx="124" cy="130" r="1.5" fill="#333"/>
+<polygon points="120,125 123,120 126,125" fill="#CC0000"/>
+<line x1="102" y1="152" x2="102" y2="160" stroke="#CC6600" stroke-width="2"/>
+<line x1="115" y1="152" x2="115" y2="160" stroke="#CC6600" stroke-width="2"/><ellipse cx="170" cy="145" rx="15" ry="12" fill="white" stroke="#333"/>
+<circle cx="182" cy="137" r="7" fill="white" stroke="#333"/>
+<polygon points="188,137 194,135 188,139" fill="#FF6600"/>
+<circle cx="184" cy="135" r="1.5" fill="#333"/>
+<polygon points="180,130 183,125 186,130" fill="#CC0000"/>
+<line x1="162" y1="157" x2="162" y2="165" stroke="#CC6600" stroke-width="2"/>
+<line x1="175" y1="157" x2="175" y2="165" stroke="#CC6600" stroke-width="2"/><circle cx="60" cy="118" r="12" fill="#FDBCB4"/>
+
+<rect x="50" y="130" width="20" height="25" rx="3" fill="#2563EB"/>
+<rect x="52" y="155" width="7" height="23" fill="#1E3A5F"/>
+<rect x="61" y="155" width="7" height="23" fill="#1E3A5F"/>
+<rect x="51" y="178" width="8" height="5" rx="2" fill="#333"/>
+<rect x="61" y="178" width="8" height="5" rx="2" fill="#333"/>
+<line x1="70" y1="133" x2="85" y2="148" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/><rect x="75" y="155" width="20" height="5" fill="#999"/>
+<text x="150" y="240" text-anchor="middle" font-size="11" fill="#333" font-family="Arial">닭장 청소</text>
 </svg>

@@ -1,5 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <rect width="200" height="200" fill="#d8f0d8" rx="10"/>
-  <rect x="4" y="4" width="192" height="192" fill="none" stroke="#aaa" stroke-width="1.5" rx="8"/>
-  <text x="100" y="100" font-size="20" fill="#333" dominant-baseline="middle" text-anchor="middle">안전대 고소작업</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 250" width="300" height="250">
+<rect width="300" height="250" fill="#f0f4f8" rx="8"/>
+<rect x="0" y="0" width="300" height="250" fill="#87CEEB"/><rect x="50" y="50" width="200" height="8" fill="#999"/>
+<rect x="55" y="58" width="5" height="110" fill="#999"/>
+<rect x="240" y="58" width="5" height="110" fill="#999"/>
+<rect x="50" y="168" width="200" height="8" fill="#999"/><circle cx="150" cy="100" r="12" fill="#FDBCB4"/>
+<ellipse cx="150" cy="92" rx="14" ry="6" fill="#FFD700"/>
+<rect x="140" y="112" width="20" height="25" rx="3" fill="#FF6347"/>
+<rect x="142" y="137" width="7" height="23" fill="#1E3A5F"/>
+<rect x="151" y="137" width="7" height="23" fill="#1E3A5F"/>
+<rect x="141" y="160" width="8" height="5" rx="2" fill="#333"/>
+<rect x="151" y="160" width="8" height="5" rx="2" fill="#333"/>
+<line x1="160" y1="115" x2="175" y2="130" stroke="#FF6347" stroke-width="4" stroke-linecap="round"/><path d="M140,115 Q135,100 145,105" stroke="#FFD700" stroke-width="2" fill="none"/>
+<line x1="140" y1="115" x2="120" y2="60" stroke="#FFD700" stroke-width="2"/>
+<text x="150" y="240" text-anchor="middle" font-size="11" fill="#333" font-family="Arial">안전대 고소작업</text>
 </svg>

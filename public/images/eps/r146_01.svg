@@ -1,5 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <rect width="200" height="200" fill="#d0e8f8" rx="10"/>
-  <rect x="4" y="4" width="192" height="192" fill="none" stroke="#aaa" stroke-width="1.5" rx="8"/>
-  <text x="100" y="100" font-size="20" fill="#333" dominant-baseline="middle" text-anchor="middle">굴착기 작업</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 250" width="300" height="250">
+<rect width="300" height="250" fill="#f0f4f8" rx="8"/>
+<rect x="0" y="0" width="300" height="160" fill="#87CEEB"/><circle cx="260" cy="40" r="25" fill="#FFD700"/><rect x="0" y="170" width="300" height="80" fill="#999"/><rect x="100" y="80" width="100" height="60" rx="5" fill="#FFD700"/>
+<rect x="130" y="50" width="40" height="40" fill="#FFD700" rx="3"/>
+<rect x="135" y="55" width="30" height="25" fill="#ADD8E6"/>
+<rect x="80" y="140" width="40" height="35" rx="5" fill="#333"/>
+<path d="M170,100 L200,130 L210,125 L190,95 Z" fill="#666"/>
+<text x="150" y="240" text-anchor="middle" font-size="11" fill="#333" font-family="Arial">굴착기 작업</text>
 </svg>

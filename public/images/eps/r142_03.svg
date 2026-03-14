@@ -1,5 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <rect width="200" height="200" fill="#fde8d0" rx="10"/>
-  <rect x="4" y="4" width="192" height="192" fill="none" stroke="#aaa" stroke-width="1.5" rx="8"/>
-  <text x="100" y="100" font-size="20" fill="#333" dominant-baseline="middle" text-anchor="middle">지게차 운반</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 250" width="300" height="250">
+<rect width="300" height="250" fill="#f0f4f8" rx="8"/>
+<rect x="0" y="0" width="300" height="170" fill="#E8E0D0"/><rect x="0" y="170" width="300" height="80" fill="#C4A882"/><line x1="0" y1="170" x2="300" y2="170" stroke="#999" stroke-width="2"/><rect x="130" y="130" width="55" height="35" rx="3" fill="#FFD700"/>
+<rect x="160" y="110" width="25" height="25" rx="2" fill="#FFD700"/>
+<rect x="165" y="115" width="15" height="15" fill="#ADD8E6"/>
+<rect x="110" y="140" width="25" height="5" fill="#999"/>
+<rect x="108" y="115" width="5" height="30" fill="#999"/>
+<circle cx="140" cy="170" r="10" fill="#333"/>
+<circle cx="175" cy="170" r="10" fill="#333"/><rect x="95" y="135" width="40" height="8" fill="#D2B48C"/>
+<rect x="97" y="110" width="16" height="25" fill="#C19A6B" stroke="#8B6914"/>
+<rect x="115" y="110" width="16" height="25" fill="#C19A6B" stroke="#8B6914"/>
+<rect x="103" y="87" width="16" height="23" fill="#C19A6B" stroke="#8B6914"/><text x="150" y="240" text-anchor="middle" font-size="11" fill="#333" font-family="Arial">지게차 운반</text>
 </svg>

@@ -33,7 +33,9 @@ except ImportError:
 # ─── Voice map ────────────────────────────────────────────────────────────────
 VOICES = {
     '남자':      'ko-KR-InJoonNeural',   # Natural male Korean
+    '남':        'ko-KR-InJoonNeural',   # Abbreviated male
     '여자':      'ko-KR-SunHiNeural',    # Natural female Korean
+    '여':        'ko-KR-SunHiNeural',    # Abbreviated female
     '방송':      'ko-KR-SunHiNeural',    # Broadcast (female)
     '안내 방송': 'ko-KR-SunHiNeural',    # Announcement
 }
@@ -42,7 +44,9 @@ DEFAULT_VOICE = 'ko-KR-SunHiNeural'
 # Speech rate adjustments
 RATE = {
     '남자':      '-5%',   # slightly slower for clarity
+    '남':        '-5%',
     '여자':      '+0%',
+    '여':        '+0%',
     '방송':      '-8%',   # broadcast is slower and clear
     '안내 방송': '-8%',
 }
@@ -57,7 +61,7 @@ def parse_script(script: str) -> list[tuple[str, str]]:
     Parse '남자: text 여자: text' → [(speaker, text), ...]
     Falls back to single broadcast segment if no labels found.
     """
-    speakers = ['안내 방송', '남자', '여자', '방송']  # '안내 방송' must come first (longer match)
+    speakers = ['안내 방송', '남자', '여자', '방송', '남', '여']  # longer labels first
     pattern = re.compile(r'(' + '|'.join(re.escape(s) for s in speakers) + r'):\s*')
     matches = list(pattern.finditer(script))
 
